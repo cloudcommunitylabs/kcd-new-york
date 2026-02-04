@@ -1,9 +1,19 @@
 [build]
   publish = "public"
   command = "yarn install && yarn build"
+
 [build.environment]
   NODE_VERSION = "20"
   YARN_VERSION = "1.22"
+
+# Production: deploys from main (set in Netlify UI: Production branch = main)
+[context.production]
+  command = "yarn install && yarn build"
+
+# Deploy Previews: build every PR so reviewers get a preview URL
+[context.deploy-preview]
+  command = "yarn install && yarn build"
+
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
   for = "/*"

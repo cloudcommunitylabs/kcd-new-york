@@ -252,11 +252,20 @@ Fonts are set in `src/components/layout.css` (e.g. IBM Plex Sans, Nunito Sans). 
 
 ### Netlify (recommended)
 
-Pushes to `main` can trigger automatic deploys.
+**Production (main website):**
+- Deploy the main site from the `main` branch.
+- In Netlify: **Site configuration** → **Build & deploy** → **Continuous deployment** → set **Production branch** to `main`.
+- Every push to `main` triggers a production deploy; the main site URL serves this branch.
 
-**Build settings** (see `netlify.toml`):
-- Build command: `yarn install && yarn build` (or `npm install --legacy-peer-deps && npm run build`)
+**Preview environments (PRs):**
+- Enable deploy previews so each pull request gets a unique preview URL.
+- In Netlify: **Site configuration** → **Build & deploy** → **Continuous deployment** → under **Deploy Previews**, enable **Deploy Previews for pull requests**.
+- When you open a PR, Netlify builds it and comments with a preview link (e.g. `deploy-preview-123--your-site.netlify.app`).
+
+**Build settings** (in `netlify.toml`):
+- Build command: `yarn install && yarn build`
 - Publish directory: `public`
+- Node 20, Yarn 1.22
 
 ### Manual deploy
 
