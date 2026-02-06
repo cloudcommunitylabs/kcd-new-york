@@ -24,9 +24,9 @@ export default function Layout({ children, title }) {
         <div className="navbar-menu">
           <div className="navbar-start">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/schedule">Schedule</NavLink>
-            <NavLink to="/speakers">Speakers</NavLink>
+            {/* <NavLink to="/about">About</NavLink> */}
+            {/* <NavLink to="/schedule">Schedule</NavLink> */}
+            {/* <NavLink to="/speakers">Speakers</NavLink> */}
             <NavLink to="/sponsors">Sponsors</NavLink>
             <NavLink to="/venue">Venue</NavLink>
             <NavLink to="/team">Team</NavLink>
@@ -47,8 +47,8 @@ export default function Layout({ children, title }) {
             <div className="column is-4">
               <h3 className="title is-6 kcd-ny-footer-heading">Quick Links</h3>
               <ul className="kcd-ny-footer-links">
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/speakers">Speakers</Link></li>
+                {/* <li><Link to="/about">About</Link></li> */}
+                {/* <li><Link to="/speakers">Speakers</Link></li> */}
                 <li><Link to="/sponsors">Sponsors</Link></li>
                 <li><Link to="/venue">Venue</Link></li>
                 <li><Link to="/team">Team</Link></li>
