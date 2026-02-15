@@ -9,15 +9,30 @@ const NavLink = ({ to, children }) => (
 );
 
 export default function Layout({ children, title }) {
+  const [isActive, setIsActive] = React.useState(false);
+
   return (
     <div className="site">
-      <nav className="navbar is-fixed-top kcd-ny-navbar" role="navigation">
+      <nav className="navbar is-fixed-top kcd-ny-navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item has-text-weight-bold">
             KCD New York 2026
           </Link>
+
+          <button
+            className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
+            aria-label="menu"
+            aria-expanded={isActive}
+            onClick={() => setIsActive(!isActive)}
+            type="button"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
         </div>
-        <div className="navbar-menu">
+
+        <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
           <div className="navbar-start">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/schedule">Schedule</NavLink>
@@ -30,9 +45,9 @@ export default function Layout({ children, title }) {
             <NavLink to="/venue">Venue</NavLink>
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
-          </div >
-        </div >
-      </nav >
+          </div>
+        </div>
+      </nav>
       <main className="main-content">{children}</main>
       <footer className="footer kcd-ny-footer">
         <div className="container">

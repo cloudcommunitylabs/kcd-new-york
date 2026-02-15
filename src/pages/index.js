@@ -48,6 +48,69 @@ const KEY_DATES = [
   { label: "Event Day", date: "June 10, 2026" },
 ];
 
+function Countdown() {
+  const [timeLeft, setTimeLeft] = React.useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  React.useEffect(() => {
+    const targetDate = new Date(EVENT_DATE).getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  if (new Date().getTime() > new Date(EVENT_DATE).getTime()) {
+    return (
+      <div className="kcd-ny-countdown">
+        <p className="title is-4 has-text-white mb-0">Thanks for making KCD New York great!</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="kcd-ny-countdown">
+      <p className="kcd-ny-countdown-title">Event Kickoff in:</p>
+      <div className="kcd-ny-countdown-units">
+        <div className="kcd-ny-countdown-unit">
+          <span className="kcd-ny-countdown-value">{timeLeft.days}</span>
+          <span className="kcd-ny-countdown-label">Days</span>
+        </div>
+        <div className="kcd-ny-countdown-unit">
+          <span className="kcd-ny-countdown-value">{timeLeft.hours}</span>
+          <span className="kcd-ny-countdown-label">Hrs</span>
+        </div>
+        <div className="kcd-ny-countdown-unit">
+          <span className="kcd-ny-countdown-value">{timeLeft.minutes}</span>
+          <span className="kcd-ny-countdown-label">Min</span>
+        </div>
+        <div className="kcd-ny-countdown-unit">
+          <span className="kcd-ny-countdown-value">{timeLeft.seconds}</span>
+          <span className="kcd-ny-countdown-label">Sec</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <Layout>
@@ -91,6 +154,9 @@ export default function HomePage() {
               <div className="mt-2" style={{ color: "white" }}>
                 <span className="is-size-7">Register (coming soon)</span>
               </div>
+            </div>
+            <div className="mt-2">
+              <Countdown />
             </div>
           </div>
         </div>

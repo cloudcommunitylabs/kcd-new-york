@@ -43,6 +43,30 @@ html {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.kcd-ny-navbar .navbar-burger {
+  color: #fff;
+}
+
+.kcd-ny-navbar .navbar-burger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 1023px) {
+  .kcd-ny-navbar .navbar-menu {
+    background-color: var(--color-primary);
+    padding: 0.5rem 0;
+  }
+  
+  .kcd-ny-navbar .navbar-item {
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .kcd-ny-navbar .navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .navbar.is-primary,
 .navbar.has-background-primary,
 .hero.is-primary:not(.kcd-ny-hero) {
@@ -495,6 +519,50 @@ html {
 .schedule-speaker-name {
   color: #666;
   font-weight: 500;
+}
+
+/* Countdown Styles */
+.kcd-ny-countdown {
+  margin-top: 2rem;
+  background: rgba(26, 44, 80, 0.4);
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.kcd-ny-countdown-title {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.kcd-ny-countdown-units {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.kcd-ny-countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kcd-ny-countdown-value {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kcd-ny-countdown-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
 }
 
 /* ========================================
