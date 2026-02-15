@@ -14,7 +14,18 @@ export default function SponsorsPage() {
       </section>
       <section className="section">
         <div className="container content">
-          <p>Sponsorship opportunities for KCD New York 2026 will be announced here. Interested in supporting the event? Reach out to the organizing team.</p>
+          <p>Sponsorship opportunities for KCD New York 2026 are now available!</p>
+          <div className="mt-5">
+            <a
+              href="https://www.canva.com/design/DAG9pfEWHV8/wYffjPEQ02UCKhPyWqyuKg/view"
+              className="button is-primary is-large"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Sponsor Prospectus
+            </a>
+          </div>
+          <p className="mt-5">Interested in supporting the event? Reach out to the organizing team at <a href="mailto:ahmed.bebars@cloudcommunitylabs.io">ahmed.bebars@cloudcommunitylabs.io</a>.</p>
         </div>
       </section>
     </Layout>

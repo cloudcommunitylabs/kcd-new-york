@@ -2,10 +2,6 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "./layout.css";
 
-const EVENT_DATE = "June 10, 2026";
-const VENUE = "Convene One Liberty Plaza";
-const ADDRESS = "1 Liberty St, New York, NY 10006";
-
 const NavLink = ({ to, children }) => (
   <Link to={to} className="navbar-item" activeClassName="is-active">
     {children}
@@ -24,16 +20,19 @@ export default function Layout({ children, title }) {
         <div className="navbar-menu">
           <div className="navbar-start">
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/schedule">Schedule</NavLink>
             {/* <NavLink to="/about">About</NavLink> */}
-            {/* <NavLink to="/schedule">Schedule</NavLink> */}
             {/* <NavLink to="/speakers">Speakers</NavLink> */}
             <NavLink to="/sponsors">Sponsors</NavLink>
+            <a href="https://sessionize.com/kcd-new-york-2026/" className="navbar-item" target="_blank" rel="noopener noreferrer">
+              Call for Papers
+            </a>
             <NavLink to="/venue">Venue</NavLink>
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
-          </div>
-        </div>
-      </nav>
+          </div >
+        </div >
+      </nav >
       <main className="main-content">{children}</main>
       <footer className="footer kcd-ny-footer">
         <div className="container">
@@ -50,6 +49,8 @@ export default function Layout({ children, title }) {
                 {/* <li><Link to="/about">About</Link></li> */}
                 {/* <li><Link to="/speakers">Speakers</Link></li> */}
                 <li><Link to="/sponsors">Sponsors</Link></li>
+                <li><a href="https://www.canva.com/design/DAG9pfEWHV8/wYffjPEQ02UCKhPyWqyuKg/view" target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
+                <li><a href="https://sessionize.com/kcd-new-york-2026/" target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
                 <li><Link to="/venue">Venue</Link></li>
                 <li><Link to="/team">Team</Link></li>
                 <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
@@ -65,6 +66,9 @@ export default function Layout({ children, title }) {
               <p className="kcd-ny-footer-text">
                 <a href="mailto:info@kcdnewyork.com">info@kcdnewyork.com</a>
               </p>
+              <p className="kcd-ny-footer-text">
+                <a href="https://www.linkedin.com/company/kcdnewyork" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </p>
             </div>
           </div>
           <div className="has-text-centered kcd-ny-footer-copy">
@@ -72,6 +76,6 @@ export default function Layout({ children, title }) {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }

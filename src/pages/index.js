@@ -11,10 +11,6 @@ const WHAT_TO_EXPECT = [
     description: "Technical talks from industry experts and practitioners sharing real-world experiences and best practices.",
   },
   {
-    title: "Hands-on Workshops",
-    description: "Interactive workshops and tutorials where you can learn by doing with guidance from experienced instructors.",
-  },
-  {
     title: "Networking",
     description: "Connect with the cloud native community, meet potential employers, and build lasting professional relationships.",
   },
@@ -30,6 +26,14 @@ const WHAT_TO_EXPECT = [
     title: "Community Driven",
     description: "Celebrate and contribute to open source projects that power modern cloud infrastructure.",
   },
+];
+
+const KEY_DATES = [
+  { label: "CFP Opens", date: "February 17, 2026" },
+  { label: "CFP Closes", date: "March 17, 2026" },
+  { label: "CFP Notifications", date: "April 14, 2026" },
+  { label: "Schedule Announced", date: "April 28, 2026" },
+  { label: "Event Day", date: "June 10, 2026" },
 ];
 
 export default function HomePage() {
@@ -54,11 +58,23 @@ export default function HomePage() {
                 <span className="kcd-ny-hero-sep"> · </span>
                 <span className="kcd-ny-hero-label">Venue:</span> {VENUE}
               </p>
-              <p className="kcd-ny-hero-detail kcd-ny-hero-address">{ADDRESS}</p>
+              <p className="kcd-ny-hero-detail kcd-ny-hero-address">
+                <a href="https://maps.app.goo.gl/oWPRrwrqbjfiqxh29" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
+                  {ADDRESS}
+                </a>
+              </p>
               <div className="mt-4">
-                <span className="button kcd-ny-cta is-medium" aria-disabled="true">
-                  Register (coming soon)
-                </span>
+                <a
+                  href="https://sessionize.com/kcd-new-york-2026/"
+                  className="button kcd-ny-cta is-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Call for Papers is Open!
+                </a>
+              </div>
+              <div className="mt-2" style={{ color: "white" }}>
+                <span className="is-size-7">Register (coming soon)</span>
               </div>
             </div>
           </div>
@@ -71,7 +87,7 @@ export default function HomePage() {
           <h2 className="title is-3">Join the community</h2>
           <p>
             Kubernetes Community Days (KCD) New York 2026 brings the community together on {EVENT_DATE} at {VENUE} in
-            Manhattan. Join developers, platform engineers, and cloud native enthusiasts for a day of talks, workshops,
+            Manhattan. Join developers, platform engineers, and cloud native enthusiasts for a day of talks
             and networking.
           </p>
           <p>
@@ -79,6 +95,23 @@ export default function HomePage() {
             Whether you're running Kubernetes in production, contributing to open source, or exploring cloud native
             technologies, KCD New York offers a front-row seat to the community and the ecosystem.
           </p>
+        </div>
+      </section>
+
+      {/* Key Dates Section */}
+      <section className="section kcd-ny-dates-section" style={{ backgroundColor: "#f9f9f9" }}>
+        <div className="container">
+          <h2 className="title is-3 has-text-centered">Key Dates</h2>
+          <div className="timeline mt-6">
+            {KEY_DATES.map((item, index) => (
+              <div key={item.label} className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}>
+                <div className="timeline-content">
+                  <span className="timeline-date">{item.date}</span>
+                  <span className="timeline-label">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
