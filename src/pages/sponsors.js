@@ -4,27 +4,22 @@ import Layout from "../components/layout";
 const SPONSOR_TIERS = [
   {
     name: "Diamond",
-    available: 3,
     logoCount: 3
   },
   {
     name: "Platinum",
-    available: 4,
     logoCount: 4
   },
   {
     name: "Gold",
-    available: 6,
     logoCount: 6
   },
   {
     name: "Bronze",
-    available: 8,
     logoCount: 8
   },
   {
     name: "Community Partner",
-    available: null,
     logoCount: 10
   }
 ];
@@ -87,14 +82,9 @@ export default function SponsorsPage() {
                 paddingBottom: "1rem",
                 borderBottom: "2px solid #1a2c50"
               }}>
-                <h3 className="title is-3" style={{ color: "#1a2c50", marginBottom: "0.5rem" }}>
+                <h3 className="title is-3" style={{ color: "#1a2c50" }}>
                   {tier.name}
                 </h3>
-                {tier.available && (
-                  <p className="subtitle is-6 has-text-grey">
-                    {tier.available} {tier.available === 1 ? 'spot' : 'spots'} available
-                  </p>
-                )}
               </div>
 
               <div
