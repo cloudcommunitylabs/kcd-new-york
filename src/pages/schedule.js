@@ -16,8 +16,18 @@ export default function SchedulePage() {
         </div>
       </section>
       <section className="section">
-        <div className="container">
-          <div className="columns is-centered">
+        <div className="container has-text-centered">
+          <div className="notification is-light">
+            <h2 className="title is-4">Schedule Coming Soon!</h2>
+            <p className="is-size-5">
+              The full event schedule will be announced on <strong>April 28, 2026</strong>.
+            </p>
+            <p className="mt-4">
+              Stay tuned for exciting talks and workshops from the cloud native community.
+            </p>
+          </div>
+
+          <div className="columns is-centered mt-6">
             <div className="column is-8">
               {SESSIONS.map((session) => (
                 <div key={session.title} className="schedule-card">
