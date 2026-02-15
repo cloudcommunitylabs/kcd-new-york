@@ -25,7 +25,7 @@ export default function SponsorsPage() {
               View Sponsor Prospectus
             </a>
           </div>
-          <p className="mt-5">Interested in supporting the event? Reach out to the organizing team at <a href="mailto:new-york-org@kubernetescommunitydays.org">new-york-org@kubernetescommunitydays.org</a>.</p>
+          <p className="mt-5">Interested in supporting the event? Reach out to the organizing team at <a href="mailto:ahmed.bebars@cloudcommunitylabs.io">ahmed.bebars@cloudcommunitylabs.io</a>.</p>
         </div>
       </section>
     </Layout>
