@@ -29,8 +29,76 @@ jobs:
         run: yarn build
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name=kcd-newyork-2026 --branch=${{ github.head_ref || github.ref_name }}
+
+      - name: Comment on PR with deployment URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branchName = context.payload.pull_request.head.ref;
+            const commitSha = context.payload.pull_request.head.sha.substring(0, 8);
+            const prNumber = context.payload.pull_request.number;
+
+            // Construct Cloudflare Pages URLs
+            const aliasUrl = `https://${branchName.replace(/[^a-z0-9-]/gi, '-').toLowerCase()}.kcd-newyork-2026.pages.dev`;
+            const homeUrl = aliasUrl;
+            const venueUrl = `${aliasUrl}/venue/`;
+
+            const comment = `## 🚀 Deployment Ready for Review
+
+            Your branch has been deployed to Cloudflare Pages!
+
+            **Preview URL:** ${aliasUrl}
+
+            ### Pages to Review:
+            - **Home Page:** ${homeUrl}
+            - **Venue Page:** ${venueUrl}
+
+            ### What to Check:
+            - ✅ 3rd year milestone section on home page
+            - ✅ Photo gallery section (shows placeholders until actual photos added)
+            - ✅ Interactive floor plan on venue page
+            - ✅ Transit tabs (Subway, PATH, Parking, Accessibility)
+            - ✅ Responsive design on mobile/tablet/desktop
+            - ✅ All interactive features (tabs, filters)
+
+            **Note:** Historical photos from Flickr still need to be added to fully showcase the gallery feature.
+
+            ---
+            *Deployment: ${commitSha} | Branch: ${branchName}*`;
+
+            // Find existing deployment comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('🚀 Deployment Ready for Review')
+            );
+
+            if (botComment) {
+              // Update existing comment
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: comment
+              });
+            } else {
+              // Create new comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: comment
+              });
+            }
