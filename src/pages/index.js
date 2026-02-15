@@ -1,5 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import PhotoGallery from "../components/PhotoGallery";
+import galleryData from "../data/gallery-photos.json";
 
 const EVENT_DATE = "June 10, 2026";
 const VENUE = "Convene One Liberty Plaza";
@@ -8,22 +10,32 @@ const ADDRESS = "1 Liberty St, New York, NY 10006";
 const WHAT_TO_EXPECT = [
   {
     title: "Expert Talks",
+    icon: "🎤",
     description: "Technical talks from industry experts and practitioners sharing real-world experiences and best practices.",
   },
   {
+    title: "Hands-On Workshops",
+    icon: "💻",
+    description: "Practical workshops where you can learn by doing and gain hands-on experience with cloud native tools.",
+  },
+  {
     title: "Networking",
+    icon: "🤝",
     description: "Connect with the cloud native community, meet potential employers, and build lasting professional relationships.",
   },
   {
     title: "Cloud Native Technologies",
+    icon: "☸️",
     description: "Learn about Kubernetes, containers, service mesh, observability, and the latest cloud native innovations.",
   },
   {
     title: "Local & International Speakers",
+    icon: "🌎",
     description: "Hear from both local practitioners and international experts in the cloud native ecosystem.",
   },
   {
     title: "Community Driven",
+    icon: "❤️",
     description: "Celebrate and contribute to open source projects that power modern cloud infrastructure.",
   },
 ];
@@ -113,8 +125,14 @@ export default function HomePage() {
       >
         <div className="hero-body">
           <div className="kcd-ny-hero-overlay" />
+          <div className="kcd-ny-hero-badge">
+            Celebrating Our 3rd Year
+          </div>
           <div className="container has-text-centered kcd-ny-hero-content">
             <h1 className="title is-1 kcd-ny-hero-title">Kubernetes Community Days New York 2026</h1>
+            <p className="subtitle is-3 has-text-white" style={{ marginTop: "1rem", fontWeight: "600", textShadow: "0 2px 4px rgba(0, 0, 0, 0.4)" }}>
+              Building Bridges in Cloud Native
+            </p>
             <div className="kcd-ny-hero-details-box">
               <p className="kcd-ny-hero-detail">
                 <span className="kcd-ny-hero-label">Date:</span> {EVENT_DATE}
@@ -147,10 +165,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* About the Theme Section */}
+      <section className="section" style={{ background: "#1a2c50", color: "white", padding: "3rem 1.5rem" }}>
+        <div className="container">
+          <div className="columns is-vcentered">
+            <div className="column is-7">
+              <h2 className="title is-2 has-text-white" style={{ marginBottom: "1.5rem" }}>
+                🌉 Building Bridges in Cloud Native
+              </h2>
+              <div className="content is-size-5" style={{ color: "rgba(255,255,255,0.95)", lineHeight: "1.8" }}>
+                <p>
+                  Just as New York's iconic Brooklyn Bridge connects communities across the East River,
+                  KCD New York 2026 connects cloud native practitioners, technologies, and ideas across
+                  the ecosystem.
+                </p>
+                <p style={{ marginBottom: "0" }}>
+                  Over three years, we've built bridges between developers and operators,
+                  between startups and enterprises, between local talent and global expertise.
+                  This year, we continue that tradition—bringing together 500+ practitioners to
+                  share knowledge, forge partnerships, and strengthen the connections that power
+                  modern cloud infrastructure.
+                </p>
+              </div>
+            </div>
+            <div className="column is-5 has-text-centered">
+              <div style={{ fontSize: "8rem", lineHeight: "1", marginBottom: "1rem" }}>🌉</div>
+              <p className="subtitle is-4 has-text-white" style={{ fontWeight: "600" }}>
+                Connecting<br/>Communities • Technologies • Ideas
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3rd Year Milestone Section */}
+      <section className="section kcd-ny-milestone-section">
+        <div className="container">
+          <div className="columns is-vcentered">
+            <div className="column is-4 has-text-centered">
+              <div className="kcd-ny-milestone-number">3</div>
+              <div className="kcd-ny-milestone-subtitle">Years Strong</div>
+              <div className="kcd-ny-stat-grid" style={{ marginTop: "1.5rem" }}>
+                <div className="kcd-ny-stat-item">
+                  <div className="kcd-ny-stat-value">500+</div>
+                  <div className="kcd-ny-stat-label">Attendees</div>
+                </div>
+                <div className="kcd-ny-stat-item">
+                  <div className="kcd-ny-stat-value">50+</div>
+                  <div className="kcd-ny-stat-label">Speakers</div>
+                </div>
+                <div className="kcd-ny-stat-item">
+                  <div className="kcd-ny-stat-value">20+</div>
+                  <div className="kcd-ny-stat-label">Sponsors</div>
+                </div>
+                <div className="kcd-ny-stat-item">
+                  <div className="kcd-ny-stat-value">30+</div>
+                  <div className="kcd-ny-stat-label">Sessions</div>
+                </div>
+              </div>
+            </div>
+            <div className="column is-8">
+              <h2 className="title is-2">Three Years of Building Bridges</h2>
+              <p className="is-size-5" style={{ lineHeight: "1.6", marginBottom: "1rem" }}>
+                Since 2024, we've been building bridges across New York City's cloud native community.
+                What started as a gathering has grown into a thriving network of practitioners, innovators,
+                and leaders who are shaping the future of cloud infrastructure.
+              </p>
+              <p className="is-size-5" style={{ lineHeight: "1.6" }}>
+                Each year, these connections grow stronger. Join us in 2026 as we continue building bridges
+                between ideas, technologies, and the people who bring them to life.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About / Join the community */}
       <section className="section">
         <div className="container content">
-          <h2 className="title is-3">Join the community</h2>
+          <h2 className="title is-3">Join Hundreds of Cloud Native Practitioners</h2>
           <p>
             Kubernetes Community Days (KCD) New York 2026 brings the community together on {EVENT_DATE} at {VENUE} in
             Manhattan. Join developers, platform engineers, and cloud native enthusiasts for a day of talks
@@ -181,6 +274,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Historical Photos Gallery */}
+      <PhotoGallery photos={galleryData.photos} columns={3} showYearFilter={true} />
+
       {/* What to Expect - dark section with feature grid */}
       <section className="section kcd-ny-dark-section">
         <div className="container">
@@ -189,11 +285,46 @@ export default function HomePage() {
             {WHAT_TO_EXPECT.map((item) => (
               <div key={item.title} className="column is-6-tablet is-4-desktop">
                 <div className="kcd-ny-feature-box">
+                  <span className="kcd-ny-feature-icon" role="img" aria-label={item.title}>
+                    {item.icon}
+                  </span>
                   <h3 className="title is-5 kcd-ny-feature-box-title">{item.title}</h3>
                   <p className="kcd-ny-feature-box-desc">{item.description}</p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Venue Preview */}
+      <section className="section kcd-ny-venue-preview">
+        <div className="container">
+          <div className="columns is-vcentered">
+            <div
+              className="column is-6 kcd-ny-venue-preview-image"
+              style={{
+                backgroundImage: "url('/img/convene-exterior-01.jpg')",
+              }}
+            >
+              {/* Image background */}
+            </div>
+            <div className="column is-6 has-text-white" style={{ padding: "2rem" }}>
+              <h2 className="title is-2 has-text-white">World-Class Venue in the Financial District</h2>
+              <div className="content is-size-5" style={{ color: "rgba(255, 255, 255, 0.95)" }}>
+                <ul style={{ lineHeight: "1.8" }}>
+                  <li>Steps from World Trade Center and One World Observatory</li>
+                  <li>Accessible by 12+ subway lines and PATH train</li>
+                  <li>Modern facility with state-of-the-art AV equipment</li>
+                  <li>Spacious conference rooms and networking areas</li>
+                </ul>
+                <div style={{ marginTop: "2rem" }}>
+                  <a href="/venue" className="button is-large kcd-ny-button-secondary">
+                    Learn More About the Venue
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

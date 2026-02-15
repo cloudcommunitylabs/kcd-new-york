@@ -1,0 +1,220 @@
+{
+  "photos": [
+    {
+      "id": "2024-01",
+      "filename": "kcd-ny-2024-01.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Engaging technical talk at KCD NY 2024",
+      "featured": true,
+      "alt": "Speaker presenting technical content to audience at KCD New York 2024"
+    },
+    {
+      "id": "2024-02",
+      "filename": "kcd-ny-2024-02.jpg",
+      "year": 2024,
+      "category": "community",
+      "caption": "Cloud native community gathering together",
+      "featured": true,
+      "alt": "Group of attendees at KCD New York 2024 event"
+    },
+    {
+      "id": "2024-03",
+      "filename": "kcd-ny-2024-03.jpg",
+      "year": 2024,
+      "category": "networking",
+      "caption": "Networking and knowledge sharing",
+      "featured": false,
+      "alt": "Attendees networking and having conversations at KCD NY 2024"
+    },
+    {
+      "id": "2024-04",
+      "filename": "kcd-ny-2024-04.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Deep dive into cloud native technologies",
+      "featured": false,
+      "alt": "Technical session in progress at KCD New York 2024"
+    },
+    {
+      "id": "2024-05",
+      "filename": "kcd-ny-2024-05.jpg",
+      "year": 2024,
+      "category": "venue",
+      "caption": "Conference space at KCD NY 2024",
+      "featured": false,
+      "alt": "Main conference room setup at KCD New York 2024"
+    },
+    {
+      "id": "2024-06",
+      "filename": "kcd-ny-2024-06.jpg",
+      "year": 2024,
+      "category": "workshops",
+      "caption": "Hands-on Kubernetes workshop in action",
+      "featured": false,
+      "alt": "Workshop participants engaged in hands-on learning"
+    },
+    {
+      "id": "2024-07",
+      "filename": "kcd-ny-2024-07.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Expert insights on cloud infrastructure",
+      "featured": false,
+      "alt": "Speaker sharing expertise on stage at KCD NY 2024"
+    },
+    {
+      "id": "2024-08",
+      "filename": "kcd-ny-2024-08.jpg",
+      "year": 2024,
+      "category": "networking",
+      "caption": "Building connections in the community",
+      "featured": false,
+      "alt": "Attendees connecting during networking session"
+    },
+    {
+      "id": "2024-09",
+      "filename": "kcd-ny-2024-09.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Kubernetes best practices session",
+      "featured": false,
+      "alt": "Technical presentation on Kubernetes at KCD NY 2024"
+    },
+    {
+      "id": "2024-10",
+      "filename": "kcd-ny-2024-10.jpg",
+      "year": 2024,
+      "category": "community",
+      "caption": "KCD NY 2024 community moments",
+      "featured": false,
+      "alt": "Community members at KCD New York 2024"
+    },
+    {
+      "id": "2024-11",
+      "filename": "kcd-ny-2024-11.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Innovation in cloud native ecosystem",
+      "featured": false,
+      "alt": "Speaker presenting cloud native innovations"
+    },
+    {
+      "id": "2024-12",
+      "filename": "kcd-ny-2024-12.jpg",
+      "year": 2024,
+      "category": "sessions",
+      "caption": "Keynote presentation at KCD NY 2024",
+      "featured": true,
+      "alt": "Keynote speaker on main stage at KCD New York 2024"
+    },
+    {
+      "id": "2025-01",
+      "filename": "kcd-ny-2025-01.jpg",
+      "year": 2025,
+      "category": "sessions",
+      "caption": "Technical excellence at KCD NY 2025",
+      "featured": true,
+      "alt": "Speaker presenting technical session at KCD New York 2025"
+    },
+    {
+      "id": "2025-02",
+      "filename": "kcd-ny-2025-02.jpg",
+      "year": 2025,
+      "category": "community",
+      "caption": "Growing cloud native community",
+      "featured": true,
+      "alt": "Community gathering at KCD New York 2025"
+    },
+    {
+      "id": "2025-03",
+      "filename": "kcd-ny-2025-03.jpg",
+      "year": 2025,
+      "category": "networking",
+      "caption": "Connecting with fellow practitioners",
+      "featured": false,
+      "alt": "Attendees networking at KCD NY 2025"
+    },
+    {
+      "id": "2025-04",
+      "filename": "kcd-ny-2025-04.jpg",
+      "year": 2025,
+      "category": "sessions",
+      "caption": "Advanced cloud native topics",
+      "featured": false,
+      "alt": "Technical presentation at KCD New York 2025"
+    },
+    {
+      "id": "2025-05",
+      "filename": "kcd-ny-2025-05.jpg",
+      "year": 2025,
+      "category": "workshops",
+      "caption": "Interactive workshop session",
+      "featured": false,
+      "alt": "Workshop in progress at KCD NY 2025"
+    },
+    {
+      "id": "2025-06",
+      "filename": "kcd-ny-2025-06.jpg",
+      "year": 2025,
+      "category": "sessions",
+      "caption": "Kubernetes in production",
+      "featured": false,
+      "alt": "Speaker discussing production Kubernetes at KCD NY 2025"
+    },
+    {
+      "id": "2025-07",
+      "filename": "kcd-ny-2025-07.jpg",
+      "year": 2025,
+      "category": "venue",
+      "caption": "KCD NY 2025 conference space",
+      "featured": false,
+      "alt": "Conference venue at KCD New York 2025"
+    },
+    {
+      "id": "2025-08",
+      "filename": "kcd-ny-2025-08.jpg",
+      "year": 2025,
+      "category": "networking",
+      "caption": "Community connections",
+      "featured": false,
+      "alt": "Attendees connecting at KCD NY 2025"
+    },
+    {
+      "id": "2025-09",
+      "filename": "kcd-ny-2025-09.jpg",
+      "year": 2025,
+      "category": "sessions",
+      "caption": "Cloud native innovation showcase",
+      "featured": false,
+      "alt": "Innovative cloud native presentation at KCD NY 2025"
+    },
+    {
+      "id": "2025-10",
+      "filename": "kcd-ny-2025-10.jpg",
+      "year": 2025,
+      "category": "community",
+      "caption": "KCD NY 2025 attendees",
+      "featured": false,
+      "alt": "Community members at KCD New York 2025 event"
+    },
+    {
+      "id": "2025-11",
+      "filename": "kcd-ny-2025-11.jpg",
+      "year": 2025,
+      "category": "sessions",
+      "caption": "Keynote at KCD NY 2025",
+      "featured": true,
+      "alt": "Keynote presentation at KCD New York 2025"
+    },
+    {
+      "id": "2025-12",
+      "filename": "kcd-ny-2025-12.jpg",
+      "year": 2025,
+      "category": "workshops",
+      "caption": "Hands-on cloud native learning",
+      "featured": false,
+      "alt": "Workshop participants learning at KCD NY 2025"
+    }
+  ]
+}

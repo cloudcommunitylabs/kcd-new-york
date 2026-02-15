@@ -564,3 +564,445 @@ html {
   text-transform: uppercase;
   margin-top: 0.25rem;
 }
+
+/* ========================================
+   3rd Year Milestone Section
+   ======================================== */
+.kcd-ny-milestone-section {
+  background: var(--color-light);
+  padding: 4rem 1.5rem;
+}
+
+.kcd-ny-milestone-number {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kcd-ny-milestone-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.kcd-ny-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.kcd-ny-stat-item {
+  text-align: center;
+}
+
+.kcd-ny-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kcd-ny-stat-label {
+  font-size: 1rem;
+  color: #4a4a4a;
+  font-weight: 500;
+}
+
+.kcd-ny-hero-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-accent-warm);
+  color: var(--color-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* ========================================
+   Photo Gallery Section
+   ======================================== */
+.kcd-ny-gallery-section {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.kcd-ny-gallery-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.kcd-ny-gallery-tab {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.kcd-ny-gallery-tab:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.kcd-ny-gallery-tab.active {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: #fff;
+}
+
+.kcd-ny-photo-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kcd-ny-photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 4/3;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.kcd-ny-photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.kcd-ny-photo-item:hover img {
+  transform: scale(1.05);
+}
+
+.kcd-ny-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.kcd-ny-photo-item:hover .kcd-ny-photo-overlay {
+  transform: translateY(0);
+}
+
+.kcd-ny-photo-year {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.kcd-ny-photo-caption {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.kcd-ny-button-secondary {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.kcd-ny-button-secondary:hover {
+  background-color: var(--color-accent-red) !important;
+  border-color: var(--color-accent-red) !important;
+}
+
+/* ========================================
+   Venue Preview Section (Home Page)
+   ======================================== */
+.kcd-ny-venue-preview {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.kcd-ny-venue-preview-image {
+  position: relative;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.kcd-ny-venue-preview-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(26, 44, 80, 0.3) 0%,
+    rgba(26, 44, 80, 0.7) 100%
+  );
+}
+
+/* ========================================
+   Map Embed Component
+   ======================================== */
+.kcd-ny-map-embed-container {
+  margin: 2rem 0;
+}
+
+.kcd-ny-map-embed-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.kcd-ny-map-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.kcd-ny-map-fallback {
+  text-align: center;
+}
+
+.kcd-ny-map-section {
+  background: #fff;
+  padding: 4rem 1.5rem;
+}
+
+/* ========================================
+   Transit Tabs (Venue Page)
+   ======================================== */
+.kcd-ny-transit-section {
+  background: var(--color-light);
+  padding: 4rem 1.5rem;
+}
+
+.kcd-ny-transit-tabs {
+  margin-bottom: 2rem;
+}
+
+.kcd-ny-transit-tabs .tabs {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.kcd-ny-transit-tabs .tabs li.is-active a {
+  border-bottom-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.kcd-ny-transit-tabs .tabs a:hover {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.kcd-ny-transit-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  min-height: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.kcd-ny-transit-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+}
+
+/* ========================================
+   Venue Amenities Grid
+   ======================================== */
+.kcd-ny-amenities-section {
+  background: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.kcd-ny-amenity-card {
+  background: var(--color-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.kcd-ny-amenity-title {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.kcd-ny-amenity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kcd-ny-amenity-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.kcd-ny-amenity-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* ========================================
+   Feature Icons (What to Expect)
+   ======================================== */
+.kcd-ny-feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+
+/* Mobile (<768px) */
+@media screen and (max-width: 767px) {
+  .kcd-ny-milestone-number {
+    font-size: 5rem;
+  }
+
+  .kcd-ny-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kcd-ny-photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .kcd-ny-venue-preview-image {
+    min-height: 300px;
+  }
+
+  .kcd-ny-map-embed-wrapper {
+    padding-bottom: 75%; /* 4:3 aspect ratio for mobile */
+  }
+
+  .kcd-ny-hero-badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Medium screens (1000px-1300px) - Better milestone column spacing */
+@media screen and (min-width: 1000px) and (max-width: 1300px) {
+  .kcd-ny-milestone-section .columns {
+    gap: 3rem;
+  }
+
+  .kcd-ny-milestone-section .column:first-child {
+    padding-right: 2rem;
+  }
+
+  .kcd-ny-milestone-section .column:last-child {
+    padding-left: 2rem;
+  }
+}
+
+/* Tablet (768px-1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .kcd-ny-milestone-number {
+    font-size: 6rem;
+  }
+
+  .kcd-ny-photo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .kcd-ny-map-embed-wrapper {
+    padding-bottom: 62.5%; /* 16:10 for tablet */
+  }
+}
+
+/* Desktop (1024px+) */
+@media screen and (min-width: 1024px) {
+  .kcd-ny-map-embed-wrapper {
+    padding-bottom: 56.25%; /* 16:9 for desktop */
+  }
+
+  .kcd-ny-stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   Accessibility Features
+   ======================================== */
+
+/* Focus indicators */
+button:focus-visible,
+a:focus-visible,
+.kcd-ny-gallery-tab:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .kcd-ny-photo-item img,
+  .kcd-ny-photo-overlay,
+  .kcd-ny-gallery-tab,
+  * {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .kcd-ny-feature-box,
+  .kcd-ny-photo-item,
+  .kcd-ny-transit-content {
+    border: 2px solid currentColor;
+  }
+}
