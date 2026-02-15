@@ -99,10 +99,10 @@ export default function SponsorsPage() {
 
               <div
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+                  display: "flex",
+                  flexWrap: "wrap",
                   gap: "2rem",
-                  justifyItems: "center"
+                  justifyContent: "center"
                 }}
               >
                 {[...Array(tier.logoCount)].map((_, idx) => (
