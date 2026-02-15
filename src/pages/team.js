@@ -11,12 +11,12 @@ const AVATAR_BG = "1a2c50";
  * LinkedIn URLs: replace with each organizer's real profile (e.g. linkedin.com/in/username).
  */
 const TEAM = [
-  { name: "Ahmed Bebars", role: "Sponsorship Lead", company: "The New York Times", linkedin: "https://www.linkedin.com/in/ahmedbebars/", image: `https://ui-avatars.com/api/?name=Ahmed+Bebars&size=400&background=${AVATAR_BG}&color=fff` },
-  { name: "Cedric Clyburn", role: "Program Chair / CFP Admin", company: "Red Hat", linkedin: "https://www.linkedin.com/in/cedricclyburn/", image: `https://ui-avatars.com/api/?name=Cedric+Clyburn&size=400&background=${AVATAR_BG}&color=fff` },
-  { name: "Julia Furst Morgado", role: "Marketing Lead", company: "Dash0", linkedin: "https://www.linkedin.com/in/juliafurst/", image: `https://ui-avatars.com/api/?name=Julia+Furst+Morgado&size=400&background=${AVATAR_BG}&color=fff` },
-  { name: "Kelly Revenaugh", role: "Community Experience Lead", company: "Testkube", linkedin: "https://www.linkedin.com/in/kellyrevenaugh/", image: `https://ui-avatars.com/api/?name=Kelly+Revenaugh&size=400&background=${AVATAR_BG}&color=fff` },
-  { name: "Scott Rigby", role: "Logistics Lead", company: "Replicated", linkedin: "https://www.linkedin.com/in/scottrigby/", image: `https://ui-avatars.com/api/?name=Scott+Rigby&size=400&background=${AVATAR_BG}&color=fff` },
-  { name: "Christopher Tineo", role: "Volunteer Coordinator", company: "Game Plan Tech", linkedin: "https://www.linkedin.com/in/christophertineo/", image: `https://ui-avatars.com/api/?name=Christopher+Tineo&size=400&background=${AVATAR_BG}&color=fff` },
+  { name: "Ahmed Bebars", role: "Sponsorship Lead", company: "The New York Times", linkedin: "https://www.linkedin.com/in/ahmedbebars/", image: "https://media.licdn.com/dms/image/v2/D4E03AQF0yGgn_72DQA/profile-displayphoto-shrink_200_200/B4EZNpS2QUH0Ag-/0/1732638369104?e=1772668800&v=beta&t=DsKn5B_tNSEGnvHXjMaBiEX65t1oWT4tYqvvXiZEkUY" },
+  { name: "Cedric Clyburn", role: "Program Chair / CFP Admin", company: "Red Hat", linkedin: "https://www.linkedin.com/in/cedricclyburn/", image: "https://media.licdn.com/dms/image/v2/D4E03AQHgxZvXMUiKFQ/profile-displayphoto-scale_200_200/B4EZjz2KMpGoAY-/0/1756437718235?e=1772668800&v=beta&t=8arBQ5lZvHkD5Llhf2tgJDyG7vFrefUIt1dfjuN-t28" },
+  { name: "Julia Furst Morgado", role: "Marketing Lead", company: "Dash0", linkedin: "https://www.linkedin.com/in/juliafmorgado/", image: "https://media.licdn.com/dms/image/v2/D4E03AQGSgvpxq1aL1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732106483574?e=1772668800&v=beta&t=e-jfb81_DVh3hR8VAWxPGfL3BSVvCo86yp-VdqWZ5bI" },
+  { name: "Kelly Revenaugh", role: "Community Experience Lead", company: "Testkube", linkedin: "https://www.linkedin.com/in/kellyrevenaugh/", image: "https://media.licdn.com/dms/image/v2/D4E03AQEnL3eM3ZS9YQ/profile-displayphoto-shrink_200_200/B4EZUmB3bpHgAc-/0/1740099778612?e=1772668800&v=beta&t=JcMjqjGDeCNvR2-tSBBpDDsUXQH9uTIuF2a_jpD_rCk" },
+  { name: "Scott Rigby", role: "Logistics Lead", company: "Replicated", linkedin: "https://www.linkedin.com/in/scottrigby/", image: "https://media.licdn.com/dms/image/v2/D5603AQGumu2mqbzeKg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722536568026?e=1772668800&v=beta&t=jlekTTb_f5mNkdOhlqD3UkSA2lMB7eWK7YTAlTq3i1g" },
+  { name: "Christopher Tineo", role: "Volunteer Coordinator", company: "Game Plan Tech", linkedin: "https://www.linkedin.com/in/christopher-tineo/", image: "https://media.licdn.com/dms/image/v2/D4E03AQGAwKLESo8Lrg/profile-displayphoto-scale_200_200/B4EZmpQCtaKoAY-/0/1759481181365?e=1772668800&v=beta&t=qm2Xde3s126Ru_DsrxecrPbbgxVIEeHKgW_o5E9e1u0" },
 ];
 
 export default function TeamPage() {
@@ -62,7 +62,7 @@ export default function TeamPage() {
                       >
                         <span className="kcd-ny-linkedin-icon" aria-hidden>
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                           </svg>
                         </span>
                         LinkedIn

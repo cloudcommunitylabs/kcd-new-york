@@ -20,7 +20,7 @@ export default function VenuePage() {
         <div className="container content">
           <h2 className="title is-4">{VENUE}</h2>
           <p className="mb-4">
-            <strong>Address:</strong> {ADDRESS}
+            <strong>Address:</strong> <a href="https://maps.app.goo.gl/oWPRrwrqbjfiqxh29" target="_blank" rel="noopener noreferrer">{ADDRESS}</a>
           </p>
           <p>
             Convene One Liberty Plaza is located in Lower Manhattan, near the World Trade Center and easily accessible
