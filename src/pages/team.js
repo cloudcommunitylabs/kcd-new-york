@@ -11,12 +11,54 @@ const AVATAR_BG = "1a2c50";
  * LinkedIn URLs: replace with each organizer's real profile (e.g. linkedin.com/in/username).
  */
 const TEAM = [
-  { name: "Ahmed Bebars", role: "Principal Engineer", company: "The New York Times", linkedin: "https://www.linkedin.com/in/ahmedbebars/", image: "https://media.licdn.com/dms/image/v2/D4E03AQF0yGgn_72DQA/profile-displayphoto-shrink_200_200/B4EZNpS2QUH0Ag-/0/1732638369104?e=1772668800&v=beta&t=DsKn5B_tNSEGnvHXjMaBiEX65t1oWT4tYqvvXiZEkUY" },
-  { name: "Cedric Clyburn", role: "Senior Developer Advocate ", company: "Red Hat", linkedin: "https://www.linkedin.com/in/cedricclyburn/", image: "https://media.licdn.com/dms/image/v2/D4E03AQHgxZvXMUiKFQ/profile-displayphoto-scale_200_200/B4EZjz2KMpGoAY-/0/1756437718235?e=1772668800&v=beta&t=8arBQ5lZvHkD5Llhf2tgJDyG7vFrefUIt1dfjuN-t28" },
-  { name: "Julia Furst Morgado", role: "Principal Developer Relations Engineer", company: "Dash0", linkedin: "https://www.linkedin.com/in/juliafmorgado/", image: "https://media.licdn.com/dms/image/v2/D4E03AQGSgvpxq1aL1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732106483574?e=1772668800&v=beta&t=e-jfb81_DVh3hR8VAWxPGfL3BSVvCo86yp-VdqWZ5bI" },
-  { name: "Kelly Revenaugh", role: "Community Experience Lead", company: "Testkube", linkedin: "https://www.linkedin.com/in/kellyrevenaugh/", image: "https://media.licdn.com/dms/image/v2/D4E03AQEnL3eM3ZS9YQ/profile-displayphoto-shrink_200_200/B4EZUmB3bpHgAc-/0/1740099778612?e=1772668800&v=beta&t=JcMjqjGDeCNvR2-tSBBpDDsUXQH9uTIuF2a_jpD_rCk" },
-  { name: "Scott Rigby", role: "Helm project maintainer", company: "Replicated", linkedin: "https://www.linkedin.com/in/scottrigby/", image: "https://media.licdn.com/dms/image/v2/D5603AQGumu2mqbzeKg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722536568026?e=1772668800&v=beta&t=jlekTTb_f5mNkdOhlqD3UkSA2lMB7eWK7YTAlTq3i1g" },
-  { name: "Christopher Tineo", role: "Senior Devops Engineer", company: "Game Plan Tech", linkedin: "https://www.linkedin.com/in/christopher-tineo/", image: "https://media.licdn.com/dms/image/v2/D4E03AQGAwKLESo8Lrg/profile-displayphoto-scale_200_200/B4EZmpQCtaKoAY-/0/1759481181365?e=1772668800&v=beta&t=qm2Xde3s126Ru_DsrxecrPbbgxVIEeHKgW_o5E9e1u0" },
+  {
+    name: "Ahmed Bebars",
+    role: "Principal Engineer",
+    company: "The New York Times",
+    eventRole: "Finance and Budgeting, Event Planner",
+    linkedin: "https://www.linkedin.com/in/ahmedbebars/",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQF0yGgn_72DQA/profile-displayphoto-shrink_800_800/B4EZNpS2QUH0Ak-/0/1732638369119?e=1772668800&v=beta&t=TIZPi_H-ZWKme2j-7DIbWn4w4EjCA6XRZ-6F-7oUKpM"
+  },
+  {
+    name: "Cedric Clyburn",
+    role: "Senior Developer Advocate ",
+    company: "Red Hat",
+    eventRole: "AV and Media Recording",
+    linkedin: "https://www.linkedin.com/in/cedricclyburn/",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQHgxZvXMUiKFQ/profile-displayphoto-crop_800_800/B4EZjz2KMpGoAI-/0/1756437718145?e=1772668800&v=beta&t=02e3-iYYXcJL_w0QS6-WWYlt43sop-ESCvj-iFRnK_Y"
+  },
+  {
+    name: "Julia Furst Morgado",
+    role: "Principal Developer Relations Engineer",
+    company: "Dash0",
+    eventRole: "Sponsors Support, Event Planner, Volunteers Coordination",
+    linkedin: "https://www.linkedin.com/in/juliafmorgado/",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGSgvpxq1aL1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732106483574?e=1772668800&v=beta&t=e-jfb81_DVh3hR8VAWxPGfL3BSVvCo86yp-VdqWZ5bI"
+  },
+  {
+    name: "Kelly Revenaugh",
+    role: "Community Experience Lead",
+    company: "Testkube",
+    eventRole: "Marketing and Promotion, Event Planner",
+    linkedin: "https://www.linkedin.com/in/kellyrevenaugh/",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQEnL3eM3ZS9YQ/profile-displayphoto-shrink_200_200/B4EZUmB3bpHgAc-/0/1740099778612?e=1772668800&v=beta&t=JcMjqjGDeCNvR2-tSBBpDDsUXQH9uTIuF2a_jpD_rCk"
+  },
+  {
+    name: "Scott Rigby",
+    role: "Helm project maintainer",
+    company: "Replicated",
+    eventRole: "Program",
+    linkedin: "https://www.linkedin.com/in/scottrigby/",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQGumu2mqbzeKg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722536568026?e=1772668800&v=beta&t=jlekTTb_f5mNkdOhlqD3UkSA2lMB7eWK7YTAlTq3i1g"
+  },
+  {
+    name: "Christopher Tineo",
+    role: "Senior Devops Engineer",
+    company: "Game Plan Tech",
+    eventRole: "Program, Event Planner, Volunteers Coordination",
+    linkedin: "https://www.linkedin.com/in/christopher-tineo/",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGAwKLESo8Lrg/profile-displayphoto-scale_200_200/B4EZmpQCtaKoAY-/0/1759481181365?e=1772668800&v=beta&t=qm2Xde3s126Ru_DsrxecrPbbgxVIEeHKgW_o5E9e1u0"
+  },
 ];
 
 export default function TeamPage() {
@@ -47,10 +89,15 @@ export default function TeamPage() {
                     </figure>
                   </div>
                   <div className="card-content kcd-ny-card-content">
-                    <p className="title is-5 kcd-ny-organizer-name">{person.name}</p>
-                    <p className="subtitle is-6 kcd-ny-organizer-role">{person.role}</p>
+                    <p className="title is-5 kcd-ny-organizer-name mb-5">{person.name}</p>
+                    <p className="subtitle is-6 kcd-ny-organizer-role mb-2">{person.role}</p>
                     {person.company && (
-                      <p className="is-size-6 kcd-ny-organizer-company">{person.company}</p>
+                      <p className="is-size-6 kcd-ny-organizer-company mb-3">{person.company}</p>
+                    )}
+                    {person.eventRole && (
+                      <p className="is-size-7 has-text-weight-semibold has-text-grey mb-3">
+                        <span className="tag is-primary is-light">{person.eventRole}</span>
+                      </p>
                     )}
                     {person.linkedin && (
                       <a

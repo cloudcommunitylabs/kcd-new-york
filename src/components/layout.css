@@ -43,6 +43,30 @@ html {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.kcd-ny-navbar .navbar-burger {
+  color: #fff;
+}
+
+.kcd-ny-navbar .navbar-burger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 1023px) {
+  .kcd-ny-navbar .navbar-menu {
+    background-color: var(--color-primary);
+    padding: 0.5rem 0;
+  }
+  
+  .kcd-ny-navbar .navbar-item {
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .kcd-ny-navbar .navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .navbar.is-primary,
 .navbar.has-background-primary,
 .hero.is-primary:not(.kcd-ny-hero) {
