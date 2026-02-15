@@ -20,10 +20,19 @@ export default function VenuePage() {
           backgroundImage: "url('/img/convene-interior-01.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          position: "relative"
         }}
       >
         <div className="hero-body">
-          <div className="kcd-ny-hero-overlay" />
+          <div style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "rgba(26, 44, 80, 0.75)",
+            zIndex: 0
+          }} />
           <div className="container has-text-centered" style={{ position: "relative", zIndex: 1 }}>
             <h1 className="title is-1 has-text-white">Venue</h1>
             <p className="subtitle is-3 has-text-white">
@@ -34,9 +43,9 @@ export default function VenuePage() {
       </section>
 
       {/* Interactive Map Section */}
-      <section className="section kcd-ny-map-section">
+      <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
         <div className="container">
-          <h2 className="title is-2 has-text-centered">Explore the Event Layout</h2>
+          <h2 className="title is-2 has-text-centered" style={{ color: "#1a2c50" }}>Explore the Event Layout</h2>
           <p className="subtitle is-5 has-text-centered has-text-grey" style={{ marginBottom: "3rem" }}>
             Navigate our interactive floor plan to plan your day
           </p>
@@ -96,9 +105,9 @@ export default function VenuePage() {
       </section>
 
       {/* Getting There Section with Tabs */}
-      <section className="section kcd-ny-transit-section">
+      <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
         <div className="container">
-          <h2 className="title is-2 has-text-centered">Getting There</h2>
+          <h2 className="title is-2 has-text-centered" style={{ color: "#1a2c50" }}>Getting There</h2>
           <p className="subtitle is-5 has-text-centered has-text-grey" style={{ marginBottom: "3rem" }}>
             Convene One Liberty Plaza is easily accessible by public transportation
           </p>
@@ -268,9 +277,9 @@ export default function VenuePage() {
       </section>
 
       {/* Nearby Amenities */}
-      <section className="section kcd-ny-amenities-section">
+      <section className="section" style={{ background: "#f9f9f9", padding: "4rem 1.5rem" }}>
         <div className="container">
-          <h2 className="title is-2 has-text-centered">Nearby Amenities</h2>
+          <h2 className="title is-2 has-text-centered" style={{ color: "#1a2c50" }}>Nearby Amenities</h2>
           <p className="subtitle is-5 has-text-centered has-text-grey" style={{ marginBottom: "3rem" }}>
             Everything you need is just minutes away
           </p>
