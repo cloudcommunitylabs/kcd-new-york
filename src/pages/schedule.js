@@ -2,24 +2,6 @@ import * as React from "react";
 import Layout from "../components/layout";
 
 const SESSIONS = [
-  {
-    time: "09:00 AM",
-    title: "Opening Keynote: The Future of Cloud Native",
-    speaker: "Sarah Jenkins",
-    image: "/img/speaker1.png",
-  },
-  {
-    time: "10:30 AM",
-    title: "Scaling Kubernetes Clusters with Confidence",
-    speaker: "Marcus Chen",
-    image: "/img/speaker2.png",
-  },
-  {
-    time: "01:00 PM",
-    title: "Security Best Practices in a Multi-Cloud World",
-    speaker: "Elena Rodriguez",
-    image: "/img/speaker3.png",
-  },
 ];
 
 export default function SchedulePage() {
