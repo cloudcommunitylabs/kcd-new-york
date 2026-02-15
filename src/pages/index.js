@@ -130,6 +130,9 @@ export default function HomePage() {
           </div>
           <div className="container has-text-centered kcd-ny-hero-content">
             <h1 className="title is-1 kcd-ny-hero-title">Kubernetes Community Days New York 2026</h1>
+            <p className="subtitle is-3 has-text-white" style={{ marginTop: "1rem", fontWeight: "600", textShadow: "0 2px 4px rgba(0, 0, 0, 0.4)" }}>
+              Building Bridges in Cloud Native
+            </p>
             <div className="kcd-ny-hero-details-box">
               <p className="kcd-ny-hero-detail">
                 <span className="kcd-ny-hero-label">Date:</span> {EVENT_DATE}
@@ -162,6 +165,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* About the Theme Section */}
+      <section className="section" style={{ background: "#1a2c50", color: "white", padding: "3rem 1.5rem" }}>
+        <div className="container">
+          <div className="columns is-vcentered">
+            <div className="column is-7">
+              <h2 className="title is-2 has-text-white" style={{ marginBottom: "1.5rem" }}>
+                🌉 Building Bridges in Cloud Native
+              </h2>
+              <div className="content is-size-5" style={{ color: "rgba(255,255,255,0.95)", lineHeight: "1.8" }}>
+                <p>
+                  Just as New York's iconic Brooklyn Bridge connects communities across the East River,
+                  KCD New York 2026 connects cloud native practitioners, technologies, and ideas across
+                  the ecosystem.
+                </p>
+                <p style={{ marginBottom: "0" }}>
+                  Over three years, we've built bridges between developers and operators,
+                  between startups and enterprises, between local talent and global expertise.
+                  This year, we continue that tradition—bringing together 500+ practitioners to
+                  share knowledge, forge partnerships, and strengthen the connections that power
+                  modern cloud infrastructure.
+                </p>
+              </div>
+            </div>
+            <div className="column is-5 has-text-centered">
+              <div style={{ fontSize: "8rem", lineHeight: "1", marginBottom: "1rem" }}>🌉</div>
+              <p className="subtitle is-4 has-text-white" style={{ fontWeight: "600" }}>
+                Connecting<br/>Communities • Technologies • Ideas
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3rd Year Milestone Section */}
       <section className="section kcd-ny-milestone-section">
         <div className="container">
@@ -189,14 +225,15 @@ export default function HomePage() {
               </div>
             </div>
             <div className="column is-8">
-              <h2 className="title is-2">A Growing Cloud Native Community</h2>
+              <h2 className="title is-2">Three Years of Building Bridges</h2>
               <p className="is-size-5" style={{ lineHeight: "1.6", marginBottom: "1rem" }}>
-                From our first event in 2024 to today, we've built New York City's premier Kubernetes community gathering.
-                Each year, we bring together hundreds of cloud native practitioners, developers, and platform engineers
-                to learn, share, and connect.
+                Since 2024, we've been building bridges across New York City's cloud native community.
+                What started as a gathering has grown into a thriving network of practitioners, innovators,
+                and leaders who are shaping the future of cloud infrastructure.
               </p>
               <p className="is-size-5" style={{ lineHeight: "1.6" }}>
-                Join us in 2026 as we continue to grow the community and push the boundaries of cloud native technologies.
+                Each year, these connections grow stronger. Join us in 2026 as we continue building bridges
+                between ideas, technologies, and the people who bring them to life.
               </p>
             </div>
           </div>
