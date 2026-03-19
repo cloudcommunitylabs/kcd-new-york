@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import eventData from "../content/event-data.json";
 
 const SPONSOR_TIERS = [
   {
@@ -38,7 +39,7 @@ export default function SponsorsPage() {
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title is-1 has-text-white" style={{ marginBottom: "1rem" }}>
-              Sponsor KCD New York 2026
+              Sponsor KCD New York {eventData.year}
             </h1>
             <p className="subtitle is-4 has-text-white" style={{ marginBottom: "2rem", opacity: 0.9 }}>
               Join us in building bridges across NYC's cloud native community
@@ -135,17 +136,9 @@ export default function SponsorsPage() {
                   <div className="column is-8 has-text-weight-semibold" style={{ color: "#1a2c50" }}>Milestone</div>
                   <div className="column is-4 has-text-weight-semibold has-text-right" style={{ color: "#1a2c50" }}>Date</div>
                 </div>
-                {[
-                  { milestone: "CFP Opens", date: "Feb 17, 2026" },
-                  { milestone: "CFP Closes", date: "Mar 17, 2026" },
-                  { milestone: "Sponsorship Agreement", date: "Mar 22, 2026" },
-                  { milestone: "CFP Notifications", date: "Apr 15, 2026" },
-                  { milestone: "Schedule Announced", date: "Apr 28, 2026" },
-                  { milestone: "Sponsor Assets Due", date: "May 11, 2026" },
-                  { milestone: "Event Day", date: "Jun 10, 2026" }
-                ].map((item, idx) => (
+                {eventData.milestones.map((item, idx) => (
                   <div key={idx} className="columns is-mobile" style={{ marginBottom: "0.75rem", alignItems: "center" }}>
-                    <div className="column is-8">{item.milestone}</div>
+                    <div className="column is-8">{item.name}</div>
                     <div className="column is-4 has-text-right" style={{ fontWeight: "600", color: "#1a2c50" }}>
                       {item.date}
                     </div>

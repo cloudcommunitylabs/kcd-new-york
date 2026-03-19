@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import eventData from "../content/event-data.json";
 
 export default function CodeOfConductPage() {
   return (
@@ -15,7 +16,7 @@ export default function CodeOfConductPage() {
       <section className="section">
         <div className="container content">
           <p>
-            Kubernetes Community Days New York 2026 follows the{" "}
+            {eventData.name} follows the{" "}
             <a href="https://www.cncf.io/events/community-events/code-of-conduct/" target="_blank" rel="noopener noreferrer">
               CNCF Code of Conduct
             </a>

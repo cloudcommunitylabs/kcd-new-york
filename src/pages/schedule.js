@@ -1,17 +1,20 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import eventData from "../content/event-data.json";
 
 const SESSIONS = [
 ];
 
 export default function SchedulePage() {
+  const scheduleAnnouncementDate = eventData.keyDates.find(d => d.label === "Schedule Announced")?.date;
+
   return (
     <Layout>
       <section className="hero is-primary">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">Schedule</h1>
-            <p className="subtitle">June 10, 2026 — Convene One Liberty Plaza</p>
+            <p className="subtitle">{eventData.date} — {eventData.venue.name}</p>
           </div>
         </div>
       </section>
@@ -20,7 +23,7 @@ export default function SchedulePage() {
           <div className="notification is-light">
             <h2 className="title is-4">Schedule Coming Soon!</h2>
             <p className="is-size-5">
-              The full event schedule will be announced on <strong>April 28, 2026</strong>.
+              The full event schedule will be announced on <strong>{scheduleAnnouncementDate}</strong>.
             </p>
             <p className="mt-4">
               Stay tuned for exciting talks and workshops from the cloud native community.

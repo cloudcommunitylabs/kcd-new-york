@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import eventData from "../content/event-data.json";
 
 export default function AboutPage() {
   return (
@@ -8,7 +9,7 @@ export default function AboutPage() {
         <div className="hero-body">
           <div className="container">
             <h1 className="title">About KCD New York</h1>
-            <p className="subtitle">Kubernetes Community Days New York 2026</p>
+            <p className="subtitle">{eventData.name}</p>
           </div>
         </div>
       </section>
@@ -16,7 +17,7 @@ export default function AboutPage() {
         <div className="container content">
           <p>
             Kubernetes Community Days (KCD) are community-organized events that bring together adopters and developers
-            of Kubernetes and other cloud native technologies. KCD New York 2026 is a one-day event for learning,
+            of Kubernetes and other cloud native technologies. {eventData.name} is a one-day event for learning,
             sharing, and networking.
           </p>
           <p>
