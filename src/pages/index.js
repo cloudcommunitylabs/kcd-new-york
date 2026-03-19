@@ -3,9 +3,11 @@ import Layout from "../components/layout";
 import PhotoGallery from "../components/PhotoGallery";
 import galleryData from "../data/gallery-photos.json";
 
-const EVENT_DATE = "June 10, 2026";
-const VENUE = "Convene One Liberty Plaza";
-const ADDRESS = "1 Liberty St, New York, NY 10006";
+import eventData from "../content/event-data.json";
+
+const EVENT_DATE = eventData.date;
+const VENUE = eventData.venue.name;
+const ADDRESS = eventData.venue.address;
 
 const WHAT_TO_EXPECT = [
   {
@@ -40,13 +42,7 @@ const WHAT_TO_EXPECT = [
   },
 ];
 
-const KEY_DATES = [
-  { label: "CFP Opens", date: "February 17, 2026" },
-  { label: "CFP Closes", date: "March 17, 2026" },
-  { label: "CFP Notifications", date: "April 14, 2026" },
-  { label: "Schedule Announced", date: "April 28, 2026" },
-  { label: "Event Day", date: "June 10, 2026" },
-];
+const KEY_DATES = eventData.keyDates;
 
 function Countdown() {
   const [timeLeft, setTimeLeft] = React.useState({
@@ -129,7 +125,7 @@ export default function HomePage() {
             Celebrating Our 3rd Year
           </div>
           <div className="container has-text-centered kcd-ny-hero-content">
-            <h1 className="title is-1 kcd-ny-hero-title">Kubernetes Community Days New York 2026</h1>
+            <h1 className="title is-1 kcd-ny-hero-title">{eventData.name}</h1>
             <p className="subtitle is-3 has-text-white" style={{ marginTop: "1rem", fontWeight: "600", textShadow: "0 2px 4px rgba(0, 0, 0, 0.4)" }}>
               Building Bridges in Cloud Native
             </p>
@@ -140,13 +136,13 @@ export default function HomePage() {
                 <span className="kcd-ny-hero-label">Venue:</span> {VENUE}
               </p>
               <p className="kcd-ny-hero-detail kcd-ny-hero-address">
-                <a href="https://maps.app.goo.gl/oWPRrwrqbjfiqxh29" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
+                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
                   {ADDRESS}
                 </a>
               </p>
               <div className="mt-4">
                 <a
-                  href="https://sessionize.com/kcd-new-york-2026/"
+                  href={eventData.links.cfp}
                   className="button kcd-ny-cta is-medium"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -176,7 +172,7 @@ export default function HomePage() {
               <div className="content is-size-5" style={{ color: "rgba(255,255,255,0.95)", lineHeight: "1.8" }}>
                 <p>
                   Just as New York's iconic Brooklyn Bridge connects communities across the East River,
-                  KCD New York 2026 connects cloud native practitioners, technologies, and ideas across
+                  {eventData.name} connects cloud native practitioners, technologies, and ideas across
                   the ecosystem.
                 </p>
                 <p style={{ marginBottom: "0" }}>
@@ -232,7 +228,7 @@ export default function HomePage() {
                 and leaders who are shaping the future of cloud infrastructure.
               </p>
               <p className="is-size-5" style={{ lineHeight: "1.6" }}>
-                Each year, these connections grow stronger. Join us in 2026 as we continue building bridges
+                Each year, these connections grow stronger. Join us in {eventData.year} as we continue building bridges
                 between ideas, technologies, and the people who bring them to life.
               </p>
             </div>
@@ -245,7 +241,7 @@ export default function HomePage() {
         <div className="container content">
           <h2 className="title is-3">Join Hundreds of Cloud Native Practitioners</h2>
           <p>
-            Kubernetes Community Days (KCD) New York 2026 brings the community together on {EVENT_DATE} at {VENUE} in
+            {eventData.name} brings the community together on {EVENT_DATE} at {VENUE} in
             Manhattan. Join developers, platform engineers, and cloud native enthusiasts for a day of talks
             and networking.
           </p>

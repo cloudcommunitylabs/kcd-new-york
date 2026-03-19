@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import eventData from "../content/event-data.json";
 
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
 
@@ -68,14 +69,14 @@ export default function TeamPage() {
         <div className="hero-body">
           <div className="container">
             <h1 className="title">Organizing Team</h1>
-            <p className="subtitle">KCD New York 2026 organizers</p>
+            <p className="subtitle">{eventData.name} organizers</p>
           </div>
         </div>
       </section>
       <section className="section">
         <div className="container content">
           <p className="mb-6">
-            The Kubernetes Community Days New York 2026 organizing team. Reach the full team at{" "}
+            The {eventData.name} organizing team. Reach the full team at{" "}
             <a href={`mailto:${ORGANIZER_EMAIL}`}>{ORGANIZER_EMAIL}</a>.
           </p>
 

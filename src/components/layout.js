@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import "./layout.css";
+import eventData from "../content/event-data.json";
 
 const NavLink = ({ to, children }) => (
   <Link to={to} className="navbar-item" activeClassName="is-active">
@@ -16,7 +17,7 @@ export default function Layout({ children, title }) {
       <nav className="navbar is-fixed-top kcd-ny-navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item has-text-weight-bold">
-            KCD New York 2026
+            {eventData.name}
           </Link>
 
           <button
@@ -39,7 +40,7 @@ export default function Layout({ children, title }) {
             {/* <NavLink to="/about">About</NavLink> */}
             {/* <NavLink to="/speakers">Speakers</NavLink> */}
             <NavLink to="/sponsors">Sponsors</NavLink>
-            <a href="https://sessionize.com/kcd-new-york-2026/" className="navbar-item" target="_blank" rel="noopener noreferrer">
+            <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
               Call for Papers
             </a>
             <NavLink to="/venue">Venue</NavLink>
@@ -53,7 +54,7 @@ export default function Layout({ children, title }) {
         <div className="container">
           <div className="columns">
             <div className="column is-4">
-              <h3 className="title is-6 kcd-ny-footer-heading">KCD New York 2026</h3>
+              <h3 className="title is-6 kcd-ny-footer-heading">{eventData.name}</h3>
               <p className="kcd-ny-footer-text">
                 Kubernetes Community Days New York is a community-organized event bringing together the cloud native community.
               </p>
@@ -64,8 +65,8 @@ export default function Layout({ children, title }) {
                 {/* <li><Link to="/about">About</Link></li> */}
                 {/* <li><Link to="/speakers">Speakers</Link></li> */}
                 <li><Link to="/sponsors">Sponsors</Link></li>
-                <li><a href="https://www.canva.com/design/DAG9pfEWHV8/wYffjPEQ02UCKhPyWqyuKg/view" target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
-                <li><a href="https://sessionize.com/kcd-new-york-2026/" target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
+                <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
+                <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
                 <li><Link to="/venue">Venue</Link></li>
                 <li><Link to="/team">Team</Link></li>
                 <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
@@ -82,7 +83,7 @@ export default function Layout({ children, title }) {
                 <a href="mailto:info@kcdnewyork.com">info@kcdnewyork.com</a>
               </p>
               <p className="kcd-ny-footer-text">
-                <a href="https://www.linkedin.com/company/kcdnewyork" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href={eventData.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </p>
             </div>
           </div>

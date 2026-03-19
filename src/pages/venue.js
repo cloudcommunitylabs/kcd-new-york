@@ -2,11 +2,12 @@ import * as React from "react";
 import { useState } from "react";
 import Layout from "../components/layout";
 import MapEmbed from "../components/MapEmbed";
+import eventData from "../content/event-data.json";
 
-const VENUE = "Convene One Liberty Plaza";
-const ADDRESS = "1 Liberty St, New York, NY 10006";
-const EVENT_DATE = "June 10, 2026";
-const INTERACTIVE_MAP_URL = "https://kcdnewyork2026.expofp.com/";
+const VENUE = eventData.venue.name;
+const ADDRESS = eventData.venue.address;
+const EVENT_DATE = eventData.date;
+const INTERACTIVE_MAP_URL = `https://kcdnewyork${eventData.year}.expofp.com/`;
 
 export default function VenuePage() {
   const [activeTab, setActiveTab] = useState("subway");
@@ -51,7 +52,7 @@ export default function VenuePage() {
           </p>
           <MapEmbed
             src={INTERACTIVE_MAP_URL}
-            title="KCD NY 2026 Interactive Event Floor Plan"
+            title={`KCD NY ${eventData.year} Interactive Event Floor Plan`}
             height={600}
           />
         </div>
@@ -162,7 +163,7 @@ export default function VenuePage() {
                       <li><strong>World Trade Center</strong> (E) — 4 minutes walk</li>
                     </ul>
                     <p>
-                      With over 12 subway lines serving the area, getting to KCD NY 2026 is convenient
+                      With over 12 subway lines serving the area, getting to {eventData.name} is convenient
                       from anywhere in the five boroughs.
                     </p>
                   </div>

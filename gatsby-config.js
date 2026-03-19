@@ -1,3 +1,5 @@
+const eventData = require("./src/content/event-data.json");
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  * Static site – no OpenEvent API. Content is in src/content and src/pages.
@@ -5,8 +7,8 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Kubernetes Community Days New York 2026`,
-    description: `KCD New York 2026 — June 10, 2026 at Convene One Liberty Plaza, 1 Liberty St, New York, NY 10006.`,
+    title: eventData.name,
+    description: `${eventData.name} — ${eventData.date} at ${eventData.venue.fullAddress}.`,
     siteUrl: `https://kcdnewyork.com`,
   },
   plugins: [

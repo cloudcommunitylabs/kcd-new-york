@@ -74,27 +74,23 @@ kcd-new-york/
 
 ### 1. **Update Event Details**
 
-#### Date & Location
-Edit these files to update event information:
+#### Central Event Configuration
+All primary event details (name, date, year, venue, key dates) are managed in a single file:
 
-**Homepage** (`src/pages/index.js`):
-```javascript
-// Line ~15–17
-<strong>Date:</strong> June 10, 2026 · <strong>Venue:</strong> Convene One Liberty Plaza
-```
+**File:** `src/content/event-data.json`
 
-**Layout** (`src/components/layout.js`): Update `EVENT_DATE`, `VENUE`, and `ADDRESS` at the top of the file.
+Update this file to change:
+- **Event Name**: `name`
+- **Primary Date**: `date` (e.g., "June 10, 2026")
+- **Year**: `year`
+- **Venue**: `venue` (name, address, fullAddress)
+- **Timeline**: `keyDates` (for homepage) and `milestones` (for sponsors page)
 
-**All page headers**: Update the hero sections in each page file.
+Most pages (`index.js`, `sponsors.js`, `venue.js`, `schedule.js`, `about.js`, `team.js`, etc.) and the `Layout` component import this data directly.
 
 #### Site Metadata
 **File:** `gatsby-config.js`
-```javascript
-siteMetadata: {
-  title: `Kubernetes Community Days New York 2026`,
-  siteUrl: `https://kcdnewyork.com`  // Update with your domain
-}
-```
+The `siteMetadata` (title and description) is also automatically populated from `src/content/event-data.json`.
 
 ---
 
