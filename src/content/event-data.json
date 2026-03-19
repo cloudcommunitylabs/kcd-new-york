@@ -21,7 +21,7 @@
     },
     {
       "label": "CFP Closes",
-      "date": "March 17, 2026"
+      "date": "March 24, 2026"
     },
     {
       "label": "CFP Notifications",
@@ -32,40 +32,12 @@
       "date": "April 28, 2026"
     },
     {
-      "label": "Event Day",
-      "date": "June 10, 2026"
-    }
-  ],
-  "milestones": [
-    {
-      "name": "CFP Opens",
-      "date": "Feb 17, 2026"
-    },
-    {
-      "name": "CFP Closes",
-      "date": "Mar 17, 2026"
-    },
-    {
-      "name": "Sponsorship Agreement",
-      "date": "Mar 22, 2026"
-    },
-    {
-      "name": "CFP Notifications",
-      "date": "Apr 14, 2026"
-    },
-    {
-      "name": "Schedule Announced",
-      "date": "Apr 28, 2026"
-    },
-    {
-      "name": "Sponsor Assets Due",
+      "label": "Sponsor Assets Due",
       "date": "May 11, 2026"
     },
     {
-      "name": "Event Day",
-      "date": "Jun 10, 2026"
+      "label": "Event Day",
+      "date": "June 10, 2026"
     }
   ]
 }
-
- 

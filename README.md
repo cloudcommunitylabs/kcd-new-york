@@ -84,7 +84,7 @@ Update this file to change:
 - **Primary Date**: `date` (e.g., "June 10, 2026")
 - **Year**: `year`
 - **Venue**: `venue` (name, address, fullAddress)
-- **Timeline**: `keyDates` (for homepage) and `milestones` (for sponsors page)
+- **Timeline**: `keyDates` in `src/content/event-data.json` (used for both homepage and sponsors page)
 
 Most pages (`index.js`, `sponsors.js`, `venue.js`, `schedule.js`, `about.js`, `team.js`, etc.) and the `Layout` component import this data directly.
 
