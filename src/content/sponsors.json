@@ -3,25 +3,25 @@
     {
       "tier": "Platinum",
       "sponsors": [
-        { 
-          "name": "Plural", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png", 
-          "url": "https://www.plural.sh/" 
+        {
+          "name": "Plural",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png",
+          "url": "https://www.plural.sh/"
         },
-        { 
-          "name": "Komodor", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/logo-color%25404x_Tp8YiAX.png",
-          "url": "https://komodor.com/" 
+        {
+          "name": "Komodor",
+          "logo": "https://komodor.com/wp-content/uploads/2024/11/komodor-logo-2024.svg",
+          "url": "https://komodor.com/"
         }
       ]
     },
     {
       "tier": "CNCF Partner",
       "sponsors": [
-        { 
-          "name": "Broadcom", 
-          "logo": "https://logo.svgcdn.com/logos/broadcom.png", 
-          "url": "https://www.broadcom.com/" 
+        {
+          "name": "Broadcom",
+          "logo": "https://www.broadcom.com/media/blt4ac44e0e6c6d8341/blt236aea49530c2fc1/64ccb6b6db10cb775e8e27d0/Broadcom_thumb.png",
+          "url": "https://www.broadcom.com/"
         }
       ]
     }
@@ -30,160 +30,160 @@
     {
       "tier": "Diamond",
       "sponsors": [
-        { 
-          "name": "vCluster", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/images_Le2jSAd.png",
-          "url": "https://www.vcluster.com/" 
+        {
+          "name": "vCluster",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/images_Le2jSAd.png",
+          "url": "https://www.vcluster.com/"
         },
-        { 
-          "name": "Chkk", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/chkk-logo.png",
-          "url": "https://www.chkk.io/" 
+        {
+          "name": "Chkk",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/chkk-logo.png",
+          "url": "https://www.chkk.io/"
         },
-        { 
-          "name": "Plural", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png",
-          "url": "https://www.plural.sh/" 
+        {
+          "name": "Plural",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png",
+          "url": "https://www.plural.sh/"
         }
       ]
     },
     {
       "tier": "Platinum",
       "sponsors": [
-        { 
-          "name": "Akamai", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Akamai_Logo_no-tagline_Full-Color_RGB_V5eNhIw.png",
-          "url": "https://www.akamai.com/" 
+        {
+          "name": "Akamai",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Akamai_Logo_no-tagline_Full-Color_RGB_V5eNhIw.png",
+          "url": "https://www.akamai.com/"
         },
-        { 
-          "name": "Red Hat", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/redhat.png",
-          "url": "https://www.redhat.com/" 
+        {
+          "name": "Red Hat",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/redhat.png",
+          "url": "https://www.redhat.com/"
         },
-        { 
-          "name": "Suse", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Suse%25404x_c8EwtF2.png",
-          "url": "https://www.suse.com/" 
+        {
+          "name": "Suse",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Suse%25404x_c8EwtF2.png",
+          "url": "https://www.suse.com/"
         },
-        { 
-          "name": "Octopus Deploy", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Octopus%25404x_qJ5tGLH.png",
-          "url": "https://octopus.com/" 
+        {
+          "name": "Octopus Deploy",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Octopus%25404x_qJ5tGLH.png",
+          "url": "https://octopus.com/"
         }
       ]
     },
     {
       "tier": "Gold",
       "sponsors": [
-        { 
-          "name": "Tigera", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/tigera_W843Teh.png",
-          "url": "https://www.tigera.io/" 
+        {
+          "name": "Tigera",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/tigera_W843Teh.png",
+          "url": "https://www.tigera.io/"
         },
-        { 
-          "name": "Nirmata", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/nirmata-horizontal-color-large-01_brlpXmY.png",
-          "url": "https://nirmata.com/" 
+        {
+          "name": "Nirmata",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/nirmata-horizontal-color-large-01_brlpXmY.png",
+          "url": "https://nirmata.com/"
         },
-        { 
-          "name": "PerfectScale", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/PerfectScale%2520by%2520doit%2520logo%2520%25283%2529_OwqhQ9l.png",
-          "url": "https://www.perfectscale.io/" 
+        {
+          "name": "PerfectScale",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/PerfectScale%2520by%2520doit%2520logo%2520%25283%2529_OwqhQ9l.png",
+          "url": "https://www.perfectscale.io/"
         },
-        { 
-          "name": "Kong", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Kong%25404x_CB5mMHU.png",
-          "url": "https://konghq.com/" 
+        {
+          "name": "Kong",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Kong%25404x_CB5mMHU.png",
+          "url": "https://konghq.com/"
         },
-        { 
-          "name": "Groundcover", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/groundcover%25404x_yi1fjKB.png",
-          "url": "https://www.groundcover.com/" 
+        {
+          "name": "Groundcover",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/groundcover%25404x_yi1fjKB.png",
+          "url": "https://www.groundcover.com/"
         },
-        { 
-          "name": "Teleport", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Teleport-Logo_C8sej7F.png",
-          "url": "https://goteleport.com/" 
+        {
+          "name": "Teleport",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Teleport-Logo_C8sej7F.png",
+          "url": "https://goteleport.com/"
         }
       ]
     },
     {
       "tier": "Bronze",
       "sponsors": [
-        { 
-          "name": "Testkube", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Testkube_logo_landscape_color-for-light-bgnd%2520%25281%2529_T4G4MXo.png",
-          "url": "https://testkube.io/" 
+        {
+          "name": "Testkube",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Testkube_logo_landscape_color-for-light-bgnd%2520%25281%2529_T4G4MXo.png",
+          "url": "https://testkube.io/"
         },
-        { 
-          "name": "Komodor", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/logo-color%25404x_Tp8YiAX.png",
-          "url": "https://komodor.com/" 
+        {
+          "name": "Komodor",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/logo-color%25404x_Tp8YiAX.png",
+          "url": "https://komodor.com/"
         },
-        { 
-          "name": "Akuity", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/akuity.png",
-          "url": "https://akuity.io/" 
+        {
+          "name": "Akuity",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/akuity.png",
+          "url": "https://akuity.io/"
         },
-        { 
-          "name": "AppsCode", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/appscode-logo%2520%25281%2529_ffGOUI8.png",
-          "url": "https://appscode.com/" 
+        {
+          "name": "AppsCode",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/appscode-logo%2520%25281%2529_ffGOUI8.png",
+          "url": "https://appscode.com/"
         },
-        { 
-          "name": "StormForge", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-cncf/events/logo-light-bg%25404x_vLESDfw.png",
-          "url": "https://www.stormforge.io/" 
+        {
+          "name": "StormForge",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/logo-light-bg%25404x_vLESDfw.png",
+          "url": "https://www.stormforge.io/"
         },
-        { 
-          "name": "Dynatrace", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/dyntrace%25404x_OBPVb8G.png",
-          "url": "https://www.dynatrace.com/" 
+        {
+          "name": "Dynatrace",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/dyntrace%25404x_OBPVb8G.png",
+          "url": "https://www.dynatrace.com/"
         },
-        { 
-          "name": "Sysdig", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/sysdig%25404x_HA1c3qp.png",
-          "url": "https://sysdig.com/" 
+        {
+          "name": "Sysdig",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/sysdig%25404x_HA1c3qp.png",
+          "url": "https://sysdig.com/"
         },
-        { 
-          "name": "Cloudsmith", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/CloudsmithLogo--RGB_Transparent%2540M%25402x_80LlroD.png",
-          "url": "https://cloudsmith.com/" 
+        {
+          "name": "Cloudsmith",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/CloudsmithLogo--RGB_Transparent%2540M%25402x_80LlroD.png",
+          "url": "https://cloudsmith.com/"
         }
       ]
     },
     {
       "tier": "Community Partner",
       "sponsors": [
-        { 
-          "name": "Cloud Community Labs", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Original%2520Logo_Ojh5Wpq.png",
-          "url": "https://cloudcommunitylabs.io/" 
+        {
+          "name": "Cloud Community Labs",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Original%2520Logo_Ojh5Wpq.png",
+          "url": "https://cloudcommunitylabs.io/"
         },
-        { 
-          "name": "Kube Careers", 
-          "logo": "https://kubecareers.com/favicon.ico",
-          "url": "https://kubecareers.com/" 
+        {
+          "name": "Kube Careers",
+          "logo": "",
+          "url": "https://kubecareers.com/"
         },
-        { 
-          "name": "Kube Events", 
-          "logo": "https://kubeevents.com/favicon.ico",
-          "url": "https://kubeevents.com/" 
+        {
+          "name": "Kube Events",
+          "logo": "",
+          "url": "https://kubeevents.com/"
         },
-        { 
-          "name": "KubeFM", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/KubeFm%25404x_dQ8JETs.png",
-          "url": "https://kubefm.org/" 
+        {
+          "name": "KubeFM",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/KubeFm%25404x_dQ8JETs.png",
+          "url": "https://kubefm.org/"
         }
       ]
     },
     {
       "tier": "Reception Event",
       "sponsors": [
-        { 
-          "name": "Cast AI", 
-          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/cast_logo2_black.jpg",
-          "url": "https://cast.ai/" 
+        {
+          "name": "Cast AI",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/cast_logo2_black.jpg",
+          "url": "https://cast.ai/"
         }
       ]
     }

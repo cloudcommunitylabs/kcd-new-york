@@ -62,14 +62,14 @@ export default function SponsorsPage() {
               }}
             >
               {sponsor.logo ? (
-                <img 
-                  src={sponsor.logo} 
-                  alt={`${sponsor.name} logo`} 
-                  style={{ 
-                    maxWidth: "100%", 
-                    maxHeight: "100%", 
-                    objectFit: "contain" 
-                  }} 
+                <img
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} logo`}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain"
+                  }}
                 />
               ) : (
                 sponsor.name
