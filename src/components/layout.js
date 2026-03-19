@@ -38,7 +38,7 @@ export default function Layout({ children, title }) {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/schedule">Schedule</NavLink>
             {/* <NavLink to="/about">About</NavLink> */}
-            {/* <NavLink to="/speakers">Speakers</NavLink> */}
+            <NavLink to="/previous-speakers">Previous Speakers</NavLink>
             <NavLink to="/sponsors">Sponsors</NavLink>
             <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
               Call for Papers
@@ -63,7 +63,7 @@ export default function Layout({ children, title }) {
               <h3 className="title is-6 kcd-ny-footer-heading">Quick Links</h3>
               <ul className="kcd-ny-footer-links">
                 {/* <li><Link to="/about">About</Link></li> */}
-                {/* <li><Link to="/speakers">Speakers</Link></li> */}
+                <li><Link to="/previous-speakers">Previous Speakers</Link></li>
                 <li><Link to="/sponsors">Sponsors</Link></li>
                 <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
                 <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>

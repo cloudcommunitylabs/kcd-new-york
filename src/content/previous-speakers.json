@@ -1,0 +1,64 @@
+{
+  "featured": [
+    {
+      "name": "Danielle Cook",
+      "company": "Cartografos Working Group",
+      "role": "CNCF Ambassador, Co-Organizer",
+      "headshot": ""
+    },
+    {
+      "name": "Daniel Krook",
+      "company": "CNCF",
+      "role": "Senior Director of Developer Experience",
+      "headshot": ""
+    },
+    {
+      "name": "Stephen Augustus",
+      "company": "Cisco",
+      "role": "Head of Open Source",
+      "headshot": ""
+    },
+    {
+      "name": "Prithvi Raj",
+      "company": "Mirantis",
+      "role": "Community Manager and Developer Advocate",
+      "headshot": ""
+    },
+    {
+      "name": "Nic Vermande",
+      "company": "MetalBear",
+      "role": "Staff Principal Developer Advocate",
+      "headshot": ""
+    },
+    {
+      "name": "Marino Wijay",
+      "company": "Kong",
+      "role": "Staff Solutions Architect",
+      "headshot": ""
+    },
+    {
+      "name": "Sam Weaver",
+      "company": "Plural",
+      "role": "CEO & Co-founder",
+      "headshot": ""
+    },
+    {
+      "name": "Michael Guarino",
+      "company": "Plural.sh",
+      "role": "CTO & Co-founder",
+      "headshot": ""
+    },
+    {
+      "name": "Christian Posta",
+      "company": "Solo.io",
+      "role": "Field CTO",
+      "headshot": ""
+    },
+    {
+      "name": "Cornelia Davis",
+      "company": "Temporal",
+      "role": "Developer Advocate",
+      "headshot": ""
+    }
+  ]
+}
