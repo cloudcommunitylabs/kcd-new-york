@@ -136,9 +136,9 @@ export default function SponsorsPage() {
                   <div className="column is-8 has-text-weight-semibold" style={{ color: "#1a2c50" }}>Milestone</div>
                   <div className="column is-4 has-text-weight-semibold has-text-right" style={{ color: "#1a2c50" }}>Date</div>
                 </div>
-                {eventData.milestones.map((item, idx) => (
+                {eventData.keyDates.map((item, idx) => (
                   <div key={idx} className="columns is-mobile" style={{ marginBottom: "0.75rem", alignItems: "center" }}>
-                    <div className="column is-8">{item.name}</div>
+                    <div className="column is-8">{item.label}</div>
                     <div className="column is-4 has-text-right" style={{ fontWeight: "600", color: "#1a2c50" }}>
                       {item.date}
                     </div>
