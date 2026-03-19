@@ -4,6 +4,7 @@ import PhotoGallery from "../components/PhotoGallery";
 import galleryData from "../data/gallery-photos.json";
 
 import eventData from "../content/event-data.json";
+import sponsorsData from "../content/sponsors.json";
 
 const EVENT_DATE = eventData.date;
 const VENUE = eventData.venue.name;
@@ -289,6 +290,44 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Sponsors Section */}
+      <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
+        <div className="container">
+          <h2 className="title is-3 has-text-centered">Our {eventData.year} Sponsors</h2>
+          <div className="mt-6" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "3rem" }}>
+            {sponsorsData["2026"] && sponsorsData["2026"].flatMap(tier => tier.sponsors).map((sponsor, idx) => (
+              <a 
+                key={idx} 
+                href={sponsor.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  width: "200px", 
+                  height: "100px", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center",
+                  transition: "transform 0.2s ease"
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.1)"}
+                onMouseOut={(e) => e.currentTarget.style.transform = "scale(1.0)"}
+              >
+                {sponsor.logo ? (
+                  <img src={sponsor.logo} alt={sponsor.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                ) : (
+                  <span className="title is-4">{sponsor.name}</span>
+                )}
+              </a>
+            ))}
+          </div>
+          <div className="has-text-centered mt-6">
+            <a href="/sponsors" className="button is-outlined kcd-ny-button-secondary">
+              View All Sponsors
+            </a>
           </div>
         </div>
       </section>
