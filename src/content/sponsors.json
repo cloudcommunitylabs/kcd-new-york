@@ -7,6 +7,21 @@
           "name": "Plural", 
           "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png", 
           "url": "https://www.plural.sh/" 
+        },
+        { 
+          "name": "Komodor", 
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,h_200,q_auto:good,w_200/v1/gcs/platform-data-cncf/events/logo-color%25404x_Tp8YiAX.png",
+          "url": "https://komodor.com/" 
+        }
+      ]
+    },
+    {
+      "tier": "CNCF Partner",
+      "sponsors": [
+        { 
+          "name": "Broadcom", 
+          "logo": "https://logo.svgcdn.com/logos/broadcom.png", 
+          "url": "https://www.broadcom.com/" 
         }
       ]
     }
