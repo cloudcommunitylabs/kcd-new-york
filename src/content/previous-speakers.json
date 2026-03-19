@@ -2,63 +2,73 @@
   "featured": [
     {
       "name": "Danielle Cook",
-      "company": "Cartografos Working Group",
-      "role": "CNCF Ambassador, Co-Organizer",
-      "headshot": "https://unavatar.io/linkedin/danielle-cook"
+      "company": "Akamai",
+      "role": "CNCF Ambassador",
+      "headshot": "https://unavatar.io/twitter/daniellemcook",
+      "linkedin": "https://www.linkedin.com/in/danielle-cook-/"
     },
     {
       "name": "Daniel Krook",
       "company": "CNCF",
       "role": "Senior Director of Developer Experience",
-      "headshot": "https://unavatar.io/linkedin/danielkrook"
+      "headshot": "https://unavatar.io/github/krook",
+      "linkedin": "https://www.linkedin.com/in/krook"
     },
     {
       "name": "Stephen Augustus",
       "company": "Cisco",
       "role": "Head of Open Source",
-      "headshot": "https://unavatar.io/linkedin/stephenaugustus"
+      "headshot": "https://unavatar.io/github/stephenaugustus",
+      "linkedin": "https://www.linkedin.com/in/stephenaugustus"
     },
     {
       "name": "Prithvi Raj",
       "company": "Mirantis",
       "role": "Community Manager and Developer Advocate",
-      "headshot": "https://unavatar.io/linkedin/prithvi-raj"
+      "headshot": "https://unavatar.io/github/prithvi1307",
+      "linkedin": "https://www.linkedin.com/in/prithvi1307"
     },
     {
       "name": "Nic Vermande",
-      "company": "MetalBear",
+      "company": "ScaleOps",
       "role": "Staff Principal Developer Advocate",
-      "headshot": "https://unavatar.io/linkedin/nicvermande"
+      "headshot": "https://unavatar.io/github/vfiftyfive",
+      "linkedin": "https://www.linkedin.com/in/vnicolas/"
     },
     {
       "name": "Marino Wijay",
-      "company": "Kong",
+      "company": "Isovalent",
       "role": "Staff Solutions Architect",
-      "headshot": "https://unavatar.io/linkedin/marino-wijay"
+      "headshot": "https://unavatar.io/github/distributethe6ix",
+      "linkedin": "https://www.linkedin.com/in/mwijay"
     },
     {
       "name": "Sam Weaver",
       "company": "Plural",
       "role": "CEO & Co-founder",
-      "headshot": "https://unavatar.io/linkedin/samweaver"
+      "headshot": "https://unavatar.io/github/samweaver",
+      "linkedin": "https://www.linkedin.com/in/samuel-weaver"
     },
     {
       "name": "Michael Guarino",
       "company": "Plural.sh",
       "role": "CTO & Co-founder",
-      "headshot": "https://unavatar.io/linkedin/michael-guarino"
+      "headshot": "https://unavatar.io/github/michaeljguarino",
+      "linkedin": "https://www.linkedin.com/in/michael-guarino-33652298/"
     },
     {
       "name": "Christian Posta",
       "company": "Solo.io",
       "role": "Field CTO",
-      "headshot": "https://unavatar.io/linkedin/christian-posta"
+      "headshot": "https://unavatar.io/github/christian-posta",
+      "linkedin": "https://www.linkedin.com/in/ceposta"
     },
     {
       "name": "Cornelia Davis",
-      "company": "Temporal",
+      "company": "Temporal Technologies",
       "role": "Developer Advocate",
-      "headshot": "https://unavatar.io/linkedin/cornelia-davis"
+      "headshot": "https://unavatar.io/github/cdavisafc",
+      "linkedin": "https://www.linkedin.com/in/corneliadavis"
     }
   ]
 }

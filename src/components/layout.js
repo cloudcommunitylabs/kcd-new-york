@@ -37,7 +37,6 @@ export default function Layout({ children, title }) {
           <div className="navbar-start">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/schedule">Schedule</NavLink>
-            {/* <NavLink to="/about">About</NavLink> */}
             <NavLink to="/previous-speakers">Previous Speakers</NavLink>
             <NavLink to="/sponsors">Sponsors</NavLink>
             <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">

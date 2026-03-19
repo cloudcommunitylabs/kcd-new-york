@@ -107,7 +107,7 @@ export default function PreviousSpeakersPage() {
                 </div>
 
                 <div style={{ flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "flex-start", width: "100%" }}>
-                  <h3 className="title is-5" style={{ marginBottom: "0.5rem", color: "#1a2c50", wordBreak: "break-word" }}>
+                  <h3 className="title is-5" style={{ marginBottom: "1.25rem", color: "#1a2c50", wordBreak: "break-word" }}>
                     {speaker.name}
                   </h3>
                   {speaker.company && (
@@ -118,6 +118,27 @@ export default function PreviousSpeakersPage() {
                   <p className="is-size-6 has-text-grey" style={{ lineHeight: "1.4", wordBreak: "break-word", marginTop: "auto" }}>
                     {speaker.role}
                   </p>
+                  {speaker.linkedin && (
+                    <div style={{ marginTop: "1rem" }}>
+                      <a 
+                        href={speaker.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{
+                          color: "#0077b5",
+                          fontSize: "0.9rem",
+                          fontWeight: "600",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          textDecoration: "none"
+                        }}
+                        onMouseOver={(e) => e.currentTarget.style.textDecoration = "underline"}
+                        onMouseOut={(e) => e.currentTarget.style.textDecoration = "none"}
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
