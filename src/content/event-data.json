@@ -9,6 +9,10 @@
     "venueMap": "https://maps.app.goo.gl/oWPRrwrqbjfiqxh29",
     "linkedin": "https://www.linkedin.com/company/kcdnewyork"
   },
+  "features": {
+    "registrationEnabled": false,
+    "showSponsorProspectus": true
+  },
   "venue": {
     "name": "Convene One Liberty Plaza",
     "address": "1 Liberty St, New York, NY 10006",

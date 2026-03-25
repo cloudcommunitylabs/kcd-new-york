@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "./layout.css";
 import eventData from "../content/event-data.json";
+import { getEventLifecycle } from "../utils/event-lifecycle";
 
 const NavLink = ({ to, children }) => (
   <Link to={to} className="navbar-item" activeClassName="is-active">
@@ -11,6 +12,7 @@ const NavLink = ({ to, children }) => (
 
 export default function Layout({ children, title }) {
   const [isActive, setIsActive] = React.useState(false);
+  const { isCfpOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
 
   return (
     <div className="site">
@@ -39,9 +41,11 @@ export default function Layout({ children, title }) {
             <NavLink to="/schedule">Schedule</NavLink>
             <NavLink to="/previous-speakers">Previous Speakers</NavLink>
             <NavLink to="/sponsors">Sponsors</NavLink>
-            <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
-              Call for Papers
-            </a>
+            {isCfpOpen && (
+              <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
+                Call for Papers
+              </a>
+            )}
             <NavLink to="/venue">Venue</NavLink>
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
@@ -64,8 +68,12 @@ export default function Layout({ children, title }) {
                 {/* <li><Link to="/about">About</Link></li> */}
                 <li><Link to="/previous-speakers">Previous Speakers</Link></li>
                 <li><Link to="/sponsors">Sponsors</Link></li>
-                <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
-                <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
+                {isSponsorProspectusVisible && (
+                  <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
+                )}
+                {isCfpOpen && (
+                  <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
+                )}
                 <li><Link to="/venue">Venue</Link></li>
                 <li><Link to="/team">Team</Link></li>
                 <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
