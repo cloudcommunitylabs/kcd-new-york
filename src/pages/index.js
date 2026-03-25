@@ -5,6 +5,7 @@ import galleryData from "../data/gallery-photos.json";
 
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
+import { getEventLifecycle } from "../utils/event-lifecycle";
 
 const EVENT_DATE = eventData.date;
 const VENUE = eventData.venue.name;
@@ -44,6 +45,58 @@ const WHAT_TO_EXPECT = [
 ];
 
 const KEY_DATES = eventData.keyDates;
+
+function CtaButtons({ size = "medium", showLabel = true }) {
+  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
+
+  return (
+    <div className="cta-buttons-container">
+      <div className="buttons is-centered">
+        {isRegistrationOpen ? (
+          <a
+            href={eventData.links.registration}
+            className={`button kcd-ny-cta is-${size}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register Now!
+          </a>
+        ) : (
+          <span className={`button kcd-ny-cta is-${size}`} aria-disabled="true" style={{ opacity: 0.8, cursor: "not-allowed" }}>
+            Register (coming soon)
+          </span>
+        )}
+
+        {isCfpOpen && (
+          <a
+            href={eventData.links.cfp}
+            className={`button kcd-ny-cta is-${size} is-outlined`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Call for Papers is Open!
+          </a>
+        )}
+        
+        {isSponsorProspectusVisible && (
+          <a
+            href={eventData.links.sponsorProspectus}
+            className={`button kcd-ny-button-secondary is-${size}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sponsor Prospectus
+          </a>
+        )}
+      </div>
+      {!isRegistrationOpen && showLabel && (
+        <div className="mt-2" style={{ color: "white" }}>
+          <span className="is-size-7">Registration details will be announced soon</span>
+        </div>
+      )}
+    </div>
+  );
+}
 
 function Countdown() {
   const [timeLeft, setTimeLeft] = React.useState({
@@ -142,17 +195,7 @@ export default function HomePage() {
                 </a>
               </p>
               <div className="mt-4">
-                <a
-                  href={eventData.links.cfp}
-                  className="button kcd-ny-cta is-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Call for Papers is Open!
-                </a>
-              </div>
-              <div className="mt-2" style={{ color: "white" }}>
-                <span className="is-size-7">Register (coming soon)</span>
+                <CtaButtons />
               </div>
             </div>
             <div className="mt-2">
@@ -375,9 +418,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="kcd-ny-cta-banner-button">
-              <span className="button kcd-ny-cta is-medium" aria-disabled="true">
-                Register (coming soon)
-              </span>
+              <CtaButtons size="medium" showLabel={false} />
             </div>
           </div>
         </div>
