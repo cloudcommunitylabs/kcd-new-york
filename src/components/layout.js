@@ -12,7 +12,7 @@ const NavLink = ({ to, children }) => (
 
 export default function Layout({ children, title }) {
   const [isActive, setIsActive] = React.useState(false);
-  const { isCfpOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
+  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
 
   return (
     <div className="site">
@@ -50,6 +50,15 @@ export default function Layout({ children, title }) {
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
           </div>
+          {isRegistrationOpen && (
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <a href={eventData.links.registration} className="button is-primary is-rounded" target="_blank" rel="noopener noreferrer">
+                  Register
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
       <main className="main-content">{children}</main>
@@ -70,6 +79,9 @@ export default function Layout({ children, title }) {
                 <li><Link to="/sponsors">Sponsors</Link></li>
                 {isSponsorProspectusVisible && (
                   <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
+                )}
+                {isRegistrationOpen && (
+                  <li><a href={eventData.links.registration} target="_blank" rel="noopener noreferrer">Register</a></li>
                 )}
                 {isCfpOpen && (
                   <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
