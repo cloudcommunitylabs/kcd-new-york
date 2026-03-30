@@ -54,7 +54,7 @@ export default function Layout({ children, title }) {
           {isRegistrationOpen && (
             <div className="navbar-end">
               <div className="navbar-item">
-                <a href={eventData.links.registration} className="button is-primary is-rounded" target="_blank" rel="noopener noreferrer">
+                <a href={eventData.links.registration} className="button kcd-ny-cta is-rounded kcd-ny-navbar-register" target="_blank" rel="noopener noreferrer">
                   Register
                 </a>
               </div>
