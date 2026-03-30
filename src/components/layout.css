@@ -78,13 +78,19 @@ html {
 }
 
 .kcd-ny-navbar-register {
+  background-color: var(--color-accent-warm) !important;
+  border-color: var(--color-accent-warm) !important;
+  color: var(--color-dark) !important;
   font-weight: 700 !important;
   transition: all 0.3s ease !important;
 }
 
 .kcd-ny-navbar-register:hover {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: var(--color-primary) !important;
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(226, 82, 61, 0.4);
+  box-shadow: 0 4px 15px rgba(247, 165, 68, 0.4);
 }
 
 .navbar.is-primary,

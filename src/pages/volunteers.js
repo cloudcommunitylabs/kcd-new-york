@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
 
 export default function VolunteersPage() {
-  const volunteerFormUrl = "https://tally.so/embed/RGRQAd?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+  const volunteerFormUrl = eventData.links.volunteerForm;
 
   return (
     <Layout>
@@ -29,31 +29,27 @@ export default function VolunteersPage() {
                   Since spots are limited, we want to get to know the "real you." Use the form below to tell us why 
                   you’re excited to jump in and what unique energy you’ll bring to the New York scene.
                 </p>
+                
+                <div className="has-text-centered mt-5">
+                  <a 
+                    href={volunteerFormUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="button kcd-ny-cta is-large is-rounded is-fullwidth-mobile"
+                  >
+                    Fill Out Volunteer Form
+                  </a>
+                </div>
               </div>
 
-              <div className="box p-0" style={{ overflow: "hidden", borderRadius: "8px", boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}>
-                <iframe
-                  src={volunteerFormUrl}
-                  width="100%"
-                  height="800"
-                  frameBorder="0"
-                  marginHeight="0"
-                  marginWidth="0"
-                  title="KCD New York Volunteer Registration"
-                  style={{ border: "none" }}
-                />
-              </div>
-              
               <div className="mt-6 has-text-centered">
                 <p className="has-text-grey">
-                  Having trouble with the form? {" "}
+                  Questions? {" "}
                   <a 
-                    href={eventData.links.volunteerForm} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    href="mailto:new-york-org@kubernetescommunitydays.org"
                     style={{ color: "var(--color-secondary)", fontWeight: 600 }}
                   >
-                    Open it in a new window
+                    Contact the organizers
                   </a>
                 </p>
               </div>
