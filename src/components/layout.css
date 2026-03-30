@@ -65,6 +65,26 @@ html {
   .kcd-ny-navbar .navbar-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+
+  .kcd-ny-navbar-register {
+    width: calc(100% - 3rem);
+    margin: 1rem 1.5rem !important;
+    padding: 1.5rem !important;
+    font-size: 1.1rem !important;
+    display: flex !important;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.kcd-ny-navbar-register {
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+}
+
+.kcd-ny-navbar-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(226, 82, 61, 0.4);
 }
 
 .navbar.is-primary,
