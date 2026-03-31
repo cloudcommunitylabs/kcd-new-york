@@ -49,6 +49,7 @@ export default function Layout({ children, title }) {
             <NavLink to="/venue">Venue</NavLink>
             <NavLink to="/team">Team</NavLink>
             <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
+            <NavLink to="/volunteers">Volunteers</NavLink>
           </div>
           {isRegistrationOpen && (
             <div className="navbar-end">
@@ -89,6 +90,7 @@ export default function Layout({ children, title }) {
                 <li><Link to="/venue">Venue</Link></li>
                 <li><Link to="/team">Team</Link></li>
                 <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
+                <li><Link to="/volunteers">Volunteers</Link></li>
                 <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                 <li><Link to="/cookie-policy">Cookie Policy</Link></li>
               </ul>
