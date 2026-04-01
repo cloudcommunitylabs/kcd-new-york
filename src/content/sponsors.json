@@ -12,12 +12,6 @@
           "name": "Komodor",
           "logo": "https://komodor.com/wp-content/uploads/2024/11/komodor-logo-2024.svg",
           "url": "https://komodor.com/"
-        },
-        {
-          "name": "CloudBolt",
-          "logo": "https://www.cloudbolt.io/wp-content/themes/cloudbolt/assets/img/svg/logo-dark.svg",
-          "url": "https://www.cloudbolt.io/",
-          "linkedin": "https://www.linkedin.com/company/cloudbolt/"
         }
       ]
     },
@@ -28,6 +22,16 @@
           "name": "Broadcom",
           "logo": "https://www.broadcom.com/media/blt4ac44e0e6c6d8341/blt236aea49530c2fc1/64ccb6b6db10cb775e8e27d0/Broadcom_thumb.png",
           "url": "https://www.broadcom.com/"
+        }
+      ]
+    },
+    {
+      "tier": "Bronze",
+      "sponsors": [
+        {
+          "name": "CloudBolt",
+          "logo": "https://www.cloudbolt.io/wp-content/themes/cloudbolt/assets/img/svg/logo-dark.svg",
+          "url": "https://www.cloudbolt.io/"
         }
       ]
     }
