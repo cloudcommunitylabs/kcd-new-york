@@ -12,6 +12,12 @@
           "name": "Komodor",
           "logo": "https://komodor.com/wp-content/uploads/2024/11/komodor-logo-2024.svg",
           "url": "https://komodor.com/"
+        },
+        {
+          "name": "CloudBolt",
+          "logo": "https://www.cloudbolt.io/wp-content/themes/cloudbolt/assets/img/svg/logo-dark.svg",
+          "url": "https://www.cloudbolt.io/",
+          "linkedin": "https://www.linkedin.com/company/cloudbolt/"
         }
       ]
     },
