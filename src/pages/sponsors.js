@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
+import { getSponsorLogo, getSponsorDimensions } from "../utils/sponsor-utils";
 
 export default function SponsorsPage() {
   const renderSponsors = (yearData) => {
@@ -26,56 +27,61 @@ export default function SponsorsPage() {
             justifyContent: "center"
           }}
         >
-          {tier.sponsors.map((sponsor, idx) => (
-            <a
-              key={idx}
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                width: "220px",
-                height: "130px",
-                border: "1px solid #e0e0e0",
-                borderRadius: "12px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "white",
-                color: "#1a2c50",
-                fontSize: "1.1rem",
-                fontWeight: "700",
-                textAlign: "center",
-                padding: "1.5rem",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
-                transition: "all 0.3s ease",
-                overflow: "hidden"
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px)";
-                e.currentTarget.style.boxShadow = "0 8px 15px rgba(0,0,0,0.1)";
-                e.currentTarget.style.borderColor = "#1a2c50";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.05)";
-                e.currentTarget.style.borderColor = "#e0e0e0";
-              }}
-            >
-              {sponsor.logo ? (
-                <img
-                  src={sponsor.logo}
-                  alt={`${sponsor.name} logo`}
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain"
-                  }}
-                />
-              ) : (
-                sponsor.name
-              )}
-            </a>
-          ))}
+          {tier.sponsors.map((sponsor, idx) => {
+            const { width, height } = getSponsorDimensions(tier.tier, sponsor.scale || 1, true);
+            const logoSrc = getSponsorLogo(sponsor.logo);
+
+            return (
+              <a
+                key={idx}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: width,
+                  height: height,
+                  border: "1px solid #e0e0e0",
+                  borderRadius: "12px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "white",
+                  color: "#1a2c50",
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  textAlign: "center",
+                  padding: "1.5rem",
+                  boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
+                  transition: "all 0.3s ease",
+                  overflow: "hidden"
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                  e.currentTarget.style.boxShadow = "0 8px 15px rgba(0,0,0,0.1)";
+                  e.currentTarget.style.borderColor = "#1a2c50";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.05)";
+                  e.currentTarget.style.borderColor = "#e0e0e0";
+                }}
+              >
+                {logoSrc ? (
+                  <img
+                    src={logoSrc}
+                    alt={`${sponsor.name} logo`}
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      objectFit: "contain"
+                    }}
+                  />
+                ) : (
+                  sponsor.name
+                )}
+              </a>
+            );
+          })}
         </div>
       </div>
     ));
@@ -130,8 +136,8 @@ export default function SponsorsPage() {
             Thank you to our partners supporting the {eventData.year} cloud native community
           </p>
 
-          {sponsorsData["2026"] && sponsorsData["2026"].length > 0 ? (
-            renderSponsors(sponsorsData["2026"])
+          {sponsorsData[eventData.year] && sponsorsData[eventData.year].length > 0 ? (
+            renderSponsors(sponsorsData[eventData.year])
           ) : (
             <div className="has-text-centered has-text-grey py-6">
               <p className="is-size-4">Be the first to sponsor KCD New York {eventData.year}!</p>
@@ -142,18 +148,24 @@ export default function SponsorsPage() {
       </section>
 
       {/* Previous Sponsors */}
-      <section className="section" style={{ background: "#f9f9f9", padding: "4rem 1.5rem" }}>
-        <div className="container">
-          <h2 className="title is-2 has-text-centered" style={{ marginBottom: "1rem" }}>
-            Previous Sponsors (2025)
-          </h2>
-          <p className="subtitle is-5 has-text-centered has-text-grey" style={{ marginBottom: "3rem" }}>
-            We're grateful for those who supported us in 2025
-          </p>
+      {Object.keys(sponsorsData)
+        .filter(year => year !== eventData.year)
+        .sort((a, b) => b - a)
+        .map(year => (
+          <section key={year} className="section" style={{ background: "#f9f9f9", padding: "4rem 1.5rem" }}>
+            <div className="container">
+              <h2 className="title is-2 has-text-centered" style={{ marginBottom: "1rem" }}>
+                Past Editions Sponsors ({year})
+              </h2>
+              <p className="subtitle is-5 has-text-centered has-text-grey" style={{ marginBottom: "3rem" }}>
+                We're grateful for those who supported us in {year}
+              </p>
 
-          {renderSponsors(sponsorsData["2025"])}
-        </div>
-      </section>
+              {renderSponsors(sponsorsData[year])}
+            </div>
+          </section>
+        ))
+      }
 
       {/* Timeline Section */}
       <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>

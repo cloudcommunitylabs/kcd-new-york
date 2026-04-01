@@ -24,6 +24,16 @@
           "url": "https://www.broadcom.com/"
         }
       ]
+    },
+    {
+      "tier": "Bronze",
+      "sponsors": [
+        {
+          "name": "CloudBolt",
+          "logo": "logos/stormforge.svg",
+          "url": "https://www.cloudbolt.io/"
+        }
+      ]
     }
   ],
   "2025": [
