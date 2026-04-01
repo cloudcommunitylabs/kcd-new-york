@@ -6,7 +6,7 @@ import galleryData from "../data/gallery-photos.json";
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
-import { getSponsorLogo, getSponsorDimensions } from "../utils/sponsor-utils";
+import { getSponsorLogo } from "../utils/sponsor-utils";
 
 
 const EVENT_DATE = eventData.date;
@@ -343,40 +343,32 @@ export default function HomePage() {
       <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
         <div className="container">
           <h2 className="title is-3 has-text-centered">Our {eventData.year} Sponsors</h2>
-          <div className="mt-6" style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "2.5rem" }}>
-            {sponsorsData[eventData.year] && sponsorsData[eventData.year].map(tier => (
-              <React.Fragment key={tier.tier}>
-                {tier.sponsors.map((sponsor, idx) => {
-                  const { width, height } = getSponsorDimensions(tier.tier, sponsor.scale || 1);
-                  const logoSrc = getSponsorLogo(sponsor.logo);
-
-                  return (
-                    <a 
-                      key={`${tier.tier}-${idx}`} 
-                      href={sponsor.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{ 
-                        width: width, 
-                        height: height, 
-                        display: "flex", 
-                        alignItems: "center", 
-                        justifyContent: "center",
-                        transition: "transform 0.2s ease"
-                      }}
-                      onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.1)"}
-                      onMouseOut={(e) => e.currentTarget.style.transform = "scale(1.0)"}
-                    >
-                      {logoSrc ? (
-                        <img src={logoSrc} alt={sponsor.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-                      ) : (
-                        <span className="title is-4">{sponsor.name}</span>
-                      )}
-                    </a>
-                  );
-                })}
-              </React.Fragment>
-            ))}
+          <div className="mt-6 sponsor-marquee">
+            <div className="sponsor-marquee-track">
+              {/* Loop twice to make the infinite animation seamless */}
+              {[1, 2].map((loopIdx) => (
+                <React.Fragment key={`loop-${loopIdx}`}>
+                  {sponsorsData[eventData.year] && sponsorsData[eventData.year].flatMap(tier => tier.sponsors).map((sponsor, idx) => {
+                    const logoSrc = getSponsorLogo(sponsor.logo);
+                    return (
+                      <a 
+                        key={`${loopIdx}-${idx}`} 
+                        href={sponsor.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="sponsor-marquee-item"
+                      >
+                        {logoSrc ? (
+                          <img src={logoSrc} alt={sponsor.name} />
+                        ) : (
+                          <span className="title is-4">{sponsor.name}</span>
+                        )}
+                      </a>
+                    );
+                  })}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
           <div className="has-text-centered mt-6">
             <a href="/sponsors" className="button is-outlined kcd-ny-button-secondary">
