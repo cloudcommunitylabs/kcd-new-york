@@ -32,6 +32,12 @@
           "name": "CloudBolt",
           "logo": "https://www.cloudbolt.io/wp-content/themes/cloudbolt/assets/img/svg/logo-dark.svg",
           "url": "https://www.cloudbolt.io/"
+        },
+        {
+          "name": "Dash0",
+          "logo": "https://www.dash0.com/images/og-image.png",
+          "url": "https://www.dash0.com/",
+          "linkedin": "https://www.linkedin.com/company/dash0/"
         }
       ]
     }
