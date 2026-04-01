@@ -30,8 +30,13 @@
       "sponsors": [
         {
           "name": "CloudBolt",
-          "logo": "logos/stormforge.svg",
+          "logo": "./logos/stormforge.svg",
           "url": "https://www.cloudbolt.io/"
+        },
+        {
+          "name": "Dash0",
+          "logo": "./logos/dash0.svg",
+          "url": "https://www.dash0.com/"
         }
       ]
     }
