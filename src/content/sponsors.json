@@ -26,6 +26,16 @@
       ]
     },
     {
+      "tier": "Gold",
+      "sponsors": [
+        {
+          "name": "Teleport",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Teleport-Logo_C8sej7F.png",
+          "url": "https://goteleport.com/"
+        }
+      ]
+    },
+    {
       "tier": "Bronze",
       "sponsors": [
         {
