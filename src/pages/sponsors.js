@@ -148,7 +148,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Previous Sponsors */}
-      {Object.keys(sponsorsData)
+      {eventData.features.showPreviousSponsors && Object.keys(sponsorsData)
         .filter(year => year !== eventData.year)
         .sort((a, b) => b - a)
         .map(year => (
