@@ -21,6 +21,16 @@
       ]
     },
     {
+      "tier": "Gold",
+      "sponsors": [
+        {
+          "name": "Teleport",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Teleport-Logo_C8sej7F.png",
+          "url": "https://goteleport.com/"
+        }
+      ]
+    },
+    {
       "tier": "Bronze",
       "sponsors": [
         {
@@ -32,6 +42,21 @@
           "name": "Dash0",
           "logo": "./logos/dash0.svg",
           "url": "https://www.dash0.com/"
+        },
+        {
+          "name": "Akuity",
+          "logo": "./logos/akuity.png",
+          "url": "https://akuity.io/"
+        },
+        {
+          "name": "Red Hat",
+          "logo": "./logos/redhat.png",
+          "url": "https://www.redhat.com/"
+        },
+        {
+          "name": "UnionAI",
+          "logo": "./logos/unionai.png",
+          "url": "https://www.union.ai/"
         }
       ]
     }
