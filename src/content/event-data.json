@@ -13,7 +13,8 @@
   "features": {
     "registrationEnabled": true,
     "showSponsorProspectus": true,
-    "showPreviousSponsors": false
+    "showPreviousSponsors": false,
+    "showPreviousSpeakers": false
   },
   "venue": {
     "name": "Convene One Liberty Plaza",

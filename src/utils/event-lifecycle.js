@@ -16,10 +16,14 @@ export const getEventLifecycle = (eventData) => {
   // Sponsor prospectus visibility
   const isSponsorProspectusVisible = eventData.features?.showSponsorProspectus && eventData.links?.sponsorProspectus;
 
+  // Previous speakers visibility
+  const isShowPreviousSpeakersVisible = eventData.features?.showPreviousSpeakers;
+
   return {
     isCfpOpen,
     isRegistrationOpen,
     isSponsorProspectusVisible,
+    isShowPreviousSpeakersVisible,
     now
   };
 };
