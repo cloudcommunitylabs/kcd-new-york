@@ -16,10 +16,9 @@
     "linkedin": "https://www.linkedin.com/company/kcdnewyork",
     "volunteerForm": "https://forms.gle/ywevp8cYy7QH5h1YA"
   },
-  "features": {
+"features": {
     "registrationEnabled": true,
     "showSponsorProspectus": true,
-    "showPreviousSponsors": false,
     "showPreviousSpeakers": false,
     "useSessionizeSchedule": true,
     "useSessionizeSpeakers": true
