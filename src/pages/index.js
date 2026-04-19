@@ -7,11 +7,50 @@ import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
 import { getSponsorLogo } from "../utils/sponsor-utils";
+import SEO from "../components/seo";
 
 
 const EVENT_DATE = eventData.date;
 const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
+
+export const Head = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": eventData.name,
+    "startDate": "2026-06-10T08:00:00-04:00", // Standardizing date for schema
+    "endDate": "2026-06-10T18:00:00-04:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": eventData.venue.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Liberty St",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10006",
+        "addressCountry": "US"
+      }
+    },
+    "description": "Kubernetes Community Days New York is a community-organized event bringing together the cloud native community.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "KCD New York",
+      "url": "https://kcdnewyork.com"
+    }
+  };
+
+  return (
+    <SEO>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </SEO>
+  );
+};
 
 const WHAT_TO_EXPECT = [
   {
@@ -210,8 +249,8 @@ export default function HomePage() {
       {/* About the Theme Section */}
       <section className="section" style={{ background: "#1a2c50", color: "white", padding: "3rem 1.5rem" }}>
         <div className="container">
-          <div className="columns is-vcentered">
-            <div className="column is-7">
+          <div className="columns is-vcentered is-mobile-stacked">
+            <div className="column is-7 mb-5-mobile">
               <h2 className="title is-2 has-text-white" style={{ marginBottom: "1.5rem" }}>
                 🌉 Building Bridges in Cloud Native
               </h2>
@@ -230,7 +269,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="column is-5 has-text-centered">
+            <div className="column is-5 has-text-centered mt-5-mobile">
               <div style={{ fontSize: "8rem", lineHeight: "1", marginBottom: "1rem" }}>🌉</div>
               <p className="subtitle is-4 has-text-white" style={{ fontWeight: "600" }}>
                 Connecting<br/>Communities • Technologies • Ideas
@@ -243,8 +282,8 @@ export default function HomePage() {
       {/* 3rd Year Milestone Section */}
       <section className="section kcd-ny-milestone-section">
         <div className="container">
-          <div className="columns is-vcentered">
-            <div className="column is-4 has-text-centered">
+          <div className="columns is-vcentered is-reversed-mobile">
+            <div className="column is-4 has-text-centered mb-6-mobile">
               <div className="kcd-ny-milestone-number">3</div>
               <div className="kcd-ny-milestone-subtitle">Years Strong</div>
               <div className="kcd-ny-stat-grid" style={{ marginTop: "1.5rem" }}>

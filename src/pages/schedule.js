@@ -1,9 +1,14 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 import eventData from "../content/event-data.json";
 
 const SESSIONS = [
 ];
+
+export const Head = () => (
+  <SEO title="Schedule" description="Full event schedule for KCD New York 2026. Join us for technical talks and networking." />
+);
 
 export default function SchedulePage() {
   const scheduleAnnouncementDate = eventData.keyDates.find(d => d.label === "Schedule Announced")?.date;

@@ -1,8 +1,13 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getSponsorLogo, getSponsorDimensions } from "../utils/sponsor-utils";
+
+export const Head = () => (
+  <SEO title="Sponsors" description="Our valued sponsors for KCD New York 2026. Join us in supporting the NYC cloud native community." />
+);
 
 export default function SponsorsPage() {
   const renderSponsors = (yearData) => {

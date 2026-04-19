@@ -547,6 +547,24 @@ html {
   font-weight: 500;
 }
 
+/* Custom Responsive Utilities */
+@media screen and (max-width: 768px) {
+  .mb-5-mobile { margin-bottom: 3rem !important; }
+  .mt-5-mobile { margin-top: 3rem !important; }
+  .mb-6-mobile { margin-bottom: 4.5rem !important; }
+  
+  .is-reversed-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .cta-buttons-container .buttons .button {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem;
+  }
+}
+
 /* Countdown Styles */
 .kcd-ny-countdown {
   margin-top: 2rem;
@@ -554,6 +572,7 @@ html {
   padding: 1.5rem;
   border-radius: 8px;
   display: inline-block;
+  max-width: 100%;
 }
 
 .kcd-ny-countdown-title {
@@ -569,12 +588,14 @@ html {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .kcd-ny-countdown-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 60px;
 }
 
 .kcd-ny-countdown-value {
@@ -582,6 +603,15 @@ html {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .kcd-ny-countdown-value {
+    font-size: 1.8rem;
+  }
+  .kcd-ny-countdown-units {
+    gap: 1rem;
+  }
 }
 
 .kcd-ny-countdown-label {
