@@ -16,10 +16,18 @@ export const getEventLifecycle = (eventData) => {
   // Sponsor prospectus visibility
   const isSponsorProspectusVisible = eventData.features?.showSponsorProspectus && eventData.links?.sponsorProspectus;
 
+  // Event is over if current date is after the event date
+  const eventDate = new Date(eventData.date);
+  // Add 1 day to the event date to ensure it stays "live" during the actual day
+  const dayAfterEvent = new Date(eventDate);
+  dayAfterEvent.setDate(eventDate.getDate() + 1);
+  const isEventOver = now > dayAfterEvent;
+
   return {
     isCfpOpen,
     isRegistrationOpen,
     isSponsorProspectusVisible,
+    isEventOver,
     now
   };
 };
