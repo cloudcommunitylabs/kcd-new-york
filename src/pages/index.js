@@ -7,7 +7,7 @@ import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
 import { getSponsorLogo } from "../utils/sponsor-utils";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 
 const EVENT_DATE = eventData.date;
@@ -45,11 +45,11 @@ export const Head = () => {
   };
 
   return (
-    <SEO>
+    <Seo>
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
-    </SEO>
+    </Seo>
   );
 };
 

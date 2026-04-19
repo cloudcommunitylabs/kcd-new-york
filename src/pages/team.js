@@ -1,12 +1,11 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
 
 /* KCD NY brand dark blue for placeholder avatars (matches speaker card style) */
-const AVATAR_BG = "1a2c50";
 
 /**
  * Placeholder avatars (initials) until real photos are added.
@@ -64,7 +63,7 @@ const TEAM = [
 ];
 
 export const Head = () => (
-  <SEO title="Team" description="Meet the organizing team behind KCD New York 2026." />
+  <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
 );
 
 export default function TeamPage() {

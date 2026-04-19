@@ -1,9 +1,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 export const Head = () => (
-  <SEO title="Speakers" description="Learn about the speakers at KCD New York 2026. Experts from the cloud native community." />
+  <Seo title="Speakers" description="Learn about the speakers at KCD New York 2026. Experts from the cloud native community." />
 );
 
 export default function SpeakersPage() {

@@ -2,16 +2,15 @@ import * as React from "react";
 import { useState } from "react";
 import Layout from "../components/layout";
 import MapEmbed from "../components/MapEmbed";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 
 const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
-const EVENT_DATE = eventData.date;
 const INTERACTIVE_MAP_URL = `https://kcdnewyork${eventData.year}.expofp.com/`;
 
 export const Head = () => (
-  <SEO title="Venue" description="Convene One Liberty Plaza in Manhattan's Financial District. Getting to KCD New York 2026." />
+  <Seo title="Venue" description="Convene One Liberty Plaza in Manhattan's Financial District. Getting to KCD New York 2026." />
 );
 
 export default function VenuePage() {
