@@ -5,7 +5,6 @@ import eventData from "../content/event-data.json";
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
 
 /* KCD NY brand dark blue for placeholder avatars (matches speaker card style) */
-const AVATAR_BG = "1a2c50";
 
 /**
  * Placeholder avatars (initials) until real photos are added.

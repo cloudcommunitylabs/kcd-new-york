@@ -53,29 +53,8 @@ export default function PreviousSpeakersPage() {
             {speakers.map((speaker, idx) => (
               <div
                 key={idx}
-                style={{
-                  border: "1px solid #e0e0e0",
-                  borderRadius: "12px",
-                  padding: "2rem",
-                  background: "white",
-                  color: "#1a2c50",
-                  textAlign: "center",
-                  boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
-                  transition: "all 0.3s ease",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center"
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow = "0 8px 15px rgba(0,0,0,0.1)";
-                  e.currentTarget.style.borderColor = "#1a2c50";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.05)";
-                  e.currentTarget.style.borderColor = "#e0e0e0";
-                }}
+                className="kcd-ny-speaker-card-alt"
+                role="presentation"
               >
                 {/* Avatar */}
                 <div 
@@ -124,16 +103,7 @@ export default function PreviousSpeakersPage() {
                         href={speaker.linkedin} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        style={{
-                          color: "#0077b5",
-                          fontSize: "0.9rem",
-                          fontWeight: "600",
-                          display: "inline-flex",
-                          alignItems: "center",
-                          textDecoration: "none"
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.textDecoration = "underline"}
-                        onMouseOut={(e) => e.currentTarget.style.textDecoration = "none"}
+                        className="kcd-ny-linkedin-simple"
                       >
                         LinkedIn
                       </a>
