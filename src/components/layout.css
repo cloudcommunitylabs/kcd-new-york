@@ -45,6 +45,50 @@ html {
 
 .kcd-ny-navbar .navbar-burger {
   color: #fff;
+  height: 3.25rem;
+  width: 3.25rem;
+  margin-left: auto;
+  position: relative;
+  display: block !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .kcd-ny-navbar .navbar-burger {
+    display: none !important;
+  }
+}
+
+.kcd-ny-navbar .navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  width: 16px;
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .kcd-ny-navbar .navbar-burger:hover {
@@ -402,6 +446,16 @@ html {
   font-size: 1.1rem;
 }
 
+@media screen and (max-width: 1023px) {
+  .navbar-brand .navbar-item.has-text-weight-bold {
+    max-width: calc(100vw - 4rem);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 /* Timeline Style */
 .timeline {
   display: flex;
@@ -558,7 +612,7 @@ html {
     flex-direction: column-reverse;
   }
 
-  .cta-buttons-container .buttons .button {
+  .cta-buttons-container .buttons .button.kcd-ny-cta {
     width: 100%;
     margin-right: 0 !important;
     margin-bottom: 0.75rem;
