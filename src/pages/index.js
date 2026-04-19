@@ -15,12 +15,13 @@ const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
 
 export const Head = () => {
+  const eventDateISO = new Date(eventData.date).toISOString().split('T')[0];
   const schema = {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": eventData.name,
-    "startDate": "2026-06-10T08:00:00-04:00", // Standardizing date for schema
-    "endDate": "2026-06-10T18:00:00-04:00",
+    "startDate": `${eventDateISO}T08:00:00-04:00`,
+    "endDate": `${eventDateISO}T18:00:00-04:00`,
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
