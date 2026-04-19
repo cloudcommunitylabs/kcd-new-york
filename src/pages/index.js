@@ -7,11 +7,51 @@ import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
 import { getSponsorLogo } from "../utils/sponsor-utils";
+import Seo from "../components/seo";
 
 
 const EVENT_DATE = eventData.date;
 const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
+
+export const Head = () => {
+  const eventDateISO = new Date(eventData.date).toISOString().split('T')[0];
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": eventData.name,
+    "startDate": `${eventDateISO}T08:00:00-04:00`,
+    "endDate": `${eventDateISO}T18:00:00-04:00`,
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": eventData.venue.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Liberty St",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10006",
+        "addressCountry": "US"
+      }
+    },
+    "description": "Kubernetes Community Days New York is a community-organized event bringing together the cloud native community.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "KCD New York",
+      "url": "https://kcdnewyork.com"
+    }
+  };
+
+  return (
+    <Seo>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Seo>
+  );
+};
 
 const WHAT_TO_EXPECT = [
   {

@@ -62,6 +62,10 @@ const TEAM = [
   },
 ];
 
+export const Head = () => (
+  <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
+);
+
 export default function TeamPage() {
   return (
     <Layout>
