@@ -20,6 +20,7 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .main-content {
@@ -27,9 +28,13 @@ html {
   padding-top: 3.25rem;
 }
 
-/* Override Bulma primary with KCD NY brand */
 .kcd-ny-navbar {
-  background-color: var(--color-primary) !important;
+  background-color: var(--color-primary);
+}
+
+.kcd-ny-navbar .navbar-brand {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .kcd-ny-navbar .navbar-item,
@@ -45,6 +50,50 @@ html {
 
 .kcd-ny-navbar .navbar-burger {
   color: #fff;
+  height: 3.25rem;
+  width: 3.25rem;
+  margin-left: auto;
+  position: relative;
+  display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  .kcd-ny-navbar .navbar-burger {
+    display: none;
+  }
+}
+
+.kcd-ny-navbar .navbar-burger span {
+  background-color: #fff;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  width: 16px;
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .kcd-ny-navbar .navbar-burger:hover {
@@ -67,28 +116,28 @@ html {
   }
 
   .kcd-ny-navbar-register {
-    width: calc(100% - 3rem);
-    margin: 1rem 1.5rem !important;
-    padding: 1.5rem !important;
-    font-size: 1.1rem !important;
-    display: flex !important;
+    width: auto;
+    margin: 1rem 1.5rem;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    display: flex;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
 
 .kcd-ny-navbar-register {
-  background-color: var(--color-accent-warm) !important;
-  border-color: var(--color-accent-warm) !important;
-  color: var(--color-dark) !important;
-  font-weight: 700 !important;
-  transition: all 0.3s ease !important;
+  background-color: var(--color-accent-warm);
+  border-color: var(--color-accent-warm);
+  color: var(--color-dark);
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 .kcd-ny-navbar-register:hover {
-  background-color: #fff !important;
-  border-color: #fff !important;
-  color: var(--color-primary) !important;
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--color-primary);
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(226, 82, 61, 0.4);
 }
