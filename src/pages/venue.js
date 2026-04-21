@@ -2,12 +2,16 @@ import * as React from "react";
 import { useState } from "react";
 import Layout from "../components/layout";
 import MapEmbed from "../components/MapEmbed";
+import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 
 const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
-const EVENT_DATE = eventData.date;
 const INTERACTIVE_MAP_URL = `https://kcdnewyork${eventData.year}.expofp.com/`;
+
+export const Head = () => (
+  <Seo title="Venue" description="Convene One Liberty Plaza in Manhattan's Financial District. Getting to KCD New York 2026." />
+);
 
 export default function VenuePage() {
   const [activeTab, setActiveTab] = useState("subway");
@@ -117,28 +121,40 @@ export default function VenuePage() {
             <div className="tabs is-centered is-large">
               <ul>
                 <li className={activeTab === "subway" ? "is-active" : ""}>
-                  <a onClick={() => setActiveTab("subway")} role="button" tabIndex={0}>
+                  <button 
+                    onClick={() => setActiveTab("subway")}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '1rem', font: 'inherit', color: 'inherit' }}
+                  >
                     <span className="kcd-ny-transit-icon">🚇</span>
                     Subway
-                  </a>
+                  </button>
                 </li>
                 <li className={activeTab === "path" ? "is-active" : ""}>
-                  <a onClick={() => setActiveTab("path")} role="button" tabIndex={0}>
+                  <button 
+                    onClick={() => setActiveTab("path")}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '1rem', font: 'inherit', color: 'inherit' }}
+                  >
                     <span className="kcd-ny-transit-icon">🚈</span>
                     PATH Train
-                  </a>
+                  </button>
                 </li>
                 <li className={activeTab === "car" ? "is-active" : ""}>
-                  <a onClick={() => setActiveTab("car")} role="button" tabIndex={0}>
+                  <button 
+                    onClick={() => setActiveTab("car")}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '1rem', font: 'inherit', color: 'inherit' }}
+                  >
                     <span className="kcd-ny-transit-icon">🚗</span>
                     Parking
-                  </a>
+                  </button>
                 </li>
                 <li className={activeTab === "accessibility" ? "is-active" : ""}>
-                  <a onClick={() => setActiveTab("accessibility")} role="button" tabIndex={0}>
+                  <button 
+                    onClick={() => setActiveTab("accessibility")}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '1rem', font: 'inherit', color: 'inherit' }}
+                  >
                     <span className="kcd-ny-transit-icon">♿</span>
                     Accessibility
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
