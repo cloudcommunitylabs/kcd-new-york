@@ -89,7 +89,16 @@ const WHAT_TO_EXPECT = [
 const KEY_DATES = eventData.keyDates;
 
 function CtaButtons({ size = "medium", showLabel = true }) {
-  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
+  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible, isEventOver } = getEventLifecycle(eventData);
+
+  if (isEventOver) {
+    return (
+      <div className="has-text-centered py-4">
+        <p className="title is-4 has-text-white mb-2">Thank you for joining us!</p>
+        <p className="subtitle is-6 has-text-white opacity-90">Stay tuned for event recordings and photos.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="cta-buttons-container">
@@ -206,9 +215,9 @@ function Countdown() {
 export default function HomePage() {
   return (
     <Layout>
-      {/* Hero with high-contrast event details box */}
+      {/* Hero with elegant glassmorphism and motion */}
       <section
-        className="hero is-medium kcd-ny-hero"
+        className="hero is-fullheight-with-navbar kcd-ny-hero"
         style={{
           backgroundImage: "url('/img/kcd-ny-hero.png')",
           backgroundSize: "cover",
@@ -217,30 +226,40 @@ export default function HomePage() {
       >
         <div className="hero-body">
           <div className="kcd-ny-hero-overlay" />
-          <div className="kcd-ny-hero-badge">
-            Celebrating Our 3rd Year
-          </div>
-          <div className="container has-text-centered kcd-ny-hero-content">
-            <h1 className="title is-1 kcd-ny-hero-title">{eventData.name}</h1>
-            <p className="subtitle is-3 has-text-white" style={{ marginTop: "1rem", fontWeight: "600", textShadow: "0 2px 4px rgba(0, 0, 0, 0.4)" }}>
+          <div className="container kcd-ny-hero-content">
+            <h1 className="title kcd-ny-hero-title kcd-ny-animate-up kcd-ny-delay-1 has-text-centered">
+              {eventData.name}
+            </h1>
+            
+            <p className="subtitle kcd-ny-hero-subtitle kcd-ny-animate-up kcd-ny-delay-2 has-text-centered">
               Building Bridges in Cloud Native
             </p>
-            <div className="kcd-ny-hero-details-box">
-              <p className="kcd-ny-hero-detail">
-                <span className="kcd-ny-hero-label">Date:</span> {EVENT_DATE}
-                <span className="kcd-ny-hero-sep"> · </span>
-                <span className="kcd-ny-hero-label">Venue:</span> {VENUE}
-              </p>
-              <p className="kcd-ny-hero-detail kcd-ny-hero-address">
-                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>
+            
+            <div className="kcd-ny-hero-details-box kcd-ny-animate-up kcd-ny-delay-3 has-text-centered">
+              <div className="columns is-mobile is-multiline is-centered">
+                <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
+                  <span className="kcd-ny-hero-label">Date</span>
+                  <span style={{fontWeight: 700}}>{EVENT_DATE}</span>
+                </div>
+                <div className="column is-hidden-mobile is-narrow kcd-ny-hero-sep">
+                  <div style={{width: "1px", height: "40px", background: "rgba(255,255,255,0.3)"}}></div>
+                </div>
+                <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
+                  <span className="kcd-ny-hero-label">Venue</span>
+                  <span style={{fontWeight: 700}}>{VENUE}</span>
+                </div>
+              </div>
+              <p className="kcd-ny-hero-address mt-3 mb-5">
+                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer">
                   {ADDRESS}
                 </a>
               </p>
-              <div className="mt-4">
-                <CtaButtons />
+              <div>
+                <CtaButtons size="large" showLabel={false} />
               </div>
             </div>
-            <div className="mt-2">
+            
+            <div className="mt-6 kcd-ny-animate-up kcd-ny-delay-4 has-text-centered">
               <Countdown />
             </div>
           </div>
