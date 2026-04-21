@@ -442,6 +442,73 @@ html {
   margin-top: auto;
 }
 
+/* Alternative Speaker Card (Grid) */
+.kcd-ny-speaker-card-alt {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  background: white;
+  color: var(--color-primary);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kcd-ny-speaker-card-alt:hover,
+.kcd-ny-speaker-card-alt:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: var(--color-primary);
+}
+
+.kcd-ny-linkedin-simple {
+  color: #0077b5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.kcd-ny-linkedin-simple:hover,
+.kcd-ny-linkedin-simple:focus {
+  text-decoration: underline;
+}
+
+.kcd-ny-sponsor-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.kcd-ny-sponsor-card:hover,
+.kcd-ny-sponsor-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: var(--color-primary);
+}
+
+/* Accessibility Features */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
 .navbar-item.has-text-weight-bold {
   font-size: 1.1rem;
 }
