@@ -1,8 +1,13 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import { getSponsorLogo, getSponsorDimensions } from "../utils/sponsor-utils";
+
+export const Head = () => (
+  <Seo title="Sponsors" description="Our valued sponsors for KCD New York 2026. Join us in supporting the NYC cloud native community." />
+);
 
 export default function SponsorsPage() {
   const renderSponsors = (yearData) => {
@@ -37,33 +42,10 @@ export default function SponsorsPage() {
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="kcd-ny-sponsor-card"
                 style={{
                   width: width,
-                  height: height,
-                  border: "1px solid #e0e0e0",
-                  borderRadius: "12px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "white",
-                  color: "#1a2c50",
-                  fontSize: "1.1rem",
-                  fontWeight: "700",
-                  textAlign: "center",
-                  padding: "1.5rem",
-                  boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
-                  transition: "all 0.3s ease",
-                  overflow: "hidden"
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow = "0 8px 15px rgba(0,0,0,0.1)";
-                  e.currentTarget.style.borderColor = "#1a2c50";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.05)";
-                  e.currentTarget.style.borderColor = "#e0e0e0";
+                  height: height
                 }}
               >
                 {logoSrc ? (

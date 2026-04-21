@@ -45,6 +45,50 @@ html {
 
 .kcd-ny-navbar .navbar-burger {
   color: #fff;
+  height: 3.25rem;
+  width: 3.25rem;
+  margin-left: auto;
+  position: relative;
+  display: block !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .kcd-ny-navbar .navbar-burger {
+    display: none !important;
+  }
+}
+
+.kcd-ny-navbar .navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 2px;
+  left: calc(50% - 8px);
+  position: absolute;
+  width: 16px;
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(1) {
+  top: calc(50% - 6px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(2) {
+  top: calc(50% - 1px);
+}
+
+.kcd-ny-navbar .navbar-burger span:nth-child(3) {
+  top: calc(50% + 4px);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kcd-ny-navbar .navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .kcd-ny-navbar .navbar-burger:hover {
@@ -398,8 +442,85 @@ html {
   margin-top: auto;
 }
 
+/* Alternative Speaker Card (Grid) */
+.kcd-ny-speaker-card-alt {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  background: white;
+  color: var(--color-primary);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kcd-ny-speaker-card-alt:hover,
+.kcd-ny-speaker-card-alt:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: var(--color-primary);
+}
+
+.kcd-ny-linkedin-simple {
+  color: #0077b5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.kcd-ny-linkedin-simple:hover,
+.kcd-ny-linkedin-simple:focus {
+  text-decoration: underline;
+}
+
+.kcd-ny-sponsor-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.kcd-ny-sponsor-card:hover,
+.kcd-ny-sponsor-card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border-color: var(--color-primary);
+}
+
+/* Accessibility Features */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
 .navbar-item.has-text-weight-bold {
   font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-brand .navbar-item.has-text-weight-bold {
+    max-width: calc(100vw - 4rem);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 /* Timeline Style */
@@ -547,6 +668,24 @@ html {
   font-weight: 500;
 }
 
+/* Custom Responsive Utilities */
+@media screen and (max-width: 768px) {
+  .mb-5-mobile { margin-bottom: 3rem !important; }
+  .mt-5-mobile { margin-top: 3rem !important; }
+  .mb-6-mobile { margin-bottom: 4.5rem !important; }
+  
+  .is-reversed-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .cta-buttons-container .buttons .button.kcd-ny-cta {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem;
+  }
+}
+
 /* Countdown Styles */
 .kcd-ny-countdown {
   margin-top: 1.5rem;
@@ -573,7 +712,7 @@ html {
 .kcd-ny-countdown-units {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -581,7 +720,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70px;
+  min-width: 60px;
 }
 
 .kcd-ny-countdown-value {
@@ -603,6 +742,15 @@ html {
   }
   .kcd-ny-countdown {
     padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .kcd-ny-countdown-value {
+    font-size: 1.8rem;
+  }
+  .kcd-ny-countdown-units {
+    gap: 1rem;
   }
 }
 
