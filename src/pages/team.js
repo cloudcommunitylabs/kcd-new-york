@@ -1,11 +1,11 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
 
 /* KCD NY brand dark blue for placeholder avatars (matches speaker card style) */
-const AVATAR_BG = "1a2c50";
 
 /**
  * Placeholder avatars (initials) until real photos are added.
@@ -61,6 +61,10 @@ const TEAM = [
     image: "https://media.licdn.com/dms/image/v2/D4E03AQGAwKLESo8Lrg/profile-displayphoto-scale_200_200/B4EZmpQCtaKoAY-/0/1759481181365?e=1772668800&v=beta&t=qm2Xde3s126Ru_DsrxecrPbbgxVIEeHKgW_o5E9e1u0"
   },
 ];
+
+export const Head = () => (
+  <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
+);
 
 export default function TeamPage() {
   return (

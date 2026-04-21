@@ -19,7 +19,8 @@ export default function Layout({ children, title }) {
       <nav className="navbar is-fixed-top kcd-ny-navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item has-text-weight-bold">
-            {eventData.name}
+            <span className="is-hidden-touch">{eventData.name}</span>
+            <span className="is-hidden-desktop">{eventData.shortName}</span>
           </Link>
 
           <button
