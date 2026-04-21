@@ -1,6 +1,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="Privacy Policy" description="KCD New York's privacy policy and data protection information." />;
 
 export default function PrivacyPolicyPage() {
   return (

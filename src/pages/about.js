@@ -1,6 +1,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="About" description="Learn more about Kubernetes Community Days New York and our mission to build bridges in the cloud native community." />;
 
 export default function AboutPage() {
   return (

@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import speakersData from "../content/previous-speakers.json";
 import eventData from "../content/event-data.json";
+import Seo from "../components/seo";
 
 function getInitials(name) {
   if (!name) return "";
@@ -9,6 +10,8 @@ function getInitials(name) {
   if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
   return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
 }
+
+export const Head = () => <Seo title="Previous Speakers" description="Discover the experts and cloud native pioneers who have shared their knowledge at past KCD New York events." />;
 
 export default function PreviousSpeakersPage() {
   const speakers = speakersData.featured || [];

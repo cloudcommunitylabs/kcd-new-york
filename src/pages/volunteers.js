@@ -1,6 +1,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="Volunteers" description="Join the engine room of KCD New York 2026. We're looking for dedicated volunteers to help build our community event." />;
 
 export default function VolunteersPage() {
   const volunteerFormUrl = eventData.links.volunteerForm;

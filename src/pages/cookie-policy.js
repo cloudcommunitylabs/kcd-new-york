@@ -1,5 +1,8 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="Cookie Policy" description="KCD New York's policy regarding the use of cookies and similar technologies." />;
 
 export default function CookiePolicyPage() {
   return (

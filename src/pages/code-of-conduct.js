@@ -1,6 +1,9 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import eventData from "../content/event-data.json";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="Code of Conduct" description="The code of conduct for KCD New York, ensuring a welcoming and harassment-free experience for everyone." />;
 
 export default function CodeOfConductPage() {
   return (

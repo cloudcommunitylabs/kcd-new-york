@@ -3,6 +3,9 @@ import Layout from "../components/layout";
 import speakersData from "../content/speakers.json";
 import eventData from "../content/event-data.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="Speakers" description="Meet the industry experts and visionaries joining us for Kubernetes Community Days New York 2026." />;
 
 function getInitials(name) {
   if (!name) return "";
