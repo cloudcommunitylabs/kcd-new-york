@@ -227,35 +227,35 @@ export default function HomePage() {
       >
         <div className="hero-body">
           <div className="kcd-ny-hero-overlay" />
-          <div className="container kcd-ny-hero-content">
-            <h1 className="title kcd-ny-hero-title kcd-ny-animate-up kcd-ny-delay-1 has-text-centered">
+          <div className="container kcd-ny-hero-content has-text-centered">
+            <h1 className="title kcd-ny-hero-title kcd-ny-animate-up kcd-ny-delay-1">
               {eventData.name}
             </h1>
             
-            <p className="subtitle kcd-ny-hero-subtitle kcd-ny-animate-up kcd-ny-delay-2 has-text-centered">
+            <p className="subtitle kcd-ny-hero-subtitle kcd-ny-animate-up kcd-ny-delay-2">
               Building Bridges in Cloud Native
             </p>
             
-            <div className="kcd-ny-hero-details-box kcd-ny-animate-up kcd-ny-delay-3 has-text-centered">
-              <div className="columns is-mobile is-multiline is-centered">
+            <div className="kcd-ny-hero-details-box kcd-ny-animate-up kcd-ny-delay-3">
+              <div className="columns is-mobile is-multiline is-centered is-vcentered">
                 <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
                   <span className="kcd-ny-hero-label">Date</span>
-                  <span style={{fontWeight: 700}}>{EVENT_DATE}</span>
+                  <span className="is-size-5 has-text-weight-bold">{EVENT_DATE}</span>
                 </div>
                 <div className="column is-hidden-mobile is-narrow kcd-ny-hero-sep">
-                  <div style={{width: "1px", height: "40px", background: "rgba(255,255,255,0.3)"}}></div>
+                  <div style={{width: "1px", height: "40px", background: "rgba(0,0,0,0.1)"}}></div>
                 </div>
                 <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
                   <span className="kcd-ny-hero-label">Venue</span>
-                  <span style={{fontWeight: 700}}>{VENUE}</span>
+                  <span className="is-size-5 has-text-weight-bold">{VENUE}</span>
                 </div>
               </div>
-              <p className="kcd-ny-hero-address mt-3 mb-5">
-                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer">
+              <p className="kcd-ny-hero-address mt-2 mb-5">
+                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer" className="has-text-grey-dark">
                   {ADDRESS}
                 </a>
               </p>
-              <div>
+              <div className="mt-4">
                 <CtaButtons size="large" showLabel={false} />
               </div>
             </div>
