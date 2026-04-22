@@ -1,6 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
+
+export const Head = () => <Seo title="404: Not Found" />;
 
 export default function NotFoundPage() {
   return (

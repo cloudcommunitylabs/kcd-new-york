@@ -5,6 +5,7 @@ import galleryData from "../data/gallery-photos.json";
 
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
+import speakersData from "../content/speakers.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
 import { getSponsorLogo } from "../utils/sponsor-utils";
 import Seo from "../components/seo";
@@ -226,35 +227,35 @@ export default function HomePage() {
       >
         <div className="hero-body">
           <div className="kcd-ny-hero-overlay" />
-          <div className="container kcd-ny-hero-content">
-            <h1 className="title kcd-ny-hero-title kcd-ny-animate-up kcd-ny-delay-1 has-text-centered">
+          <div className="container kcd-ny-hero-content has-text-centered">
+            <h1 className="title kcd-ny-hero-title kcd-ny-animate-up kcd-ny-delay-1">
               {eventData.name}
             </h1>
             
-            <p className="subtitle kcd-ny-hero-subtitle kcd-ny-animate-up kcd-ny-delay-2 has-text-centered">
+            <p className="subtitle kcd-ny-hero-subtitle kcd-ny-animate-up kcd-ny-delay-2">
               Building Bridges in Cloud Native
             </p>
             
-            <div className="kcd-ny-hero-details-box kcd-ny-animate-up kcd-ny-delay-3 has-text-centered">
-              <div className="columns is-mobile is-multiline is-centered">
+            <div className="kcd-ny-hero-details-box kcd-ny-animate-up kcd-ny-delay-3">
+              <div className="columns is-mobile is-multiline is-centered is-vcentered">
                 <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
                   <span className="kcd-ny-hero-label">Date</span>
-                  <span style={{fontWeight: 700}}>{EVENT_DATE}</span>
+                  <span className="is-size-5 has-text-weight-bold">{EVENT_DATE}</span>
                 </div>
                 <div className="column is-hidden-mobile is-narrow kcd-ny-hero-sep">
-                  <div style={{width: "1px", height: "40px", background: "rgba(255,255,255,0.3)"}}></div>
+                  <div style={{width: "1px", height: "40px", background: "rgba(0,0,0,0.1)"}}></div>
                 </div>
                 <div className="column is-12-mobile is-auto-tablet kcd-ny-hero-detail">
                   <span className="kcd-ny-hero-label">Venue</span>
-                  <span style={{fontWeight: 700}}>{VENUE}</span>
+                  <span className="is-size-5 has-text-weight-bold">{VENUE}</span>
                 </div>
               </div>
-              <p className="kcd-ny-hero-address mt-3 mb-5">
-                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer">
+              <p className="kcd-ny-hero-address mt-2 mb-5">
+                <a href={eventData.links.venueMap} target="_blank" rel="noopener noreferrer" className="has-text-grey-dark">
                   {ADDRESS}
                 </a>
               </p>
-              <div>
+              <div className="mt-4">
                 <CtaButtons size="large" showLabel={false} />
               </div>
             </div>
@@ -394,6 +395,165 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Speakers Section - Architectural Modernist Style */}
+      <section className="section" style={{ 
+        background: "#ffffff", 
+        padding: "6rem 1.5rem",
+        position: "relative",
+        overflow: "hidden"
+      }}>
+        {/* Subtle geometric background pattern */}
+        <div style={{
+          position: "absolute",
+          top: "-10%",
+          right: "-5%",
+          width: "40%",
+          height: "40%",
+          background: "radial-gradient(circle, #f0f4f8 2px, transparent 1px)",
+          backgroundSize: "30px 30px",
+          opacity: 0.5,
+          zIndex: 0
+        }} />
+
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ marginBottom: "4rem", textAlign: "center" }}>
+            <span style={{ 
+              color: "#d62293", 
+              fontWeight: "700", 
+              textTransform: "uppercase", 
+              letterSpacing: "2px", 
+              fontSize: "0.85rem",
+              display: "block",
+              marginBottom: "0.5rem"
+            }}>
+              2026 Lineup
+            </span>
+            <h2 className="title is-2" style={{ color: "#1a2c50", fontWeight: "900", letterSpacing: "-1px" }}>
+              Featured Speakers
+            </h2>
+            <div style={{ width: "60px", height: "4px", background: "#1a2c50", margin: "1.5rem auto" }} />
+          </div>
+
+          <div className="columns is-multiline is-centered">
+            {(speakersData["2026"] || [])
+              .filter(s => s.isKeynote || s.isHighlighted)
+              .slice(0, 3)
+              .map((speaker, idx) => {
+                const companyUrls = {
+                  "Akamai": "https://www.akamai.com",
+                  "Solo.io": "https://www.solo.io",
+                  "Diagrid": "https://www.diagrid.io"
+                };
+                const companyUrl = companyUrls[speaker.company];
+
+                return (
+                  <div key={idx} className="column is-4-desktop is-6-tablet">
+                    <div 
+                      style={{ 
+                        height: "100%", 
+                        background: "#fff",
+                        borderRadius: "0px",
+                        borderLeft: "8px solid #1a2c50",
+                        padding: "2rem 1.5rem",
+                        boxShadow: "15px 15px 0px #f0f4f8",
+                        transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                        display: "flex",
+                        flexDirection: "column",
+                        position: "relative"
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.transform = "translate(-6px, -6px)";
+                        e.currentTarget.style.boxShadow = "22px 22px 0px #e2e8f0";
+                        e.currentTarget.style.borderColor = "#d62293";
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.transform = "translate(0, 0)";
+                        e.currentTarget.style.boxShadow = "15px 15px 0px #f0f4f8";
+                        e.currentTarget.style.borderColor = "#1a2c50";
+                      }}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
+                        <figure className="image" style={{ marginRight: "1rem", flexShrink: 0, width: "100px", height: "100px" }}>
+                          <img 
+                            src={speaker.headshot} 
+                            alt={speaker.name}
+                            style={{ objectFit: "cover", height: "100px", width: "100px", filter: "grayscale(5%) contrast(1.05)" }}
+                          />
+                        </figure>
+                        <div style={{ textAlign: "left" }}>
+                           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                              <h3 className="title is-4" style={{ color: "#1a2c50", fontWeight: "800", lineHeight: "1.1", marginBottom: "0", fontSize: "1.3rem" }}>
+                                 {speaker.name}
+                              </h3>
+                              {speaker.linkedin && (
+                                 <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center" }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0077b5">
+                                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                 </a>
+                              )}
+                           </div>
+                           {companyUrl ? (
+                             <a href={companyUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                                <p style={{ color: "#d62293", fontWeight: "700", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "0.3rem" }}>
+                                   {speaker.company}
+                                </p>
+                             </a>
+                           ) : (
+                             <p style={{ color: "#d62293", fontWeight: "700", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "0.3rem" }}>
+                                {speaker.company}
+                             </p>
+                           )}
+                        </div>
+                      </div>
+                      
+                      <div style={{ flexGrow: 1 }}>
+                        <p style={{ 
+                          color: "#4a5568", 
+                          fontSize: "0.85rem", 
+                          lineHeight: "1.4",
+                          fontStyle: "italic",
+                          borderTop: "1px solid #edf2f7",
+                          paddingTop: "1rem"
+                        }}>
+                          {speaker.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+
+          <div className="has-text-centered" style={{ marginTop: "6rem" }}>
+            <a 
+              href="/speakers" 
+              className="button is-large"
+              style={{
+                background: "#1a2c50",
+                color: "white",
+                borderRadius: "0",
+                padding: "1.5rem 3rem",
+                fontWeight: "700",
+                border: "none",
+                boxShadow: "10px 10px 0px #d62293",
+                transition: "all 0.3s ease"
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = "translate(-4px, -4px)";
+                e.currentTarget.style.boxShadow = "14px 14px 0px #d62293";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = "translate(0, 0)";
+                e.currentTarget.style.boxShadow = "10px 10px 0px #d62293";
+              }}
+            >
+              Discover All Speakers
+            </a>
           </div>
         </div>
       </section>

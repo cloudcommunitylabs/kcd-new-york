@@ -1,0 +1,310 @@
+{
+  "2026": [
+    {
+      "name": "Victor S. Recio",
+      "company": "Cloud Native Dominican Republic",
+      "role": "KubeAstronaut \ud83d\ude80 | Docker Captain \ud83d\udc33 | \u2601\ufe0f Cloud & Software Architect | \ud83c\udfe2 ex-Microsoft | \ud83c\udf93Educator & Speaker \ud83d\udce2",
+      "headshot": "https://sessionize.com/image/e6c5-400o400o1-K4dywA5QLM2K3gSpE9XQ3q.png",
+      "linkedin": "https://www.linkedin.com/in/vsrecio"
+    },
+    {
+      "name": "Diana Todea",
+      "company": "VictoriaMetrics",
+      "role": "Developer Experience Engineer",
+      "headshot": "https://sessionize.com/image/5750-400o400o1-QLFFAbDfSXFWB7f29n2559.jpg",
+      "linkedin": "https://www.linkedin.com/in/diana-todea-b2a79968"
+    },
+    {
+      "name": "Carol Valencia",
+      "company": "KrolCloud",
+      "role": "Cloud Architect @ KrolCloud | Open-Source Contributor",
+      "headshot": "https://sessionize.com/image/9593-400o400o1-LSvpExxvU2pKGHKVLCAk6y.jpeg",
+      "linkedin": "https://www.linkedin.com/in/carolgv/"
+    },
+    {
+      "name": "Josh Lee",
+      "company": "Altinity",
+      "role": "Developer Advocate @ Altinity",
+      "headshot": "https://sessionize.com/image/e65d-400o400o1-wEshMTnytiWDS9yazd5K3h.jpg",
+      "linkedin": "https://www.linkedin.com/in/joshuamlee/"
+    },
+    {
+      "name": "Cortney Nickerson",
+      "company": "Nirmata",
+      "role": "Head of Community at Nirmata",
+      "headshot": "https://sessionize.com/image/f30a-400o400o1-DBnwKZV58JxShQyZPir95.jpg",
+      "linkedin": "https://www.linkedin.com/in/cortney-nickerson-26836413a/"
+    },
+    {
+      "name": "Balu Chavan",
+      "company": "NA",
+      "role": "AT&T Services Inc, Lead Tech Product Manager",
+      "headshot": "https://sessionize.com/image/d147-400o400o1-Wb8Rh9YTXAj8ciEWJX9mnW.png",
+      "linkedin": "https://www.linkedin.com/in/balu-chavan/"
+    },
+    {
+      "name": "Nicolas Mengin",
+      "company": "Traefik Labs",
+      "role": "Traefik Maintainer - Head of Development @ TraefikLabs",
+      "headshot": "https://sessionize.com/image/75d2-400o400o1-9hfFUxafgn8NiCbbeD2t9v.png",
+      "linkedin": "https://www.linkedin.com/in/nicolas-mengin-toulouse/"
+    },
+    {
+      "name": "Emile Vauge",
+      "company": "TRAEFIK LABS",
+      "role": "Creator of Traefik - Founder & CTO of Traefik Labs",
+      "headshot": "https://sessionize.com/image/116e-400o400o1-frPxzGQsi8M2YEpXJJuJqe.jpg",
+      "linkedin": "https://www.linkedin.com/in/emilevauge/"
+    },
+    {
+      "name": "Jake Pineda",
+      "company": "CNCF",
+      "role": "Open Source Growth Strategist, Senior Membership Executive, CNCF",
+      "headshot": "https://sessionize.com/image/d6ee-400o400o1-RX1Bt4uXx4wmfyL3bkko4u.jpg",
+      "linkedin": "https://www.linkedin.com/in/jake-p-8348127b/"
+    },
+    {
+      "name": "Brandt Keller",
+      "company": "Defense Unicorns",
+      "role": "Staff Software Engineer | TAG Security Technical Lead | OpenSSF Maintainer",
+      "headshot": "https://sessionize.com/image/572b-400o400o1-HQfzM262p8o3RogLDKPiEC.jpg",
+      "linkedin": "https://www.linkedin.com/in/brandtkeller/"
+    },
+    {
+      "name": "Steven Jin",
+      "company": "Microsoft",
+      "role": "Software Engineer at Microsoft",
+      "headshot": "https://sessionize.com/image/e07d-400o400o1-XgVjv46M3DrSXkH4WUkUpK.jpg",
+      "linkedin": "https://www.linkedin.com/in/stevenjin8/"
+    },
+    {
+      "name": "Henrik Rexed",
+      "company": "Dynatrace",
+      "role": "Dynatrace Cloud Native Advocate",
+      "headshot": "https://sessionize.com/image/5877-400o400o1-fa5dri49BeXdywNsR5mfZL.png",
+      "linkedin": "https://www.linkedin.com/in/hrexed/"
+    },
+    {
+      "name": "Samir Sengupta",
+      "company": "independent",
+      "role": "SyGenticAI, AI/ML ENGINEER, BUILDING AGI",
+      "headshot": "https://sessionize.com/image/2809-400o400o1-NaR4beNvU42sbVqgEdwmTZ.png",
+      "linkedin": "https://www.linkedin.com/in/samirsengupta"
+    },
+    {
+      "name": "Carlos Santana",
+      "company": "AWS",
+      "role": "Sr. Kubernetes Specialist SA, AWS",
+      "headshot": "https://sessionize.com/image/9dc1-400o400o1-a3frfw5LMiXbZBA4gAdzPP.jpeg",
+      "linkedin": "https://www.linkedin.com/in/csantanapr"
+    },
+    {
+      "name": "Raj Saha",
+      "company": "Cloud With Raj",
+      "role": "Founder, Stealth Startup",
+      "headshot": "https://sessionize.com/image/a368-400o400o1-aECLkyN75XhEozMEr1s7ww.png",
+      "linkedin": "https://www.linkedin.com/in/cloudwithraj/"
+    },
+    {
+      "name": "Dwayne McDaniel",
+      "company": "GitGuardian",
+      "role": "Developer Advocate at GitGuardian and huge fan of open source",
+      "headshot": "https://sessionize.com/image/ede4-400o400o1-DcbN39HEhrgYQQ3D95ffwg.png",
+      "linkedin": "https://www.linkedin.com/in/dwaynemcdaniel/"
+    },
+    {
+      "name": "Dylan Page",
+      "company": "Lambda.ai",
+      "role": "Manager, Core Infra @ Lambda | Co-Chair @ K8s SIG Infra | Co-Chair @ CNCF TAG Infrastructure | Maintainer @ Atlantis",
+      "headshot": "https://sessionize.com/image/fa4b-400o400o1-S4vw2ZazaX6RDrG3tihor9.jpg",
+      "linkedin": "https://www.linkedin.com/in/dylandanielpage/"
+    },
+    {
+      "name": "Fabrizio Sgura",
+      "company": "Veritas Automata",
+      "role": "Chief Engineer (Platform Product Business, Distributed Architecture) at Veritas Automata|CNCF Ambassador|Kubestronaut",
+      "headshot": "https://sessionize.com/image/bfc5-400o400o1-smLvQLXx6gvUGyQ9wpGLak.jpg",
+      "linkedin": "https://www.linkedin.com/in/fabrizio-sgura"
+    },
+    {
+      "name": "Graziano Casto",
+      "company": "Akamas",
+      "role": "Developer Relations Engineer @ Akamas | Tech Lead @ CNCF TAG DevEx | Kubernetes v1.35 Comms Lead",
+      "headshot": "https://sessionize.com/image/9d25-400o400o1-wCQjLBc3rcQkAf7SeDdSvV.jpg",
+      "linkedin": "https://www.linkedin.com/in/castograziano/"
+    },
+    {
+      "name": "Dolis Sharma",
+      "company": "Nirmata",
+      "role": "CNCF Ambassador | Solution Architect, Nirmata",
+      "headshot": "https://sessionize.com/image/45c6-400o400o1-NF2KRowC5zV4dAguERMTJG.jpg",
+      "linkedin": "https://www.linkedin.com/in/dolis-sharma-212003129/"
+    },
+    {
+      "name": "Alessandro Cannarella",
+      "company": "Sysdig",
+      "role": "Sysdig, Open Source Engineer II",
+      "headshot": "https://sessionize.com/image/0f1f-400o400o1-BLNcg5QkVZDVkk5cidTKHf.png",
+      "linkedin": ""
+    },
+    {
+      "name": "Aakansha Priya",
+      "company": "Dash0",
+      "role": "Solution Architect at Dash0 | CNCF Ambassador",
+      "headshot": "https://sessionize.com/image/4a3a-400o400o1-7hSVipMZJGdfb1xs874Fvh.jpg",
+      "linkedin": "https://www.linkedin.com/in/aakansha-priya-1782b91a0/"
+    },
+    {
+      "name": "Lewis Denham-Parry",
+      "company": "Edera",
+      "role": " Staff Solutions Architect @ Edera",
+      "headshot": "https://sessionize.com/image/4c52-400o400o1-VbLhYzoEG7geXDFowitJws.jpeg",
+      "linkedin": "https://www.linkedin.com/in/denhamparry/"
+    },
+    {
+      "name": "Mofesola Babalola",
+      "company": "Tempo.io",
+      "role": "Staff Site Reliability Engineer, Tempo",
+      "headshot": "https://sessionize.com/image/4a71-400o400o1-R8MpCLMDyDJmX9iPaUatWj.jpg",
+      "linkedin": "https://www.linkedin.com/in/mofesola/"
+    },
+    {
+      "name": "Hannah Olukoye",
+      "company": "DKB Code Factory",
+      "role": "Google Developer Expert |Engineering Manager",
+      "headshot": "https://sessionize.com/image/5696-400o400o1-WzvsiiWVhmi7XF9uJwaLCV.jpg",
+      "linkedin": "https://www.linkedin.com/in/hannaholukoye/"
+    },
+    {
+      "name": "Tim Banks",
+      "company": "Innovative Solutions",
+      "role": "Solutions Architect, Caylent",
+      "headshot": "https://sessionize.com/image/cff6-400o400o1-R9KhgyuCqZWuMRwpCwpbc8.jpg",
+      "linkedin": "https://www.linkedin.com/in/timjb/"
+    },
+    {
+      "name": "Johan Heimar Prieto Benavides",
+      "company": "Cursacloud ",
+      "role": "Leader Devops",
+      "headshot": "https://sessionize.com/image/0d2b-400o400o1-DTw9erdxbfPgS88UaSKeHf.jpg",
+      "linkedin": "https://www.linkedin.com/in/johan-heimar-p-7a110a167/"
+    },
+    {
+      "name": "Alena Wang",
+      "company": "Capital One",
+      "role": "Sr Lead Software Engineer | GenAI Platform @ Capital One",
+      "headshot": "https://sessionize.com/image/1540-400o400o1-3XUSo8r64kgKFs9mHBkcAW.png",
+      "linkedin": "http://linkedin.com/in/alenawang"
+    },
+    {
+      "name": "Tara Tufano",
+      "company": "Capital One",
+      "role": "Sr Lead Software Engineer",
+      "headshot": "https://sessionize.com/image/bfe1-400o400o1-3EVvAD4v7FJmC93AiiWxQW.jpg",
+      "linkedin": ""
+    },
+    {
+      "name": "Bruno Chauvet",
+      "company": "Rokt",
+      "role": "Compute Platform Lead",
+      "headshot": "https://sessionize.com/image/9fc5-400o400o1-VWY7KMrV16ktLh8BTWXUEA.jpg",
+      "linkedin": "https://www.linkedin.com/in/bruno-chauvet-sydney"
+    },
+    {
+      "name": "Chad M. Crowell",
+      "company": "Akamai",
+      "role": "Principal SRE at Akamai, Author of Acing the CKA Exam Book, K8s Maintainer",
+      "headshot": "https://sessionize.com/image/774a-400o400o1-K23HwFw5ZZKADAFn9gmvYd.jpg",
+      "linkedin": "https://linkedin.com/in/chadmcrowell",
+      "isKeynote": true
+    },
+    {
+      "name": "Lin Sun",
+      "company": "Solo.io",
+      "role": "VP of Open Source at Solo.io, Kubecon Co-Chair, Istio Maintainer",
+      "headshot": "https://sessionize.com/image/b154-400o400o1-UnrH8vnN8XbaR16rnvDHp6.jpg",
+      "linkedin": "https://www.linkedin.com/in/lin-sun-a9b7a81/",
+      "isKeynote": true
+    },
+    {
+      "name": "Mauricio Salatino",
+      "company": "Dash0",
+      "role": "Dapr OSS Maintainer, Author of Platform Engineering on Kubernetes",
+      "headshot": "https://stateofopencon.com/app/uploads/2023/01/mauricio-salaboy-salatino-2-768x768.jpg",
+      "linkedin": "https://www.linkedin.com/in/salaboy/",
+      "isKeynote": true
+    }
+  ],
+  "Previous": [
+    {
+      "name": "Danielle Cook",
+      "company": "Akamai",
+      "role": "CNCF Ambassador",
+      "headshot": "https://unavatar.io/twitter/daniellemcook",
+      "linkedin": "https://www.linkedin.com/in/danielle-cook-/"
+    },
+    {
+      "name": "Daniel Krook",
+      "company": "CNCF",
+      "role": "Senior Director of Developer Experience",
+      "headshot": "https://unavatar.io/github/krook",
+      "linkedin": "https://www.linkedin.com/in/krook"
+    },
+    {
+      "name": "Stephen Augustus",
+      "company": "Cisco",
+      "role": "Head of Open Source",
+      "headshot": "https://unavatar.io/github/stephenaugustus",
+      "linkedin": "https://www.linkedin.com/in/stephenaugustus"
+    },
+    {
+      "name": "Prithvi Raj",
+      "company": "Mirantis",
+      "role": "Community Manager and Developer Advocate",
+      "headshot": "https://unavatar.io/github/prithvi1307",
+      "linkedin": "https://www.linkedin.com/in/prithvi1307"
+    },
+    {
+      "name": "Nic Vermande",
+      "company": "ScaleOps",
+      "role": "Staff Principal Developer Advocate",
+      "headshot": "https://unavatar.io/github/vfiftyfive",
+      "linkedin": "https://www.linkedin.com/in/vnicolas/"
+    },
+    {
+      "name": "Marino Wijay",
+      "company": "Isovalent",
+      "role": "Staff Solutions Architect",
+      "headshot": "https://unavatar.io/github/distributethe6ix",
+      "linkedin": "https://www.linkedin.com/in/mwijay"
+    },
+    {
+      "name": "Sam Weaver",
+      "company": "Plural",
+      "role": "CEO & Co-founder",
+      "headshot": "https://unavatar.io/github/samweaver",
+      "linkedin": "https://www.linkedin.com/in/samuel-weaver"
+    },
+    {
+      "name": "Michael Guarino",
+      "company": "Plural.sh",
+      "role": "CTO & Co-founder",
+      "headshot": "https://unavatar.io/github/michaeljguarino",
+      "linkedin": "https://www.linkedin.com/in/michael-guarino-33652298/"
+    },
+    {
+      "name": "Christian Posta",
+      "company": "Solo.io",
+      "role": "Field CTO",
+      "headshot": "https://unavatar.io/github/christian-posta",
+      "linkedin": "https://www.linkedin.com/in/ceposta"
+    },
+    {
+      "name": "Cornelia Davis",
+      "company": "Temporal Technologies",
+      "role": "Developer Advocate",
+      "headshot": "https://unavatar.io/github/cdavisafc",
+      "linkedin": "https://www.linkedin.com/in/corneliadavis"
+    }
+  ]
+}
