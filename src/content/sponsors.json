@@ -59,6 +59,31 @@
           "url": "https://www.union.ai/"
         }
       ]
+    },
+    {
+      "tier": "Community Partner",
+      "sponsors": [
+        {
+          "name": "Kube Careers",
+          "logo": "./logos/kubecareers.png",
+          "url": "https://kube.careers/"
+        },
+        {
+          "name": "Kube Events",
+          "logo": "./logos/kubeevents.png",
+          "url": "https://kube.events/"
+        },
+        {
+          "name": "KubeFM",
+          "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/KubeFm%25404x_dQ8JETs.png",
+          "url": "https://kube.fm/"
+        },
+        {
+          "name": "OpenSSF",
+          "logo": "./logos/openssf.svg",
+          "url": "https://openssf.org/"
+        }
+      ]
     }
   ],
   "2025": [
@@ -203,12 +228,12 @@
         {
           "name": "Kube Events",
           "logo": "",
-          "url": "https://kubeevents.com/"
+          "url": "https://kube.events/"
         },
         {
           "name": "KubeFM",
           "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/KubeFm%25404x_dQ8JETs.png",
-          "url": "https://kubefm.org/"
+          "url": "https://kube.fm/"
         }
       ]
     },
