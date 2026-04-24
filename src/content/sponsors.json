@@ -14,6 +14,11 @@
       "tier": "Platinum",
       "sponsors": [
         {
+          "name": "Akamai",
+          "logo": "./logos/akamai.png",
+          "url": "https://www.akamai.com/"
+        },
+        {
           "name": "Plural",
           "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png",
           "url": "https://www.plural.sh/"

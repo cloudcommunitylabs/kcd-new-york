@@ -12,8 +12,8 @@
   --color-light: #f5f5f5;
 }
 
-html {
-  font-family: "IBM Plex Sans", "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+html, body, .title, .subtitle, .button, input, select, textarea {
+  font-family: "IBM Plex Sans", "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 .site {
@@ -516,7 +516,7 @@ html {
 .kcd-ny-sponsor-card:focus {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-  border-color: var(--color-secondary);
+  border-color: #a0a0a0;
 }
 
 .kcd-ny-sponsor-card img {
@@ -551,14 +551,10 @@ html {
 }
 
 /* Diamond Tier - Ultra Premium */
-.tier-diamond .kcd-ny-sponsor-card {
-  border: 2px solid #b9f2ff;
-  background: linear-gradient(145deg, #ffffff 0%, #f0faff 100%);
-  box-shadow: 0 10px 25px rgba(185, 242, 255, 0.3);
-}
+
 
 .tier-diamond .tier-header {
-  color: #0089b3 !important;
+  color: #0089b3;
   text-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -567,14 +563,10 @@ html {
 }
 
 /* Platinum Tier - Refined Premium */
-.tier-platinum .kcd-ny-sponsor-card {
-  border: 2px solid #e5e4e2;
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
+
 
 .tier-platinum .tier-header {
-  color: #4a4a4a !important;
+  color: #4a4a4a;
 }
 
 .tier-platinum .tier-header::after {
@@ -582,14 +574,10 @@ html {
 }
 
 /* Gold Tier - Vibrant & Warm */
-.tier-gold .kcd-ny-sponsor-card {
-  border: 2px solid #ffd700;
-  background: linear-gradient(145deg, #ffffff 0%, #fffdf0 100%);
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.15);
-}
+
 
 .tier-gold .tier-header {
-  color: #c5a000 !important;
+  color: #c5a000;
 }
 
 .tier-gold .tier-header::after {
@@ -597,15 +585,11 @@ html {
 }
 
 /* Community & Bronze - Clean & Accessible */
-.tier-community .kcd-ny-sponsor-card,
-.tier-bronze .kcd-ny-sponsor-card {
-  border: 1px solid #e0e0e0;
-  background: #fff;
-}
+
 
 .tier-community .tier-header,
 .tier-bronze .tier-header {
-  color: var(--color-primary) !important;
+  color: var(--color-primary);
 }
 
 .tier-community .tier-header::after,
@@ -614,13 +598,10 @@ html {
 }
 
 /* Reception Event - Festive & Special */
-.tier-reception .kcd-ny-sponsor-card {
-  border: 2px dashed var(--color-secondary);
-  background: linear-gradient(145deg, #fff 0%, #fff5f2 100%);
-}
+
 
 .tier-reception .tier-header {
-  color: var(--color-secondary) !important;
+  color: var(--color-secondary);
 }
 
 .tier-reception .tier-header::after {
@@ -636,8 +617,6 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   opacity: 0.03;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -647,6 +626,32 @@ html {
 .tier-section {
   position: relative;
   z-index: 1;
+  padding: 2rem 0;
+}
+
+.tier-header-massive {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(26, 44, 80, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.sponsor-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* Animations */

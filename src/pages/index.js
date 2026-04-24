@@ -7,7 +7,7 @@ import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import speakersData from "../content/speakers.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
-import { getSponsorLogo } from "../utils/sponsor-utils";
+import { getSponsorLogo, getTierClass } from "../utils/sponsor-utils";
 import Seo from "../components/seo";
 
 
@@ -583,11 +583,7 @@ export default function HomePage() {
               {[1, 2].map((loopIdx) => (
                 <React.Fragment key={`loop-${loopIdx}`}>
                   {sponsorsData[eventData.year] && sponsorsData[eventData.year].map(tier => {
-                    const tierClass = tier.tier.toLowerCase();
-                    let mappedClass = "";
-                    if (tierClass.includes("diamond")) mappedClass = "tier-diamond";
-                    else if (tierClass.includes("platinum")) mappedClass = "tier-platinum";
-                    else if (tierClass.includes("gold")) mappedClass = "tier-gold";
+                    const mappedClass = getTierClass(tier.tier);
 
                     return tier.sponsors.map((sponsor, idx) => {
                       const logoSrc = getSponsorLogo(sponsor.logo);
