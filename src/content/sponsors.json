@@ -1,6 +1,16 @@
 {
   "2026": [
     {
+      "tier": "Diamond",
+      "sponsors": [
+        {
+          "name": "UnionAI",
+          "logo": "./logos/unionai.png",
+          "url": "https://www.union.ai/"
+        }
+      ]
+    },
+    {
       "tier": "Platinum",
       "sponsors": [
         {
@@ -52,11 +62,6 @@
           "name": "Red Hat",
           "logo": "./logos/redhat.png",
           "url": "https://www.redhat.com/"
-        },
-        {
-          "name": "UnionAI",
-          "logo": "./logos/unionai.png",
-          "url": "https://www.union.ai/"
         }
       ]
     },

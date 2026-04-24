@@ -508,16 +508,170 @@ html {
   text-align: center;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   overflow: hidden;
 }
 
 .kcd-ny-sponsor-card:hover,
 .kcd-ny-sponsor-card:focus {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-  border-color: var(--color-primary);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-color: var(--color-secondary);
 }
+
+.kcd-ny-sponsor-card img {
+  transition: transform 0.4s ease;
+}
+
+.kcd-ny-sponsor-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tier Specific Styles */
+.tier-header {
+  position: relative;
+  display: inline-block;
+  padding: 0 2rem 0.5rem;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tier-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--color-secondary);
+  border-radius: 2px;
+}
+
+/* Diamond Tier - Ultra Premium */
+.tier-diamond .kcd-ny-sponsor-card {
+  border: 2px solid #b9f2ff;
+  background: linear-gradient(145deg, #ffffff 0%, #f0faff 100%);
+  box-shadow: 0 10px 25px rgba(185, 242, 255, 0.3);
+}
+
+.tier-diamond .tier-header {
+  color: #0089b3 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tier-diamond .tier-header::after {
+  background: linear-gradient(90deg, #b9f2ff, #0089b3);
+}
+
+/* Platinum Tier - Refined Premium */
+.tier-platinum .kcd-ny-sponsor-card {
+  border: 2px solid #e5e4e2;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tier-platinum .tier-header {
+  color: #4a4a4a !important;
+}
+
+.tier-platinum .tier-header::after {
+  background: linear-gradient(90deg, #e5e4e2, #a0a0a0);
+}
+
+/* Gold Tier - Vibrant & Warm */
+.tier-gold .kcd-ny-sponsor-card {
+  border: 2px solid #ffd700;
+  background: linear-gradient(145deg, #ffffff 0%, #fffdf0 100%);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.15);
+}
+
+.tier-gold .tier-header {
+  color: #c5a000 !important;
+}
+
+.tier-gold .tier-header::after {
+  background: linear-gradient(90deg, #ffd700, #c5a000);
+}
+
+/* Community & Bronze - Clean & Accessible */
+.tier-community .kcd-ny-sponsor-card,
+.tier-bronze .kcd-ny-sponsor-card {
+  border: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.tier-community .tier-header,
+.tier-bronze .tier-header {
+  color: var(--color-primary) !important;
+}
+
+.tier-community .tier-header::after,
+.tier-bronze .tier-header::after {
+  background: var(--color-primary-light);
+}
+
+/* Reception Event - Festive & Special */
+.tier-reception .kcd-ny-sponsor-card {
+  border: 2px dashed var(--color-secondary);
+  background: linear-gradient(145deg, #fff 0%, #fff5f2 100%);
+}
+
+.tier-reception .tier-header {
+  color: var(--color-secondary) !important;
+}
+
+.tier-reception .tier-header::after {
+  background: repeating-linear-gradient(45deg, var(--color-secondary), var(--color-secondary) 10px, #fff 10px, #fff 20px);
+}
+
+/* Background Texture Utilities */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.tier-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
 
 /* Accessibility Features */
 button:focus-visible,
@@ -700,6 +854,21 @@ a:focus-visible {
     width: 100%;
     margin-right: 0 !important;
     margin-bottom: 0.75rem;
+  }
+
+  .tier-header {
+    font-size: 1.5rem !important;
+    margin-bottom: 2rem;
+  }
+
+  .kcd-ny-sponsor-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Faster animations on mobile */
+  .animate-up {
+    animation-duration: 0.5s;
   }
 }
 

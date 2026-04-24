@@ -10,16 +10,22 @@ export const Head = () => (
 );
 
 export default function SponsorsPage() {
+  const getTierClass = (tierName) => {
+    const tier = tierName.toLowerCase();
+    if (tier.includes("diamond")) return "tier-diamond";
+    if (tier.includes("platinum")) return "tier-platinum";
+    if (tier.includes("gold")) return "tier-gold";
+    if (tier.includes("bronze")) return "tier-bronze";
+    if (tier.includes("community")) return "tier-community";
+    if (tier.includes("reception")) return "tier-reception";
+    return "";
+  };
+
   const renderSponsors = (yearData) => {
     return yearData.map((tier) => (
-      <div key={tier.tier} style={{ marginBottom: "4rem" }}>
-        <div style={{
-          textAlign: "center",
-          marginBottom: "2rem",
-          paddingBottom: "1rem",
-          borderBottom: "2px solid #1a2c50"
-        }}>
-          <h3 className="title is-3" style={{ color: "#1a2c50" }}>
+      <div key={tier.tier} className={`tier-section ${getTierClass(tier.tier)}`} style={{ marginBottom: "6rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <h3 className="tier-header is-size-3">
             {tier.tier}
           </h3>
         </div>
@@ -28,13 +34,15 @@ export default function SponsorsPage() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "2rem",
+            gap: "2.5rem",
             justifyContent: "center"
           }}
         >
           {tier.sponsors.map((sponsor, idx) => {
             const { width, height } = getSponsorDimensions(tier.tier, sponsor.scale || 1, true);
             const logoSrc = getSponsorLogo(sponsor.logo);
+            // Apply staggered delay classes (1 to 6)
+            const delayClass = `delay-${(idx % 6) + 1}`;
 
             return (
               <a
@@ -42,7 +50,7 @@ export default function SponsorsPage() {
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="kcd-ny-sponsor-card"
+                className={`kcd-ny-sponsor-card animate-up ${delayClass}`}
                 style={{
                   width: width,
                   height: height
@@ -59,7 +67,7 @@ export default function SponsorsPage() {
                     }}
                   />
                 ) : (
-                  sponsor.name
+                  <span className="has-text-weight-bold">{sponsor.name}</span>
                 )}
               </a>
             );
@@ -109,7 +117,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Current Sponsors */}
-      <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
+      <section className="section bg-grain" style={{ background: "white", padding: "4rem 1.5rem" }}>
         <div className="container">
           <h2 className="title is-2 has-text-centered" style={{ marginBottom: "1rem" }}>
             Our {eventData.year} Sponsors
@@ -134,7 +142,7 @@ export default function SponsorsPage() {
         .filter(year => year !== eventData.year)
         .sort((a, b) => b - a)
         .map(year => (
-          <section key={year} className="section" style={{ background: "#f9f9f9", padding: "4rem 1.5rem" }}>
+          <section key={year} className="section bg-grain" style={{ background: "#f9f9f9", padding: "4rem 1.5rem" }}>
             <div className="container">
               <h2 className="title is-2 has-text-centered" style={{ marginBottom: "1rem" }}>
                 Past Editions Sponsors ({year})
