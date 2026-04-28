@@ -1462,3 +1462,49 @@ a:focus-visible,
   object-fit: contain;
 }
 
+/* ========================================
+   Sessionize Embed Custom Styling
+   ======================================== */
+
+/* Unified tag styling: White background, Black text, Black border */
+.sz-session__room, 
+.sz-session__type,
+.sz-tag[data-categoryname="session_type"],
+.sz-tag[data-categoryname="topic"],
+.sz-tag[data-categoryname="level"] {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #000000 !important;
+}
+
+/* Icons for context, following black/white theme */
+.sz-session__room:before {
+  content: "📍 ";
+}
+
+.sz-tag[data-categoryname="topic"]:before {
+  content: "🏷️ ";
+}
+
+.sz-tag[data-categoryname="level"]:before {
+  content: "📊 ";
+}
+
+.sz-session__type:before,
+.sz-tag[data-categoryname="session_type"]:before {
+  content: "✨ ";
+}
+
+/* SpeakerWall Spacing */
+.sz-speaker__name {
+  margin-bottom: 1rem !important;
+  display: block;
+}
+
