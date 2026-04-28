@@ -5,6 +5,11 @@
   "year": "2026",
   "links": {
     "cfp": "https://sessionize.com/kcd-new-york-2026/",
+    "sessionizeId": "ub0c1f4u",
+    "sessionizeEmbeds": {
+      "schedule": "GridSmart",
+      "speakers": "SpeakerWall"
+    },
     "registration": "https://tickets.kcdnewyork.com",
     "sponsorProspectus": "https://www.canva.com/design/DAG9pfEWHV8/wYffjPEQ02UCKhPyWqyuKg/view",
     "venueMap": "https://maps.app.goo.gl/oWPRrwrqbjfiqxh29",
@@ -15,7 +20,9 @@
     "registrationEnabled": true,
     "showSponsorProspectus": true,
     "showPreviousSponsors": false,
-    "showPreviousSpeakers": false
+    "showPreviousSpeakers": false,
+    "useSessionizeSchedule": true,
+    "useSessionizeSpeakers": true
   },
   "venue": {
     "name": "Convene One Liberty Plaza",

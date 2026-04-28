@@ -5,7 +5,6 @@ import galleryData from "../data/gallery-photos.json";
 
 import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
-import speakersData from "../content/speakers.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
 import { getSponsorLogo } from "../utils/sponsor-utils";
 import Seo from "../components/seo";
@@ -14,6 +13,30 @@ import Seo from "../components/seo";
 const EVENT_DATE = eventData.date;
 const VENUE = eventData.venue.name;
 const ADDRESS = eventData.venue.address;
+
+const KEYNOTES = [
+  {
+    name: "Lin Sun",
+    company: "Solo.io",
+    role: "VP of Open Source at Solo.io, Kubecon Co-Chair, Istio Maintainer",
+    headshot: "https://sessionize.com/image/b154-400o400o1-UnrH8vnN8XbaR16rnvDHp6.jpg",
+    linkedin: "https://www.linkedin.com/in/lin-sun-a9b7a81/"
+  },
+  {
+    name: "Mauricio Salatino",
+    company: "Dash0",
+    role: "Dapr OSS Maintainer, Author of Platform Engineering on Kubernetes",
+    headshot: "https://stateofopencon.com/app/uploads/2023/01/mauricio-salaboy-salatino-2-768x768.jpg",
+    linkedin: "https://www.linkedin.com/in/salaboy/"
+  },
+  {
+    name: "Chad M. Crowell",
+    company: "Akamai",
+    role: "Principal SRE at Akamai, Author of Acing the CKA Exam Book, K8s Maintainer",
+    headshot: "https://sessionize.com/image/774a-400o400o1-K23HwFw5ZZKADAFn9gmvYd.jpg",
+    linkedin: "https://linkedin.com/in/chadmcrowell"
+  }
+];
 
 export const Head = () => {
   const eventDateISO = new Date(eventData.date).toISOString().split('T')[0];
@@ -90,7 +113,7 @@ const WHAT_TO_EXPECT = [
 const KEY_DATES = eventData.keyDates;
 
 function CtaButtons({ size = "medium", showLabel = true }) {
-  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible, isEventOver } = getEventLifecycle(eventData);
+  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible, isScheduleLive, isEventOver } = getEventLifecycle(eventData);
 
   if (isEventOver) {
     return (
@@ -117,6 +140,16 @@ function CtaButtons({ size = "medium", showLabel = true }) {
           <span className={`button kcd-ny-cta is-${size}`} aria-disabled="true" style={{ opacity: 0.8, cursor: "not-allowed" }}>
             Register (coming soon)
           </span>
+        )}
+
+        {isScheduleLive && (
+          <a
+            href="/schedule"
+            className={`button kcd-ny-cta is-${size} is-outlined`}
+            style={{ borderColor: "white", color: "white" }}
+          >
+            View Full Schedule
+          </a>
         )}
 
         {isCfpOpen && (
@@ -213,7 +246,13 @@ function Countdown() {
   );
 }
 
-export default function HomePage() {
+const LinkedInIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+  </svg>
+);
+
+export default function IndexPage() {
   return (
     <Layout>
       {/* Hero with elegant glassmorphism and motion */}
@@ -433,100 +472,78 @@ export default function HomePage() {
               2026 Lineup
             </span>
             <h2 className="title is-2" style={{ color: "#1a2c50", fontWeight: "900", letterSpacing: "-1px" }}>
-              Featured Speakers
+              Keynote Speakers
             </h2>
             <div style={{ width: "60px", height: "4px", background: "#1a2c50", margin: "1.5rem auto" }} />
           </div>
 
           <div className="columns is-multiline is-centered">
-            {(speakersData["2026"] || [])
-              .filter(s => s.isKeynote || s.isHighlighted)
-              .slice(0, 3)
-              .map((speaker, idx) => {
-                const companyUrls = {
-                  "Akamai": "https://www.akamai.com",
-                  "Solo.io": "https://www.solo.io",
-                  "Diagrid": "https://www.diagrid.io"
-                };
-                const companyUrl = companyUrls[speaker.company];
-
-                return (
-                  <div key={idx} className="column is-4-desktop is-6-tablet">
-                    <div 
-                      style={{ 
-                        height: "100%", 
-                        background: "#fff",
-                        borderRadius: "0px",
-                        borderLeft: "8px solid #1a2c50",
-                        padding: "2rem 1.5rem",
-                        boxShadow: "15px 15px 0px #f0f4f8",
-                        transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
-                        display: "flex",
-                        flexDirection: "column",
-                        position: "relative"
-                      }}
-                      onMouseOver={(e) => {
-                        e.currentTarget.style.transform = "translate(-6px, -6px)";
-                        e.currentTarget.style.boxShadow = "22px 22px 0px #e2e8f0";
-                        e.currentTarget.style.borderColor = "#d62293";
-                      }}
-                      onMouseOut={(e) => {
-                        e.currentTarget.style.transform = "translate(0, 0)";
-                        e.currentTarget.style.boxShadow = "15px 15px 0px #f0f4f8";
-                        e.currentTarget.style.borderColor = "#1a2c50";
-                      }}
-                    >
-                      <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
-                        <figure className="image" style={{ marginRight: "1rem", flexShrink: 0, width: "100px", height: "100px" }}>
-                          <img 
-                            src={speaker.headshot} 
-                            alt={speaker.name}
-                            style={{ objectFit: "cover", height: "100px", width: "100px", filter: "grayscale(5%) contrast(1.05)" }}
-                          />
-                        </figure>
-                        <div style={{ textAlign: "left" }}>
-                           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                              <h3 className="title is-4" style={{ color: "#1a2c50", fontWeight: "800", lineHeight: "1.1", marginBottom: "0", fontSize: "1.3rem" }}>
-                                 {speaker.name}
-                              </h3>
-                              {speaker.linkedin && (
-                                 <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center" }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0077b5">
-                                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </svg>
-                                 </a>
-                              )}
-                           </div>
-                           {companyUrl ? (
-                             <a href={companyUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
-                                <p style={{ color: "#d62293", fontWeight: "700", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "0.3rem" }}>
-                                   {speaker.company}
-                                </p>
+            {KEYNOTES.map((speaker, idx) => (
+              <div key={idx} className="column is-4-desktop is-6-tablet">
+                <div 
+                  style={{ 
+                    height: "100%", 
+                    background: "#fff",
+                    borderRadius: "0px",
+                    borderLeft: "8px solid #1a2c50",
+                    padding: "2rem 1.5rem",
+                    boxShadow: "15px 15px 0px #f0f4f8",
+                    transition: "all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "relative"
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "translate(-6px, -6px)";
+                    e.currentTarget.style.boxShadow = "22px 22px 0px #e2e8f0";
+                    e.currentTarget.style.borderColor = "#d62293";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "translate(0, 0)";
+                    e.currentTarget.style.boxShadow = "15px 15px 0px #f0f4f8";
+                    e.currentTarget.style.borderColor = "#1a2c50";
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem" }}>
+                    <figure className="image" style={{ marginRight: "1rem", flexShrink: 0, width: "100px", height: "100px" }}>
+                      <img 
+                        src={speaker.headshot} 
+                        alt={speaker.name}
+                        style={{ objectFit: "cover", height: "100px", width: "100px", filter: "grayscale(5%) contrast(1.05)" }}
+                      />
+                    </figure>
+                    <div style={{ textAlign: "left" }}>
+                       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                          <h3 className="title is-4" style={{ color: "#1a2c50", fontWeight: "800", lineHeight: "1.1", marginBottom: "0", fontSize: "1.3rem" }}>
+                             {speaker.name}
+                          </h3>
+                          {speaker.linkedin && (
+                             <a href={speaker.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center" }}>
+                                <LinkedInIcon />
                              </a>
-                           ) : (
-                             <p style={{ color: "#d62293", fontWeight: "700", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "0.3rem" }}>
-                                {speaker.company}
-                             </p>
-                           )}
-                        </div>
-                      </div>
-                      
-                      <div style={{ flexGrow: 1 }}>
-                        <p style={{ 
-                          color: "#4a5568", 
-                          fontSize: "0.85rem", 
-                          lineHeight: "1.4",
-                          fontStyle: "italic",
-                          borderTop: "1px solid #edf2f7",
-                          paddingTop: "1rem"
-                        }}>
-                          {speaker.role}
-                        </p>
-                      </div>
+                          )}
+                       </div>
+                       <p style={{ color: "#d62293", fontWeight: "700", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.5px", marginTop: "0.8rem" }}>
+                          {speaker.company}
+                       </p>
                     </div>
                   </div>
-                );
-              })}
+                  
+                  <div style={{ flexGrow: 1 }}>
+                    <p style={{ 
+                      color: "#4a5568", 
+                      fontSize: "0.85rem", 
+                      lineHeight: "1.4",
+                      fontStyle: "italic",
+                      borderTop: "1px solid #edf2f7",
+                      paddingTop: "1rem"
+                    }}>
+                      {speaker.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="has-text-centered" style={{ marginTop: "6rem" }}>

@@ -18,6 +18,11 @@ export const getEventLifecycle = (eventData) => {
 
   // Previous speakers visibility
   const isShowPreviousSpeakersVisible = eventData.features?.showPreviousSpeakers;
+
+  // Sessionize status
+  const isScheduleLive = eventData.features?.useSessionizeSchedule;
+  const useSessionizeSpeakers = eventData.features?.useSessionizeSpeakers;
+
   // Event is over if current date is after the event date
   const eventDate = new Date(eventData.date);
   // Add 1 day to the event date to ensure it stays "live" during the actual day
@@ -30,6 +35,8 @@ export const getEventLifecycle = (eventData) => {
     isRegistrationOpen,
     isSponsorProspectusVisible,
     isShowPreviousSpeakersVisible,
+    isScheduleLive,
+    useSessionizeSpeakers,
     isEventOver,
     now
   };
