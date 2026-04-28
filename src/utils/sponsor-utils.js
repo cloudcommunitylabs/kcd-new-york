@@ -46,10 +46,32 @@ export const getSponsorDimensions = (tierName, scale = 1, isLargePage = false) =
   };
 
   const source = isLargePage ? largeDimensions : baseDimensions;
-  const base = source[tierName] || source.Default;
+  
+  // Find the best matching tier key
+  const tierKey = Object.keys(source).find(key => 
+    tierName.toLowerCase().includes(key.toLowerCase())
+  );
+  
+  const base = source[tierKey] || source.Default;
   
   return {
     width: `${base.width * scale}px`,
     height: `${base.height * scale}px`
   };
+};
+
+/**
+ * Maps a sponsorship tier name to its corresponding CSS class.
+ * @param {string} tierName - The name of the tier.
+ * @returns {string} The CSS class name.
+ */
+export const getTierClass = (tierName) => {
+  const tier = tierName.toLowerCase();
+  if (tier.includes("diamond")) return "tier-diamond";
+  if (tier.includes("platinum")) return "tier-platinum";
+  if (tier.includes("gold")) return "tier-gold";
+  if (tier.includes("bronze")) return "tier-bronze";
+  if (tier.includes("community")) return "tier-community";
+  if (tier.includes("reception")) return "tier-reception";
+  return "";
 };

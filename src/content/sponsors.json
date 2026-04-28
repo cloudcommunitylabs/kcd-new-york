@@ -1,8 +1,23 @@
 {
   "2026": [
     {
+      "tier": "Diamond",
+      "sponsors": [
+        {
+          "name": "UnionAI",
+          "logo": "./logos/unionai.png",
+          "url": "https://www.union.ai/"
+        }
+      ]
+    },
+    {
       "tier": "Platinum",
       "sponsors": [
+        {
+          "name": "Akamai",
+          "logo": "./logos/akamai.png",
+          "url": "https://www.akamai.com/"
+        },
         {
           "name": "Plural",
           "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Plural%25404x_Gnlu4Fj.png",
@@ -52,11 +67,6 @@
           "name": "Red Hat",
           "logo": "./logos/redhat.png",
           "url": "https://www.redhat.com/"
-        },
-        {
-          "name": "UnionAI",
-          "logo": "./logos/unionai.png",
-          "url": "https://www.union.ai/"
         }
       ]
     },

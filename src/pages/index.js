@@ -7,7 +7,7 @@ import eventData from "../content/event-data.json";
 import sponsorsData from "../content/sponsors.json";
 import speakersData from "../content/speakers.json";
 import { getEventLifecycle } from "../utils/event-lifecycle";
-import { getSponsorLogo } from "../utils/sponsor-utils";
+import { getSponsorLogo, getTierClass } from "../utils/sponsor-utils";
 import Seo from "../components/seo";
 
 
@@ -559,38 +559,57 @@ export default function HomePage() {
       </section>
 
       {/* Featured Sponsors Section */}
-      <section className="section" style={{ background: "white", padding: "4rem 1.5rem" }}>
+      <section className="section bg-grain" style={{ background: "white", padding: "4rem 1.5rem" }}>
         <div className="container">
-          <h2 className="title is-3 has-text-centered">Our {eventData.year} Sponsors</h2>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <span style={{ 
+              color: "#d62293", 
+              fontWeight: "700", 
+              textTransform: "uppercase", 
+              letterSpacing: "2px", 
+              fontSize: "0.85rem",
+              display: "block",
+              marginBottom: "0.5rem"
+            }}>
+              Partners
+            </span>
+            <h2 className="title is-3" style={{ color: "#1a2c50", fontWeight: "900" }}>Our {eventData.year} Sponsors</h2>
+            <div style={{ width: "40px", height: "3px", background: "#1a2c50", margin: "1rem auto" }} />
+          </div>
+          
           <div className="mt-6 sponsor-marquee">
             <div className="sponsor-marquee-track">
               {/* Loop twice to make the infinite animation seamless */}
               {[1, 2].map((loopIdx) => (
                 <React.Fragment key={`loop-${loopIdx}`}>
-                  {sponsorsData[eventData.year] && sponsorsData[eventData.year].flatMap(tier => tier.sponsors).map((sponsor, idx) => {
-                    const logoSrc = getSponsorLogo(sponsor.logo);
-                    return (
-                      <a 
-                        key={`${loopIdx}-${idx}`} 
-                        href={sponsor.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="sponsor-marquee-item"
-                      >
-                        {logoSrc ? (
-                          <img src={logoSrc} alt={sponsor.name} />
-                        ) : (
-                          <span className="title is-4">{sponsor.name}</span>
-                        )}
-                      </a>
-                    );
+                  {sponsorsData[eventData.year] && sponsorsData[eventData.year].map(tier => {
+                    const mappedClass = getTierClass(tier.tier);
+
+                    return tier.sponsors.map((sponsor, idx) => {
+                      const logoSrc = getSponsorLogo(sponsor.logo);
+                      return (
+                        <a 
+                          key={`${loopIdx}-${tier.tier}-${idx}`} 
+                          href={sponsor.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className={`sponsor-marquee-item ${mappedClass}`}
+                        >
+                          {logoSrc ? (
+                            <img src={logoSrc} alt={sponsor.name} />
+                          ) : (
+                            <span className="title is-4">{sponsor.name}</span>
+                          )}
+                        </a>
+                      );
+                    });
                   })}
                 </React.Fragment>
               ))}
             </div>
           </div>
           <div className="has-text-centered mt-6">
-            <a href="/sponsors" className="button is-outlined kcd-ny-button-secondary">
+            <a href="/sponsors" className="button is-outlined kcd-ny-button-secondary" style={{ borderRadius: "0", borderWidth: "2px" }}>
               View All Sponsors
             </a>
           </div>
