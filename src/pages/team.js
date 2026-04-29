@@ -4,25 +4,7 @@ import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 import teamData from "../content/team.json";
 
-/* Local image imports */
-import ahmedImg from "../images/team/ahmed-bebars.jpg";
-import cedricImg from "../images/team/cedric-clyburn.jpg";
-import juliaImg from "../images/team/julia-furst-morgado.jpg";
-import kellyImg from "../images/team/kelly-revenaugh.jpg";
-import scottImg from "../images/team/scott-rigby.jpg";
-import christopherImg from "../images/team/christopher-tineo.jpg";
-
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
-
-// Map IDs from JSON to imported image objects
-const imageMap = {
-  "ahmed-bebars": ahmedImg,
-  "cedric-clyburn": cedricImg,
-  "julia-furst-morgado": juliaImg,
-  "kelly-revenaugh": kellyImg,
-  "scott-rigby": scottImg,
-  "christopher-tineo": christopherImg,
-};
 
 export const Head = () => (
   <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
@@ -52,7 +34,7 @@ export default function TeamPage() {
                 <div className="card kcd-ny-speaker-card">
                   <div className="card-image kcd-ny-card-image">
                     <figure className="image kcd-ny-avatar-circle">
-                      <img src={imageMap[person.id]} alt={person.name} />
+                      <img src={person.image} alt={person.name} />
                     </figure>
                   </div>
                   <div className="card-content kcd-ny-card-content">

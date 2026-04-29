@@ -5,7 +5,8 @@
     "role": "Principal Engineer",
     "company": "The New York Times",
     "eventRole": "Finance and Budgeting, Event Planner",
-    "linkedin": "https://www.linkedin.com/in/ahmedbebars/"
+    "linkedin": "https://www.linkedin.com/in/ahmedbebars/",
+    "image": "../images/team/ahmed-bebars.jpg"
   },
   {
     "id": "cedric-clyburn",
@@ -13,7 +14,8 @@
     "role": "Senior Developer Advocate",
     "company": "Red Hat",
     "eventRole": "AV and Media Recording",
-    "linkedin": "https://www.linkedin.com/in/cedricclyburn/"
+    "linkedin": "https://www.linkedin.com/in/cedricclyburn/",
+    "image": "../images/team/cedric-clyburn.jpg"
   },
   {
     "id": "julia-furst-morgado",
@@ -21,7 +23,8 @@
     "role": "Principal Developer Relations Engineer",
     "company": "Dash0",
     "eventRole": "Sponsors Support, Event Planner, Volunteers Coordination",
-    "linkedin": "https://www.linkedin.com/in/juliafmorgado/"
+    "linkedin": "https://www.linkedin.com/in/juliafmorgado/",
+    "image": "../images/team/julia-furst-morgado.jpg"
   },
   {
     "id": "kelly-revenaugh",
@@ -29,7 +32,8 @@
     "role": "Community Experience Lead",
     "company": "Testkube",
     "eventRole": "Marketing and Promotion, Event Planner",
-    "linkedin": "https://www.linkedin.com/in/kellyrevenaugh/"
+    "linkedin": "https://www.linkedin.com/in/kellyrevenaugh/",
+    "image": "../images/team/kelly-revenaugh.jpg"
   },
   {
     "id": "scott-rigby",
@@ -37,7 +41,8 @@
     "role": "Helm project maintainer",
     "company": "Replicated",
     "eventRole": "Program",
-    "linkedin": "https://www.linkedin.com/in/scottrigby/"
+    "linkedin": "https://www.linkedin.com/in/scottrigby/",
+    "image": "../images/team/scott-rigby.jpg"
   },
   {
     "id": "christopher-tineo",
@@ -45,6 +50,7 @@
     "role": "Senior DevOps Engineer",
     "company": "Game Plan Tech",
     "eventRole": "Program, Event Planner, Volunteers Coordination",
-    "linkedin": "https://www.linkedin.com/in/christopher-tineo/"
+    "linkedin": "https://www.linkedin.com/in/christopher-tineo/",
+    "image": "../images/team/christopher-tineo.jpg"
   }
 ]
