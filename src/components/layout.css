@@ -280,13 +280,21 @@ html, body, .title, .subtitle, .button, input, select, textarea {
   object-fit: cover;
 }
 
-/* Centered card content – no overlap, good contrast for role text */
+/* Centered card content – improved overflow handling */
 .kcd-ny-card-content {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem 1.5rem 1.5rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.kcd-ny-speaker-card .title,
+.kcd-ny-speaker-card .subtitle {
+  width: 100%;
 }
 
 .kcd-ny-organizer-name {
