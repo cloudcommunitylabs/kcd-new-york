@@ -2,65 +2,9 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
+import teamData from "../content/team.json";
 
 const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
-
-/* KCD NY brand dark blue for placeholder avatars (matches speaker card style) */
-
-/**
- * Placeholder avatars (initials) until real photos are added.
- * LinkedIn URLs: replace with each organizer's real profile (e.g. linkedin.com/in/username).
- */
-const TEAM = [
-  {
-    name: "Ahmed Bebars",
-    role: "Principal Engineer",
-    company: "The New York Times",
-    eventRole: "Finance and Budgeting, Event Planner",
-    linkedin: "https://www.linkedin.com/in/ahmedbebars/",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQF0yGgn_72DQA/profile-displayphoto-shrink_800_800/B4EZNpS2QUH0Ak-/0/1732638369119?e=1772668800&v=beta&t=TIZPi_H-ZWKme2j-7DIbWn4w4EjCA6XRZ-6F-7oUKpM"
-  },
-  {
-    name: "Cedric Clyburn",
-    role: "Senior Developer Advocate ",
-    company: "Red Hat",
-    eventRole: "AV and Media Recording",
-    linkedin: "https://www.linkedin.com/in/cedricclyburn/",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQHgxZvXMUiKFQ/profile-displayphoto-crop_800_800/B4EZjz2KMpGoAI-/0/1756437718145?e=1772668800&v=beta&t=02e3-iYYXcJL_w0QS6-WWYlt43sop-ESCvj-iFRnK_Y"
-  },
-  {
-    name: "Julia Furst Morgado",
-    role: "Principal Developer Relations Engineer",
-    company: "Dash0",
-    eventRole: "Sponsors Support, Event Planner, Volunteers Coordination",
-    linkedin: "https://www.linkedin.com/in/juliafmorgado/",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQGSgvpxq1aL1A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1732106483574?e=1772668800&v=beta&t=e-jfb81_DVh3hR8VAWxPGfL3BSVvCo86yp-VdqWZ5bI"
-  },
-  {
-    name: "Kelly Revenaugh",
-    role: "Community Experience Lead",
-    company: "Testkube",
-    eventRole: "Marketing and Promotion, Event Planner",
-    linkedin: "https://www.linkedin.com/in/kellyrevenaugh/",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQEnL3eM3ZS9YQ/profile-displayphoto-shrink_200_200/B4EZUmB3bpHgAc-/0/1740099778612?e=1772668800&v=beta&t=JcMjqjGDeCNvR2-tSBBpDDsUXQH9uTIuF2a_jpD_rCk"
-  },
-  {
-    name: "Scott Rigby",
-    role: "Helm project maintainer",
-    company: "Replicated",
-    eventRole: "Program",
-    linkedin: "https://www.linkedin.com/in/scottrigby/",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQGumu2mqbzeKg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722536568026?e=1772668800&v=beta&t=jlekTTb_f5mNkdOhlqD3UkSA2lMB7eWK7YTAlTq3i1g"
-  },
-  {
-    name: "Christopher Tineo",
-    role: "Senior Devops Engineer",
-    company: "Game Plan Tech",
-    eventRole: "Program, Event Planner, Volunteers Coordination",
-    linkedin: "https://www.linkedin.com/in/christopher-tineo/",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQGAwKLESo8Lrg/profile-displayphoto-scale_200_200/B4EZmpQCtaKoAY-/0/1759481181365?e=1772668800&v=beta&t=qm2Xde3s126Ru_DsrxecrPbbgxVIEeHKgW_o5E9e1u0"
-  },
-];
 
 export const Head = () => (
   <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
@@ -85,8 +29,8 @@ export default function TeamPage() {
           </p>
 
           <div className="columns is-multiline is-variable is-5">
-            {TEAM.map((person) => (
-              <div key={person.name} className="column is-6-tablet is-4-desktop">
+            {teamData.map((person) => (
+              <div key={person.id} className="column is-6-tablet is-4-desktop">
                 <div className="card kcd-ny-speaker-card">
                   <div className="card-image kcd-ny-card-image">
                     <figure className="image kcd-ny-avatar-circle">
@@ -101,7 +45,9 @@ export default function TeamPage() {
                     )}
                     {person.eventRole && (
                       <p className="is-size-7 has-text-weight-semibold has-text-grey mb-3">
-                        <span className="tag is-primary is-light">{person.eventRole}</span>
+                        <span className="tag is-primary is-light" style={{ whiteSpace: 'normal', height: 'auto', padding: '0.5rem' }}>
+                          {person.eventRole}
+                        </span>
                       </p>
                     )}
                     {person.linkedin && (

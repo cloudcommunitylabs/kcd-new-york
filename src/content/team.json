@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ahmed-bebars",
+    "name": "Ahmed Bebars",
+    "role": "Principal Engineer",
+    "company": "The New York Times",
+    "eventRole": "Finance and Budgeting, Event Planner",
+    "linkedin": "https://www.linkedin.com/in/ahmedbebars/",
+    "image": "../images/team/ahmed-bebars.jpg"
+  },
+  {
+    "id": "cedric-clyburn",
+    "name": "Cedric Clyburn",
+    "role": "Senior Developer Advocate",
+    "company": "Red Hat",
+    "eventRole": "AV and Media Recording",
+    "linkedin": "https://www.linkedin.com/in/cedricclyburn/",
+    "image": "../images/team/cedric-clyburn.jpg"
+  },
+  {
+    "id": "julia-furst-morgado",
+    "name": "Julia Furst Morgado",
+    "role": "Principal Developer Relations Engineer",
+    "company": "Dash0",
+    "eventRole": "Sponsors Support, Event Planner, Volunteers Coordination",
+    "linkedin": "https://www.linkedin.com/in/juliafmorgado/",
+    "image": "../images/team/julia-furst-morgado.jpg"
+  },
+  {
+    "id": "kelly-revenaugh",
+    "name": "Kelly Revenaugh",
+    "role": "Community Experience Lead",
+    "company": "Testkube",
+    "eventRole": "Marketing and Promotion, Event Planner",
+    "linkedin": "https://www.linkedin.com/in/kellyrevenaugh/",
+    "image": "../images/team/kelly-revenaugh.jpg"
+  },
+  {
+    "id": "scott-rigby",
+    "name": "Scott Rigby",
+    "role": "Helm project maintainer",
+    "company": "Replicated",
+    "eventRole": "Program",
+    "linkedin": "https://www.linkedin.com/in/scottrigby/",
+    "image": "../images/team/scott-rigby.jpg"
+  },
+  {
+    "id": "christopher-tineo",
+    "name": "Christopher Tineo",
+    "role": "Senior DevOps Engineer",
+    "company": "Game Plan Tech",
+    "eventRole": "Program, Event Planner, Volunteers Coordination",
+    "linkedin": "https://www.linkedin.com/in/christopher-tineo/",
+    "image": "../images/team/christopher-tineo.jpg"
+  }
+]
