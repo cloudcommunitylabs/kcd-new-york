@@ -6,7 +6,7 @@
     "company": "The New York Times",
     "eventRole": "Finance and Budgeting, Event Planner",
     "linkedin": "https://www.linkedin.com/in/ahmedbebars/",
-    "image": "../images/team/ahmed-bebars.jpg"
+    "image": "/img/team/ahmed-bebars.jpg"
   },
   {
     "id": "cedric-clyburn",
@@ -15,7 +15,7 @@
     "company": "Red Hat",
     "eventRole": "AV and Media Recording",
     "linkedin": "https://www.linkedin.com/in/cedricclyburn/",
-    "image": "../images/team/cedric-clyburn.jpg"
+    "image": "/img/team/cedric-clyburn.jpg"
   },
   {
     "id": "julia-furst-morgado",
@@ -24,7 +24,7 @@
     "company": "Dash0",
     "eventRole": "Sponsors Support, Event Planner, Volunteers Coordination",
     "linkedin": "https://www.linkedin.com/in/juliafmorgado/",
-    "image": "../images/team/julia-furst-morgado.jpg"
+    "image": "/img/team/julia-furst-morgado.jpg"
   },
   {
     "id": "kelly-revenaugh",
@@ -33,7 +33,7 @@
     "company": "Testkube",
     "eventRole": "Marketing and Promotion, Event Planner",
     "linkedin": "https://www.linkedin.com/in/kellyrevenaugh/",
-    "image": "../images/team/kelly-revenaugh.jpg"
+    "image": "/img/team/kelly-revenaugh.jpg"
   },
   {
     "id": "scott-rigby",
@@ -42,7 +42,7 @@
     "company": "Replicated",
     "eventRole": "Program",
     "linkedin": "https://www.linkedin.com/in/scottrigby/",
-    "image": "../images/team/scott-rigby.jpg"
+    "image": "/img/team/scott-rigby.jpg"
   },
   {
     "id": "christopher-tineo",
@@ -51,6 +51,6 @@
     "company": "Game Plan Tech",
     "eventRole": "Program, Event Planner, Volunteers Coordination",
     "linkedin": "https://www.linkedin.com/in/christopher-tineo/",
-    "image": "../images/team/christopher-tineo.jpg"
+    "image": "/img/team/christopher-tineo.jpg"
   }
 ]
