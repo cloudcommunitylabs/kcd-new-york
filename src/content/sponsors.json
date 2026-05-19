@@ -42,6 +42,11 @@
           "name": "Teleport",
           "logo": "https://res.cloudinary.com/startup-grind/image/upload/c_fit,f_auto,q_auto,w_600/v1/gcs/platform-data-cncf/events/Teleport-Logo_C8sej7F.png",
           "url": "https://goteleport.com/"
+        },
+        {
+          "name": "Edera",
+          "logo": "https://mma.prnewswire.com/media/2626852/Edera_Logo_Dark_2x_Logo.jpg?p=publish",
+          "url": "https://edera.dev"
         }
       ]
     },
