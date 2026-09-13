@@ -17,11 +17,13 @@ import { useState } from "react";
  *   - alt: string - Accessibility alt text
  * @param {number} columns - Number of columns (default: 3)
  * @param {boolean} showYearFilter - Show year filter tabs (default: true)
+ * @param {string} flickrUrl - Link to the full album (button hidden when empty)
  */
 export default function PhotoGallery({
   photos = [],
   columns = 3,
-  showYearFilter = true
+  showYearFilter = true,
+  flickrUrl = "https://www.flickr.com/photos/kcdnewyork/albums/"
 }) {
   const [selectedYear, setSelectedYear] = useState("all");
 
@@ -110,16 +112,18 @@ export default function PhotoGallery({
           )}
         </div>
 
-        <div className="has-text-centered" style={{ marginTop: "3rem" }}>
-          <a
-            href="https://www.flickr.com/photos/kcdnewyork/albums/"
-            className="button is-large kcd-ny-button-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View All Photos on Flickr
-          </a>
-        </div>
+        {flickrUrl && (
+          <div className="has-text-centered" style={{ marginTop: "3rem" }}>
+            <a
+              href={flickrUrl}
+              className="button is-large kcd-ny-button-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All Photos on Flickr
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -10,9 +10,25 @@ const NavLink = ({ to, children }) => (
   </Link>
 );
 
-export default function Layout({ children, title }) {
+/**
+ * Site chrome (navbar + footer). Navigation items only appear when the matching
+ * section or link is ready in src/content/event-data.json.
+ */
+export default function Layout({ children }) {
   const [isActive, setIsActive] = React.useState(false);
-  const { isCfpOpen, isRegistrationOpen, isSponsorProspectusVisible } = getEventLifecycle(eventData);
+  const lifecycle = getEventLifecycle(eventData);
+  const { links, previousEdition } = eventData;
+
+  const navItems = [
+    { to: "/", label: "Home", show: true },
+    { to: "/schedule", label: "Schedule", show: lifecycle.showSchedule },
+    { to: "/speakers", label: "Speakers", show: lifecycle.showSpeakers },
+    { to: "/sponsors", label: "Sponsors", show: lifecycle.showSponsors },
+    { to: "/venue", label: "Venue", show: lifecycle.showVenue },
+    { to: "/team", label: "Team", show: lifecycle.showTeam },
+    { to: "/code-of-conduct", label: "Code of Conduct", show: true },
+    { to: "/volunteers", label: "Volunteers", show: lifecycle.showVolunteers },
+  ].filter((item) => item.show);
 
   return (
     <div className="site">
@@ -38,29 +54,38 @@ export default function Layout({ children, title }) {
 
         <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
           <div className="navbar-start">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/schedule">Schedule</NavLink>
-            <NavLink to="/speakers">Speakers</NavLink>
-            <NavLink to="/sponsors">Sponsors</NavLink>
-            {isCfpOpen && (
-              <a href={eventData.links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
+            {navItems.map((item) => (
+              <NavLink key={item.to} to={item.to}>
+                {item.label}
+              </NavLink>
+            ))}
+            {lifecycle.isCfpOpen && (
+              <a href={links.cfp} className="navbar-item" target="_blank" rel="noopener noreferrer">
                 Call for Papers
               </a>
             )}
-            <NavLink to="/venue">Venue</NavLink>
-            <NavLink to="/team">Team</NavLink>
-            <NavLink to="/code-of-conduct">Code of Conduct</NavLink>
-            <NavLink to="/volunteers">Volunteers</NavLink>
           </div>
-          {isRegistrationOpen && (
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <a href={eventData.links.registration} className="button kcd-ny-cta is-rounded kcd-ny-navbar-register" target="_blank" rel="noopener noreferrer">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              {lifecycle.isRegistrationOpen ? (
+                <a
+                  href={links.registration}
+                  className="button kcd-ny-cta is-rounded kcd-ny-navbar-register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Register
                 </a>
-              </div>
+              ) : (
+                lifecycle.isComingSoon && (
+                  <span className="kcd-ny-nav-badge">
+                    <span className="kcd-ny-pulse" aria-hidden="true" />
+                    Coming soon
+                  </span>
+                )
+              )}
             </div>
-          )}
+          </div>
         </div>
       </nav>
       <main className="main-content">{children}</main>
@@ -70,50 +95,107 @@ export default function Layout({ children, title }) {
             <div className="column is-4">
               <h3 className="title is-6 kcd-ny-footer-heading">{eventData.name}</h3>
               <p className="kcd-ny-footer-text">
-                Kubernetes Community Days New York is a community-organized event bringing together the cloud native community.
+                Kubernetes Community Days New York is a community-organized event bringing together the cloud native
+                community. Part of the{" "}
+                <a href={links.kcdProgram} target="_blank" rel="noopener noreferrer">
+                  Kubernetes Community Days
+                </a>{" "}
+                program supported by the{" "}
+                <a href={links.cncf} target="_blank" rel="noopener noreferrer">
+                  CNCF
+                </a>
+                .
               </p>
+              {previousEdition && previousEdition.url && (
+                <p className="kcd-ny-footer-text">
+                  <a href={previousEdition.url} target="_blank" rel="noopener noreferrer">
+                    Looking for {previousEdition.name}? Visit the archive →
+                  </a>
+                </p>
+              )}
             </div>
             <div className="column is-4">
               <h3 className="title is-6 kcd-ny-footer-heading">Quick Links</h3>
               <ul className="kcd-ny-footer-links">
-                {/* <li><Link to="/about">About</Link></li> */}
-                <li><Link to="/speakers">Speakers</Link></li>
-                <li><Link to="/sponsors">Sponsors</Link></li>
-                {isSponsorProspectusVisible && (
-                  <li><a href={eventData.links.sponsorProspectus} target="_blank" rel="noopener noreferrer">Sponsor Prospectus</a></li>
+                {navItems
+                  .filter((item) => item.to !== "/")
+                  .map((item) => (
+                    <li key={item.to}>
+                      <Link to={item.to}>{item.label}</Link>
+                    </li>
+                  ))}
+                {lifecycle.isSponsorProspectusVisible && (
+                  <li>
+                    <a href={links.sponsorProspectus} target="_blank" rel="noopener noreferrer">
+                      Sponsor Prospectus
+                    </a>
+                  </li>
                 )}
-                {isRegistrationOpen && (
-                  <li><a href={eventData.links.registration} target="_blank" rel="noopener noreferrer">Register</a></li>
+                {lifecycle.isRegistrationOpen && (
+                  <li>
+                    <a href={links.registration} target="_blank" rel="noopener noreferrer">
+                      Register
+                    </a>
+                  </li>
                 )}
-                {isCfpOpen && (
-                  <li><a href={eventData.links.cfp} target="_blank" rel="noopener noreferrer">Call for Papers</a></li>
+                {lifecycle.isCfpOpen && (
+                  <li>
+                    <a href={links.cfp} target="_blank" rel="noopener noreferrer">
+                      Call for Papers
+                    </a>
+                  </li>
                 )}
-                <li><Link to="/venue">Venue</Link></li>
-                <li><Link to="/team">Team</Link></li>
-                <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
-                <li><Link to="/volunteers">Volunteers</Link></li>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+                <li>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link to="/cookie-policy">Cookie Policy</Link>
+                </li>
               </ul>
             </div>
             <div className="column is-4">
               <h3 className="title is-6 kcd-ny-footer-heading">Contact</h3>
-              <p className="kcd-ny-footer-text">
-                <a href="mailto:new-york-org@kubernetescommunitydays.org">new-york-org@kubernetescommunitydays.org</a>
-              </p>
-              <p className="kcd-ny-footer-text">
-                <a href="mailto:info@kcdnewyork.com">info@kcdnewyork.com</a>
-              </p>
-              <p className="kcd-ny-footer-text">
-                <a href={eventData.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              </p>
+              {links.organizerEmail && (
+                <p className="kcd-ny-footer-text">
+                  <a href={`mailto:${links.organizerEmail}`}>{links.organizerEmail}</a>
+                </p>
+              )}
+              {lifecycle.hasContactEmail && (
+                <p className="kcd-ny-footer-text">
+                  <a href={`mailto:${links.email}`}>{links.email}</a>
+                </p>
+              )}
+              {lifecycle.hasLinkedIn && (
+                <p className="kcd-ny-footer-text">
+                  <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </p>
+              )}
+              {lifecycle.hasTwitter && (
+                <p className="kcd-ny-footer-text">
+                  <a href={links.twitter} target="_blank" rel="noopener noreferrer">
+                    X (Twitter)
+                  </a>
+                </p>
+              )}
+              {lifecycle.hasFlickr && (
+                <p className="kcd-ny-footer-text">
+                  <a href={links.flickr} target="_blank" rel="noopener noreferrer">
+                    Photos on Flickr
+                  </a>
+                </p>
+              )}
             </div>
           </div>
           <div className="has-text-centered kcd-ny-footer-copy">
-            <p>© {new Date().getFullYear()} KCD New York. Part of the CNCF Kubernetes Community Days program.</p>
+            <p>
+              © {new Date().getFullYear()} KCD New York. Part of the CNCF Kubernetes Community Days program. Kubernetes
+              and the Kubernetes logo are trademarks of The Linux Foundation.
+            </p>
           </div>
         </div>
       </footer>
-    </div >
+    </div>
   );
 }

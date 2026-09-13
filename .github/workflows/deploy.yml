@@ -9,6 +9,13 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  # Cloudflare Pages project that receives the build from this branch.
+  # NOTE: this project currently serves the live 2026 site at kcdnewyork.com.
+  # Before merging the 2027 site to main, create the 2026 archive (see README
+  # "Archiving 2026") and point this at the new `kcd-newyork-2027` project.
+  CLOUDFLARE_PAGES_PROJECT: kcd-newyork-2026
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -37,41 +44,47 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=kcd-newyork-2026 --branch=${{ github.head_ref || github.ref_name }}
+          command: pages deploy public --project-name=${{ env.CLOUDFLARE_PAGES_PROJECT }} --branch=${{ github.head_ref || github.ref_name }}
 
       - name: Comment on PR with deployment URL
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
+        env:
+          PROJECT_NAME: ${{ env.CLOUDFLARE_PAGES_PROJECT }}
         with:
           script: |
             const branchName = context.payload.pull_request.head.ref;
             const commitSha = context.payload.pull_request.head.sha.substring(0, 8);
             const prNumber = context.payload.pull_request.number;
+            const projectName = process.env.PROJECT_NAME;
 
-            // Construct Cloudflare Pages URLs
-            const aliasUrl = `https://${branchName.replace(/[^a-z0-9-]/gi, '-').toLowerCase()}.kcd-newyork-2026.pages.dev`;
-            const homeUrl = aliasUrl;
-            const venueUrl = `${aliasUrl}/venue/`;
+            // Cloudflare Pages branch alias: lowercase, non [a-z0-9-] replaced with "-", max 28 chars
+            const branchAlias = branchName
+              .toLowerCase()
+              .replace(/[^a-z0-9-]/g, '-')
+              .replace(/^-+|-+$/g, '')
+              .substring(0, 28)
+              .replace(/-+$/g, '');
+            const previewUrl = `https://${branchAlias}.${projectName}.pages.dev`;
 
             const comment = `## 🚀 Deployment Ready for Review
 
             Your branch has been deployed to Cloudflare Pages!
 
-            **Preview URL:** ${aliasUrl}
+            **Preview URL:** ${previewUrl}
 
             ### Pages to Review:
-            - **Home Page:** ${homeUrl}
-            - **Venue Page:** ${venueUrl}
+            - **Landing page:** ${previewUrl}
+            - **Sponsors:** ${previewUrl}/sponsors/
+            - **Team:** ${previewUrl}/team/
+            - **404 page:** ${previewUrl}/this-page-does-not-exist
 
             ### What to Check:
-            - ✅ 3rd year milestone section on home page
-            - ✅ Photo gallery section (shows placeholders until actual photos added)
-            - ✅ Interactive floor plan on venue page
-            - ✅ Transit tabs (Subway, PATH, Parking, Accessibility)
+            - ✅ Hero shows the event name, "Coming soon", month and location from \`src/content/event-data.json\`
+            - ✅ Only links that are filled in are visible (Register, CFP, prospectus, volunteer form)
+            - ✅ 2026 recap section (stats, keynotes, sponsor marquee, archive link)
+            - ✅ Pages whose \`sections.*\` flag is off are not built (schedule, speakers, venue, volunteers)
             - ✅ Responsive design on mobile/tablet/desktop
-            - ✅ All interactive features (tabs, filters)
-
-            **Note:** Historical photos from Flickr still need to be added to fully showcase the gallery feature.
 
             ---
             *Deployment: ${commitSha} | Branch: ${branchName}*`;

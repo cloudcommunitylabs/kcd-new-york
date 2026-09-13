@@ -10,7 +10,7 @@ const ADDRESS = eventData.venue.address;
 const INTERACTIVE_MAP_URL = `https://kcdnewyork${eventData.year}.expofp.com/`;
 
 export const Head = () => (
-  <Seo title="Venue" description="Convene One Liberty Plaza in Manhattan's Financial District. Getting to KCD New York 2026." />
+  <Seo title="Venue" description={`Getting to ${eventData.name}${VENUE ? ` at ${VENUE}` : ""}.`} />
 );
 
 export default function VenuePage() {

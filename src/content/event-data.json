@@ -1,58 +1,114 @@
 {
-  "name": "Kubernetes Community Days New York 2026",
-  "shortName": "KCD NY 2026",
-  "date": "June 10, 2026",
-  "year": "2026",
+  "name": "Kubernetes Community Days New York 2027",
+  "shortName": "KCD NY 2027",
+  "year": "2027",
+  "status": "coming-soon",
+  "tagline": "New York's cloud native community is coming back together.",
+  "description": "Kubernetes Community Days New York is a community-organized, CNCF-supported event bringing together adopters, contributors and technologists from the open source and cloud native ecosystem across New York City and beyond. Dates, venue, call for proposals, sponsorship and registration for 2027 will be announced here.",
+  "date": {
+    "display": "June 2027",
+    "iso": "",
+    "note": "Exact date to be announced"
+  },
+  "venue": {
+    "name": "",
+    "address": "",
+    "fullAddress": "",
+    "city": "New York, NY",
+    "note": "Venue to be announced"
+  },
   "links": {
-    "cfp": "https://sessionize.com/kcd-new-york-2026/",
-    "sessionizeId": "ub0c1f4u",
+    "cfp": "",
+    "sessionizeId": "",
     "sessionizeEmbeds": {
       "schedule": "GridSmart",
       "speakers": "SpeakerWall"
     },
-    "registration": "https://tickets.kcdnewyork.com",
-    "sponsorProspectus": "https://www.canva.com/design/DAG9pfEWHV8/wYffjPEQ02UCKhPyWqyuKg/view",
-    "venueMap": "https://maps.app.goo.gl/oWPRrwrqbjfiqxh29",
+    "registration": "",
+    "sponsorProspectus": "",
+    "venueMap": "",
+    "volunteerForm": "",
     "linkedin": "https://www.linkedin.com/company/kcdnewyork",
-    "volunteerForm": "https://forms.gle/ywevp8cYy7QH5h1YA"
+    "twitter": "",
+    "flickr": "https://www.flickr.com/photos/kcdnewyork/albums/",
+    "email": "info@kcdnewyork.com",
+    "organizerEmail": "new-york-org@kubernetescommunitydays.org",
+    "sponsorEmail": "ahmed.bebars@cloudcommunitylabs.io",
+    "kcdProgram": "https://www.cncf.io/kcds/",
+    "cncf": "https://www.cncf.io/"
   },
-  "features": {
-    "registrationEnabled": true,
-    "showSponsorProspectus": true,
-    "showPreviousSponsors": false,
-    "showPreviousSpeakers": false,
-    "useSessionizeSchedule": true,
-    "useSessionizeSpeakers": true
+  "newsletter": {
+    "provider": "constant-contact",
+    "constantContactFormId": "",
+    "constantContactAccountId": "",
+    "title": "Get KCD New York updates",
+    "text": "Be the first to hear when the date is locked in, the call for proposals opens and tickets go on sale. No spam, unsubscribe any time."
   },
-  "venue": {
-    "name": "Convene One Liberty Plaza",
-    "address": "1 Liberty St, New York, NY 10006",
-    "fullAddress": "Convene One Liberty Plaza, 1 Liberty St, New York, NY 10006"
+  "sections": {
+    "about": true,
+    "getInvolved": true,
+    "keyDates": false,
+    "recap": true,
+    "schedule": false,
+    "speakers": false,
+    "previousSpeakers": false,
+    "sponsors": true,
+    "previousSponsors": true,
+    "venue": false,
+    "team": true,
+    "volunteers": false,
+    "gallery": true
   },
-  "keyDates": [
-    {
-      "label": "CFP Opens",
-      "date": "February 17, 2026"
-    },
-    {
-      "label": "CFP Closes",
-      "date": "March 24, 2026"
-    },
-    {
-      "label": "CFP Notifications",
-      "date": "April 14, 2026"
-    },
-    {
-      "label": "Schedule Announced",
-      "date": "April 28, 2026"
-    },
-    {
-      "label": "Sponsor Assets Due",
-      "date": "May 11, 2026"
-    },
-    {
-      "label": "Event Day",
-      "date": "June 10, 2026"
-    }
-  ]
+  "keyDates": [],
+  "keynotes": [],
+  "previousEdition": {
+    "year": "2026",
+    "name": "KCD New York 2026",
+    "date": "June 10, 2026",
+    "venue": "Convene One Liberty Plaza",
+    "theme": "Building Bridges in Cloud Native",
+    "url": "https://2026.kcdnewyork.com",
+    "summary": "On June 10, 2026 the cloud native community filled Convene One Liberty Plaza for our third edition. A full day of keynotes, technical sessions and hallway conversations, all under the banner of Building Bridges in Cloud Native.",
+    "stats": [
+      {
+        "value": "500+",
+        "label": "Attendees"
+      },
+      {
+        "value": "50+",
+        "label": "Speakers"
+      },
+      {
+        "value": "20+",
+        "label": "Sponsors"
+      },
+      {
+        "value": "30+",
+        "label": "Sessions"
+      }
+    ],
+    "keynotes": [
+      {
+        "name": "Lin Sun",
+        "company": "Solo.io",
+        "role": "VP of Open Source at Solo.io, KubeCon Co-Chair, Istio Maintainer",
+        "headshot": "https://sessionize.com/image/b154-400o400o1-UnrH8vnN8XbaR16rnvDHp6.jpg",
+        "linkedin": "https://www.linkedin.com/in/lin-sun-a9b7a81/"
+      },
+      {
+        "name": "Mauricio Salatino",
+        "company": "Dash0",
+        "role": "Dapr OSS Maintainer, Author of Platform Engineering on Kubernetes",
+        "headshot": "https://stateofopencon.com/app/uploads/2023/01/mauricio-salaboy-salatino-2-768x768.jpg",
+        "linkedin": "https://www.linkedin.com/in/salaboy/"
+      },
+      {
+        "name": "Chad M. Crowell",
+        "company": "Akamai",
+        "role": "Principal SRE at Akamai, Author of Acing the CKA Exam, Kubernetes Maintainer",
+        "headshot": "https://sessionize.com/image/774a-400o400o1-K23HwFw5ZZKADAFn9gmvYd.jpg",
+        "linkedin": "https://linkedin.com/in/chadmcrowell"
+      }
+    ]
+  }
 }

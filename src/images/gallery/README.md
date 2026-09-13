@@ -1,11 +1,15 @@
 # Gallery Images
 
-This directory contains historical photos from past KCD New York events.
+Historical photos from past KCD New York events, shown in the "Our Community in Action"
+section of the home page (year tabs are generated from the metadata).
 
 ## Directory Structure
 
+Images are served from `static/images/gallery/<year>/`:
+
 - `2024/` - Photos from KCD New York 2024
 - `2025/` - Photos from KCD New York 2025
+- `2026/` - Photos from KCD New York 2026 (empty until added)
 
 ## Photo Requirements
 
@@ -22,17 +26,12 @@ Visit https://www.flickr.com/photos/kcdnewyork/albums/ to download photos.
 ### Image Processing
 Before adding to repository:
 1. **Resize**: 1920x1280px max (full size)
-2. **Format**: JPEG with WebP support via Gatsby
+2. **Format**: JPEG
 3. **Compression**: 80% quality
 4. **Tool**: Use Squoosh.app, ImageOptim, or sharp CLI
 
 ### File Naming Convention
-Format: `kcd-ny-{year}-{category}-{number}.jpg`
-
-Examples:
-- `kcd-ny-2024-keynote-01.jpg`
-- `kcd-ny-2024-networking-01.jpg`
-- `kcd-ny-2025-workshop-01.jpg`
+Format: `kcd-ny-{year}-{number}.jpg`, e.g. `kcd-ny-2026-01.jpg`
 
 ### Categories
 - `keynote` - Main stage presentations
