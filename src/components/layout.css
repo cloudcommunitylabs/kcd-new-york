@@ -1516,3 +1516,33 @@ a:focus-visible,
   display: block;
 }
 
+
+/* ========================================
+   Archive banner (this branch is the frozen 2026 edition)
+   ======================================== */
+.kcd-ny-archive-banner {
+  background: var(--color-accent-warm);
+  color: var(--color-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  text-align: center;
+}
+
+.kcd-ny-archive-banner a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.kcd-ny-archive-banner-tag {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  margin-right: 0.6rem;
+}

@@ -17,8 +17,8 @@
     "volunteerForm": "https://forms.gle/ywevp8cYy7QH5h1YA"
   },
   "features": {
-    "registrationEnabled": true,
-    "showSponsorProspectus": true,
+    "registrationEnabled": false,
+    "showSponsorProspectus": false,
     "showPreviousSponsors": false,
     "showPreviousSpeakers": false,
     "useSessionizeSchedule": true,
@@ -54,5 +54,9 @@
       "label": "Event Day",
       "date": "June 10, 2026"
     }
-  ]
+  ],
+  "archive": {
+    "currentSiteUrl": "https://kcdnewyork.com",
+    "currentSiteLabel": "KCD New York 2027"
+  }
 }

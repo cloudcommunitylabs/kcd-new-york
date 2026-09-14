@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: eventData.name,
     description: `${eventData.name} — ${eventData.date} at ${eventData.venue.fullAddress}.`,
-    siteUrl: `https://kcdnewyork.com`,
+    siteUrl: process.env.GATSBY_SITE_URL || "https://2026.kcdnewyork.com",
   },
   plugins: [
     `gatsby-plugin-image`,

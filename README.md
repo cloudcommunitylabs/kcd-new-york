@@ -1,4 +1,8 @@
-# KCD New York 2026 Website
+# KCD New York 2026 Website (archive branch)
+
+> **This branch (`2026`) is the frozen KCD New York 2026 edition, served at [2026.kcdnewyork.com](https://2026.kcdnewyork.com).**
+> Every push to `2026` deploys to the `kcd-newyork-2026` Cloudflare Pages project. Only make archive fixes here (broken links, typos);
+> the current site lives on `main` and deploys to `kcd-newyork-2027`. See `main`'s README, section "Archiving 2026".
 
 Official website for Kubernetes Community Days New York 2026 — June 10th, 2026 at Convene One Liberty Plaza, NYC.
 

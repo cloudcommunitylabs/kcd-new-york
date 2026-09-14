@@ -63,7 +63,18 @@ export default function Layout({ children, title }) {
           )}
         </div>
       </nav>
-      <main className="main-content">{children}</main>
+      <main className="main-content">
+        {eventData.archive && (
+          <div className="kcd-ny-archive-banner" role="note">
+            <div className="container">
+              <span className="kcd-ny-archive-banner-tag">Archive</span>
+              You are viewing the {eventData.shortName} site. Looking for the next edition?{" "}
+              <a href={eventData.archive.currentSiteUrl}>Head to {eventData.archive.currentSiteLabel} →</a>
+            </div>
+          </div>
+        )}
+        {children}
+      </main>
       <footer className="footer kcd-ny-footer">
         <div className="container">
           <div className="columns">
