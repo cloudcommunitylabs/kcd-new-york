@@ -78,7 +78,7 @@ kcd-new-york/
 │       ├── code-of-conduct.js, privacy-policy.js, cookie-policy.js, 404.js
 │       └── content-pages/*.md     # Legacy OpenEventKit template pages (unused)
 └── static/
-    ├── img/                       # Hero, venue and team images
+    ├── img/                       # Hero (kcd-ny-hero-2027.jpg), venue and team images
     ├── images/gallery/<year>/     # Gallery photos
     ├── CNAME, robots.txt
     └── ...
@@ -136,6 +136,7 @@ Navigation, footer links and the "Get involved" cards update automatically.
 The landing page carries a "Looking back" section for the previous edition, driven by `previousEdition` in `event-data.json`:
 
 - `stats` — the year in numbers (**the current values are placeholders copied from the 2026 site; replace them with the real attendance, speaker, sponsor and session counts**).
+- Photos: 13 selected 2026 photos live in `static/images/gallery/2026/` with metadata in `src/data/gallery-photos.json`; the hero background `static/img/kcd-ny-hero-2027.jpg` is composed from one of them.
 - `keynotes` — the 2026 keynote speakers.
 - `summary`, `theme`, `date`, `venue` — the recap copy.
 - `url` — the archived 2026 site (`https://2026.kcdnewyork.com`). "Relive KCD New York 2026" links here.
@@ -152,7 +153,7 @@ The sign-up form is Constant Contact's inline form, the same integration as the 
 - `constantContactFormId` — the `data-form-id` from the form's inline code (`<div class="ctct-inline-form" data-form-id="…">`).
 - `constantContactAccountId` — the `_ctct_m` value from the account's **Universal Code** (Constant Contact → Sign-up Forms → your form → Inline code → *Universal Code*, the line `var _ctct_m = "…"`).
 
-The section, the **Get updates** hero button and the widget script only appear once **both** values are set. The widget loads from `static.ctctcdn.com`.
+The section, the **Get updates** hero button and the widget script only appear once **both** values are set (they are: the KCD New York form lives in the Cloud Community Labs Constant Contact account). The widget loads from `static.ctctcdn.com`.
 
 ---
 
@@ -223,22 +224,25 @@ npx wrangler pages deploy public --project-name=<project>
 
 ## 🗄️ Archiving 2026
 
-> ⚠️ **Do not merge the 2027 landing page to `main` before this is done.** The workflow currently deploys `main` to the `kcd-newyork-2026` Cloudflare project, which is the live 2026 site at `kcdnewyork.com`. Merging first would replace the 2026 site with the 2027 landing page and leave nothing for the recap to link to.
+Every edition stays online: the 2026 site is frozen on the **`2026` branch** and served at **`2026.kcdnewyork.com`**, while `main` is the current edition at `kcdnewyork.com`.
 
-The 2026 site is preserved as a frozen edition at **`2026.kcdnewyork.com`**, so every year's site stays online. Steps:
+**Already in place (in git):**
 
-1. **Freeze the source.** From the last 2026 commit on `main` (`c2f6381`, "Add Edera as a sponsor"):
-   ```bash
-   git tag 2026-final c2f6381
-   git branch 2026 c2f6381
-   git push origin 2026-final 2026
-   ```
-2. **Archive-mode tweaks on the `2026` branch** (small PR against `2026`): a slim banner at the top pointing to `kcdnewyork.com` for 2027, `features.registrationEnabled: false`, `features.showSponsorProspectus: false`. Everything else (schedule, speakers, sponsors, venue, photos) stays as it was.
-3. **Deploy the archive.** Add a `deploy-2026.yml` workflow that runs on pushes to `2026` and deploys with `--project-name=kcd-newyork-2026 --branch=main` so it becomes that project's production deployment. Protect the `2026` branch.
-4. **Cloudflare.** In the `kcd-newyork-2026` Pages project, add the custom domain `2026.kcdnewyork.com`. Create a new Pages project **`kcd-newyork-2027`**, add `kcdnewyork.com` and `www.kcdnewyork.com` to it (removing them from the 2026 project).
-5. **Repoint this repo.** Change `CLOUDFLARE_PAGES_PROJECT` in `deploy.yml` to `kcd-newyork-2027`, then merge the 2027 landing page to `main`.
+- Tag `2026-final` marks the last 2026 commit.
+- Branch `2026` = that commit plus archive-mode tweaks: an "Archive" banner linking to `kcdnewyork.com`, registration and prospectus buttons switched off, `siteUrl` set to `https://2026.kcdnewyork.com`. Everything else (schedule, speakers, sponsors, venue, photos) is untouched.
+- `.github/workflows/deploy.yml` **on the `2026` branch** deploys every push to `2026` as the production deployment of the `kcd-newyork-2026` Cloudflare Pages project (and previews for PRs against `2026`).
+- `.github/workflows/deploy.yml` **on `main`** deploys to the `kcd-newyork-2027` project.
 
-Repeat the same pattern in 2028 (`2027` branch → `2027.kcdnewyork.com`).
+**One-time Cloudflare steps (dashboard → Workers & Pages):**
+
+1. `kcd-newyork-2026` → *Custom domains* → add `2026.kcdnewyork.com`. Cloudflare creates the DNS record automatically when the zone is on Cloudflare.
+2. `kcd-newyork-2026` → *Custom domains* → remove `kcdnewyork.com` and `www.kcdnewyork.com` **after** step 3 has deployed at least once, so the apex never points at an empty project.
+3. `kcd-newyork-2027` → *Custom domains* → add `kcdnewyork.com` and `www.kcdnewyork.com`. Make sure its production branch is `main` (*Settings → Builds*), and that the GitHub secrets `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` have *Pages: Edit* on the account (they are shared by both projects).
+4. Merge the 2027 landing page PR into `main`. The workflow deploys it to `kcd-newyork-2027`; the archive keeps serving from the `2026` branch.
+
+Optionally protect the `2026` branch in GitHub (*Settings → Branches*) so it only changes through PRs.
+
+Repeat the same pattern in 2028: tag `2027-final`, branch `2027`, add `2027.kcdnewyork.com` to a `kcd-newyork-2027` archive, and point `main` at a new project.
 
 ---
 

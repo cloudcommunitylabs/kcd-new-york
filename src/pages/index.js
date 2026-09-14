@@ -302,7 +302,7 @@ export default function IndexPage() {
       <section
         className="hero is-fullheight-with-navbar kcd-ny-hero"
         style={{
-          backgroundImage: "url('/img/kcd-ny-hero.png')",
+          backgroundImage: "url('/img/kcd-ny-hero-2027.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

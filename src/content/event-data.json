@@ -39,8 +39,8 @@
   },
   "newsletter": {
     "provider": "constant-contact",
-    "constantContactFormId": "",
-    "constantContactAccountId": "",
+    "constantContactFormId": "638d1c39-a23f-4c48-9cb7-0373b7eda422",
+    "constantContactAccountId": "26e3db1f65849647142c97ca07e9886a",
     "title": "Get KCD New York updates",
     "text": "Be the first to hear when the date is locked in, the call for proposals opens and tickets go on sale. No spam, unsubscribe any time."
   },

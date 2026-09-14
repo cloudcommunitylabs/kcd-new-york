@@ -10,11 +10,9 @@ on:
   workflow_dispatch:
 
 env:
-  # Cloudflare Pages project that receives the build from this branch.
-  # NOTE: this project currently serves the live 2026 site at kcdnewyork.com.
-  # Before merging the 2027 site to main, create the 2026 archive (see README
-  # "Archiving 2026") and point this at the new `kcd-newyork-2027` project.
-  CLOUDFLARE_PAGES_PROJECT: kcd-newyork-2026
+  # Cloudflare Pages project that receives builds from main (production) and PRs (previews).
+  # The frozen 2026 site deploys from the `2026` branch to `kcd-newyork-2026` instead.
+  CLOUDFLARE_PAGES_PROJECT: kcd-newyork-2027
 
 jobs:
   deploy:
