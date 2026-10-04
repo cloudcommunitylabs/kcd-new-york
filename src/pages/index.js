@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import PhotoGallery from "../components/PhotoGallery";
-import NewsletterSignup, { NEWSLETTER_WIDGET_SRC, hasNewsletterForm } from "../components/NewsletterSignup";
+import NewsletterSignup, { hasNewsletterForm } from "../components/NewsletterSignup";
 import Seo from "../components/seo";
 import galleryData from "../data/gallery-photos.json";
 import eventData from "../content/event-data.json";
@@ -81,23 +81,9 @@ export const Head = () => {
     schema.endDate = `${eventData.date.iso}T18:00:00-04:00`;
   }
 
-  const newsletterReady = hasNewsletterForm(eventData.newsletter);
-
   return (
     <Seo>
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      {newsletterReady && (
-        <>
-          {/* Begin Constant Contact Active Forms (universal code) */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `var _ctct_m = ${JSON.stringify(eventData.newsletter.constantContactAccountId)};`,
-            }}
-          />
-          <script id="signupScript" src={NEWSLETTER_WIDGET_SRC} async defer />
-          {/* End Constant Contact Active Forms */}
-        </>
-      )}
     </Seo>
   );
 };
