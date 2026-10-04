@@ -1,43 +1,101 @@
-export const getEventLifecycle = (eventData) => {
-  const now = new Date();
+/**
+ * Derives which parts of the site are ready to show from src/content/event-data.json.
+ *
+ * Rules of thumb (same approach as the KCD Cairo landing page):
+ *  - A link that is an empty string means "not ready yet"; the matching button stays hidden.
+ *  - `sections.*` toggles whole sections and pages. Pages whose section is off are
+ *    removed from the build in gatsby-node.js so nothing half-finished leaks out.
+ *  - Date-driven behaviour (countdown, "event is over", CFP closing) only kicks in
+ *    once `date.iso` / the relevant key date is filled in.
+ *
+ * Written as CommonJS so both gatsby-node.js (Node) and the React pages (webpack) can use it.
+ */
+const hasValue = (value) => typeof value === "string" && value.trim().length > 0;
 
-  const keyDates = eventData.keyDates || [];
+const parseDate = (value) => {
+  if (!hasValue(value)) return null;
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
 
-  // Find CFP close date from keyDates
-  const cfpCloseDateStr = keyDates.find(d => d.label === "CFP Closes")?.date;
-  const cfpCloseDate = cfpCloseDateStr ? new Date(cfpCloseDateStr) : null;
+function getEventLifecycle(eventData, now = new Date()) {
+  const links = eventData.links || {};
+  const sections = eventData.sections || {};
+  const date = eventData.date || {};
+  const venue = eventData.venue || {};
+  const keyDates = Array.isArray(eventData.keyDates) ? eventData.keyDates : [];
+  const previousEdition = eventData.previousEdition || null;
 
-  // CFP is open if current date is before close date
-  const isCfpOpen = cfpCloseDate && now < cfpCloseDate;
+  const eventDate = parseDate(date.iso);
+  const hasExactDate = Boolean(eventDate);
 
-  // Registration is controlled by feature flag and must have a link
-  const isRegistrationOpen = eventData.features?.registrationEnabled && eventData.links?.registration;
+  // Event is over the day after the event date (keeps the site "live" on the day itself).
+  let isEventOver = false;
+  if (eventDate) {
+    const dayAfterEvent = new Date(eventDate);
+    dayAfterEvent.setDate(dayAfterEvent.getDate() + 1);
+    isEventOver = now > dayAfterEvent;
+  }
 
-  // Sponsor prospectus visibility
-  const isSponsorProspectusVisible = eventData.features?.showSponsorProspectus && eventData.links?.sponsorProspectus;
+  // CFP is open when a link exists and, if a "CFP Closes" key date is set, we are before it.
+  const cfpCloseDate = parseDate((keyDates.find((d) => d.label === "CFP Closes") || {}).date);
+  const isCfpOpen = hasValue(links.cfp) && (!cfpCloseDate || now < cfpCloseDate);
 
-  // Previous speakers visibility
-  const isShowPreviousSpeakersVisible = eventData.features?.showPreviousSpeakers;
-
-  // Sessionize status
-  const isScheduleLive = eventData.features?.useSessionizeSchedule;
-  const useSessionizeSpeakers = eventData.features?.useSessionizeSpeakers;
-
-  // Event is over if current date is after the event date
-  const eventDate = new Date(eventData.date);
-  // Add 1 day to the event date to ensure it stays "live" during the actual day
-  const dayAfterEvent = new Date(eventDate);
-  dayAfterEvent.setDate(eventDate.getDate() + 1);
-  const isEventOver = now > dayAfterEvent;
+  const hasSessionize = hasValue(links.sessionizeId);
 
   return {
-    isCfpOpen,
-    isRegistrationOpen,
-    isSponsorProspectusVisible,
-    isShowPreviousSpeakersVisible,
-    isScheduleLive,
-    useSessionizeSpeakers,
+    now,
+    isComingSoon: eventData.status === "coming-soon",
     isEventOver,
-    now
+    hasExactDate,
+    eventDate,
+    hasVenue: hasValue(venue.name),
+
+    isCfpOpen,
+    isRegistrationOpen: hasValue(links.registration),
+    isSponsorProspectusVisible: hasValue(links.sponsorProspectus),
+    isVolunteerFormVisible: hasValue(links.volunteerForm),
+    hasVenueMap: hasValue(links.venueMap),
+    hasContactEmail: hasValue(links.email),
+    hasLinkedIn: hasValue(links.linkedin),
+    hasTwitter: hasValue(links.twitter),
+    hasFlickr: hasValue(links.flickr),
+    hasAnySocial: hasValue(links.linkedin) || hasValue(links.twitter),
+
+    // Sessionize embeds
+    hasSessionize,
+    isScheduleLive: sections.schedule === true && hasSessionize,
+    useSessionizeSpeakers: sections.speakers === true && hasSessionize,
+
+    // Sections / pages
+    showAbout: sections.about !== false,
+    showGetInvolved: sections.getInvolved !== false,
+    showKeyDates: sections.keyDates === true && keyDates.length > 0,
+    showRecap: sections.recap === true && Boolean(previousEdition),
+    showSchedule: sections.schedule === true,
+    showSpeakers: sections.speakers === true,
+    showPreviousSpeakers: sections.previousSpeakers === true,
+    showSponsors: sections.sponsors === true,
+    showPreviousSponsors: sections.previousSponsors === true,
+    showVenue: sections.venue === true && hasValue(venue.name),
+    showTeam: sections.team === true,
+    showVolunteers: sections.volunteers === true && hasValue(links.volunteerForm),
+    showGallery: sections.gallery === true,
   };
+}
+
+/**
+ * Map of page paths to the lifecycle flag that must be true for the page to be built.
+ * Used by gatsby-node.js. Pages not listed here are always built.
+ */
+const GATED_PAGES = {
+  "/schedule/": "showSchedule",
+  "/speakers/": "showSpeakers",
+  "/previous-speakers/": "showPreviousSpeakers",
+  "/sponsors/": "showSponsors",
+  "/venue/": "showVenue",
+  "/team/": "showTeam",
+  "/volunteers/": "showVolunteers",
 };
+
+module.exports = { getEventLifecycle, GATED_PAGES, hasValue };

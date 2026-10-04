@@ -1,6 +1,123 @@
 {
   "photos": [
     {
+      "id": "2026-01",
+      "filename": "kcd-ny-2026-01.jpg",
+      "year": 2026,
+      "category": "community",
+      "caption": "The whole room together for the closing group photo",
+      "featured": true,
+      "alt": "Attendees gathered for a group photo in the main room at KCD New York 2026"
+    },
+    {
+      "id": "2026-02",
+      "filename": "kcd-ny-2026-02.jpg",
+      "year": 2026,
+      "category": "keynote",
+      "caption": "Chad Crowell opening keynote: Open Source Didn't Build Itself",
+      "featured": true,
+      "alt": "Keynote title slide \"Open Source Didn't Build Itself\" on the main screen at KCD New York 2026"
+    },
+    {
+      "id": "2026-03",
+      "filename": "kcd-ny-2026-03.jpg",
+      "year": 2026,
+      "category": "sessions",
+      "caption": "A packed main room for the morning sessions",
+      "featured": true,
+      "alt": "Full audience watching a session on the big screen at KCD New York 2026"
+    },
+    {
+      "id": "2026-04",
+      "filename": "kcd-ny-2026-04.jpg",
+      "year": 2026,
+      "category": "keynote",
+      "caption": "Welcome to KCD New York 2026",
+      "featured": false,
+      "alt": "Opening slide \"Welcome to KCD New York 2026\" above the stage"
+    },
+    {
+      "id": "2026-05",
+      "filename": "kcd-ny-2026-05.jpg",
+      "year": 2026,
+      "category": "sessions",
+      "caption": "Lin Sun on stage in front of the Financial District windows",
+      "featured": false,
+      "alt": "Speaker presenting on stage with green trees visible through the windows at KCD New York 2026"
+    },
+    {
+      "id": "2026-06",
+      "filename": "kcd-ny-2026-06.jpg",
+      "year": 2026,
+      "category": "sessions",
+      "caption": "Panel discussion with the platform engineering crowd",
+      "featured": false,
+      "alt": "Panelists seated on stage during a panel session at KCD New York 2026"
+    },
+    {
+      "id": "2026-07",
+      "filename": "kcd-ny-2026-07.jpg",
+      "year": 2026,
+      "category": "venue",
+      "caption": "The expo hall at Convene One Liberty Plaza",
+      "featured": false,
+      "alt": "Wide view of the sponsor expo hall with the KCD New York 2026 sponsor banner in the foreground"
+    },
+    {
+      "id": "2026-08",
+      "filename": "kcd-ny-2026-08.jpg",
+      "year": 2026,
+      "category": "community",
+      "caption": "Lunch break in the atrium",
+      "featured": false,
+      "alt": "Attendees getting lunch, viewed from the mezzanine at KCD New York 2026"
+    },
+    {
+      "id": "2026-09",
+      "filename": "kcd-ny-2026-09.jpg",
+      "year": 2026,
+      "category": "networking",
+      "caption": "Conversations with a view of Lower Manhattan",
+      "featured": false,
+      "alt": "Group of attendees talking around a table next to the windows at KCD New York 2026"
+    },
+    {
+      "id": "2026-10",
+      "filename": "kcd-ny-2026-10.jpg",
+      "year": 2026,
+      "category": "networking",
+      "caption": "Sponsor booths, swag and a Kubernetes shield",
+      "featured": false,
+      "alt": "Sponsor representative holding a Kubernetes shield at a booth in the expo hall"
+    },
+    {
+      "id": "2026-11",
+      "filename": "kcd-ny-2026-11.jpg",
+      "year": 2026,
+      "category": "community",
+      "caption": "Prize giveaway on the main stage",
+      "featured": false,
+      "alt": "Organizers handing a Kubernetes shield to a raffle winner on stage at KCD New York 2026"
+    },
+    {
+      "id": "2026-12",
+      "filename": "kcd-ny-2026-12.jpg",
+      "year": 2026,
+      "category": "community",
+      "caption": "The organizers and volunteers who made 2026 happen",
+      "featured": true,
+      "alt": "Organizing team and volunteers posing on stage at KCD New York 2026"
+    },
+    {
+      "id": "2026-13",
+      "filename": "kcd-ny-2026-13.jpg",
+      "year": 2026,
+      "category": "networking",
+      "caption": "Sponsor teams bringing the energy to the expo floor",
+      "featured": false,
+      "alt": "Sponsor team in matching red jumpsuits posing at their booth at KCD New York 2026"
+    },
+    {
       "id": "2024-01",
       "filename": "kcd-ny-2024-01.jpg",
       "year": 2024,

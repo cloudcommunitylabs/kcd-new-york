@@ -1,6 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import eventData from "../content/event-data.json";
 
 export const Head = () => <Seo title="Cookie Policy" description="KCD New York's policy regarding the use of cookies and similar technologies." />;
 
@@ -16,7 +17,7 @@ export default function CookiePolicyPage() {
       </section>
       <section className="section">
         <div className="container content">
-          <p>Cookie policy for KCD New York 2026 will be published here.</p>
+          <p>Cookie policy for {eventData.name} will be published here.</p>
         </div>
       </section>
     </Layout>

@@ -4,10 +4,10 @@ import Seo from "../components/seo";
 import eventData from "../content/event-data.json";
 import teamData from "../content/team.json";
 
-const ORGANIZER_EMAIL = "new-york-org@kubernetescommunitydays.org";
+const ORGANIZER_EMAIL = eventData.links.organizerEmail || eventData.links.email;
 
 export const Head = () => (
-  <Seo title="Team" description="Meet the organizing team behind KCD New York 2026." />
+  <Seo title="Team" description={`Meet the organizing team behind ${eventData.name}.`} />
 );
 
 export default function TeamPage() {

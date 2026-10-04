@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import speakersData from "../content/previous-speakers.json";
 import eventData from "../content/event-data.json";
 import Seo from "../components/seo";
+import { getEventLifecycle } from "../utils/event-lifecycle";
 
 function getInitials(name) {
   if (!name) return "";
@@ -15,6 +16,7 @@ export const Head = () => <Seo title="Previous Speakers" description="Discover t
 
 export default function PreviousSpeakersPage() {
   const speakers = speakersData.featured || [];
+  const { isCfpOpen } = getEventLifecycle(eventData);
 
   return (
     <Layout>
@@ -117,17 +119,19 @@ export default function PreviousSpeakersPage() {
             ))}
           </div>
           
-          <div className="has-text-centered" style={{ marginTop: "4rem" }}>
-            <p className="is-size-5 mb-4">Want to be our next speaker?</p>
-            <a
-              href={eventData.links.cfp}
-              className="button is-large kcd-ny-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Submit to our CFP
-            </a>
-          </div>
+          {isCfpOpen && (
+            <div className="has-text-centered" style={{ marginTop: "4rem" }}>
+              <p className="is-size-5 mb-4">Want to be our next speaker?</p>
+              <a
+                href={eventData.links.cfp}
+                className="button is-large kcd-ny-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Submit to our CFP
+              </a>
+            </div>
+          )}
         </div>
       </section>
     </Layout>

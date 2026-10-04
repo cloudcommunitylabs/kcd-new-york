@@ -1,8 +1,8 @@
 {
-  "name": "kcd-new-york-2026",
+  "name": "kcd-new-york",
   "version": "1.0.0",
   "private": true,
-  "description": "Kubernetes Community Days New York 2026",
+  "description": "Kubernetes Community Days New York website",
   "author": "KCD New York",
   "keywords": [
     "gatsby",

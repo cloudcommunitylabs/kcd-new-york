@@ -1,28 +1,25 @@
-# KCD New York 2026 Website
+# KCD New York Website
 
-Official website for Kubernetes Community Days New York 2026 — June 10th, 2026 at Convene One Liberty Plaza, NYC.
+Official website for **Kubernetes Community Days New York**, part of the [CNCF Kubernetes Community Days](https://www.cncf.io/kcds/) program. KCD New York is on the [CNCF H1 2027 KCD calendar](https://www.cncf.io/blog/2026/08/20/announcing-h1-2027-kcds/) for **June 2027**.
+
+The site currently serves the **KCD New York 2027 "coming soon" landing page**, built on the same theme as the 2026 site. All of the 2026 pages (schedule, speakers, venue, volunteers…) are still in the repo; they are simply switched off in `src/content/event-data.json` until their 2027 data is ready. The 2026 edition itself lives on at **[2026.kcdnewyork.com](https://2026.kcdnewyork.com)** (see [Archiving 2026](#-archiving-2026)).
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
+# Node 20 (see .nvmrc)
 yarn install
 # or: npm install --legacy-peer-deps
 
-# Start development server
+# Start development server at http://localhost:8000
 yarn develop
-# or: npm run develop
 
-# Build for production
+# Production build into ./public
 yarn build
-# or: npm run build
 
-# Serve production build locally
+# Serve the production build at http://localhost:9000
 yarn serve
-# or: npm run serve
 ```
-
-Visit http://localhost:8000 to view the site.
 
 If you see cache or module errors, run `yarn gatsby-clean` (or `npx gatsby clean`) then try again.
 
@@ -31,12 +28,15 @@ If you see cache or module errors, run `yarn gatsby-clean` (or `npx gatsby clean
 ## 📋 Table of Contents
 
 - [Project Structure](#-project-structure)
-- [Customization Guide](#-customization-guide)
+- [Updating the Site](#-updating-the-site)
+- [Bringing Pages Back for 2027](#-bringing-pages-back-for-2027)
+- [2026 Recap Section](#-2026-recap-section)
+- [Email Sign-up](#-email-sign-up-constant-contact)
 - [API Integrations](#-api-integrations)
 - [Adding Images](#-adding-images)
-- [Updating Content](#-updating-content)
 - [Styling & Branding](#-styling--branding)
-- [Deployment](#-deployment)
+- [Deployment](#-deployment-cloudflare-pages)
+- [Archiving 2026](#-archiving-2026)
 - [Contributing](#-contributing)
 
 ---
@@ -45,234 +45,204 @@ If you see cache or module errors, run `yarn gatsby-clean` (or `npx gatsby clean
 
 ```
 kcd-new-york/
+├── .github/workflows/deploy.yml   # Build + deploy to Cloudflare Pages
+├── gatsby-config.js               # Site metadata (from event-data.json)
+├── gatsby-node.js                 # Drops pages whose `sections.*` flag is off
 ├── src/
-│   ├── components/          # Reusable React components
-│   │   ├── layout.js        # Main layout with navbar & footer
-│   │   └── layout.css       # Global styles and Bulma customizations
-│   ├── images/              # Image assets
-│   │   └── icon.png         # Site favicon (update this!)
-│   └── pages/               # Page components (auto-routing)
-│       ├── index.js         # Homepage
-│       ├── about.js         # About KCD New York
-│       ├── schedule.js      # Event schedule
-│       ├── speakers.js      # Speakers & CFP
-│       ├── sponsors.js      # Sponsorship information
-│       ├── venue.js         # Venue details
-│       ├── team.js          # Organizing team
-│       ├── code-of-conduct.js  # Code of Conduct
-│       ├── privacy-policy.js   # Privacy Policy
-│       ├── cookie-policy.js    # Cookie Policy
-│       └── 404.js           # 404 error page
-├── gatsby-config.js         # Gatsby configuration
-├── netlify.toml             # Netlify build configuration
-└── package.json             # Dependencies
+│   ├── content/
+│   │   ├── event-data.json        # ★ Single source of truth: dates, links, sections, 2026 recap
+│   │   ├── sponsors.json          # Sponsors per year ("2027": [], "2026": [...], "2025": [...])
+│   │   ├── team.json              # Organizing team
+│   │   ├── previous-speakers.json # Highlighted past speakers
+│   │   └── logos/                 # Local sponsor logos
+│   ├── components/
+│   │   ├── layout.js              # Navbar + footer (nav items appear as sections are enabled)
+│   │   ├── layout.css             # Theme: brand colours, Bulma customisations, landing page styles
+│   │   ├── NewsletterSignup.js    # Constant Contact "Stay in the loop" section
+│   │   ├── PhotoGallery.js        # Year-filtered photo gallery
+│   │   ├── MapEmbed.js            # Responsive iframe (venue floor plan)
+│   │   └── seo.js                 # <head> metadata
+│   ├── data/gallery-photos.json   # Gallery metadata (photos live in static/images/gallery)
+│   ├── utils/
+│   │   ├── event-lifecycle.js     # Decides which links, sections and pages are ready to show
+│   │   └── sponsor-utils.js       # Logo resolution and tier sizing
+│   └── pages/
+│       ├── index.js               # 2027 landing page (hero, save the month, about, recap, get involved)
+│       ├── schedule.js            # Sessionize schedule (gated: sections.schedule)
+│       ├── speakers.js            # Sessionize speaker wall (gated: sections.speakers)
+│       ├── sponsors.js            # Sponsors + past editions (gated: sections.sponsors)
+│       ├── venue.js               # Venue, floor plan, transit (gated: sections.venue)
+│       ├── team.js                # Organizing team (gated: sections.team)
+│       ├── volunteers.js          # Volunteer form (gated: sections.volunteers)
+│       ├── previous-speakers.js   # (gated: sections.previousSpeakers)
+│       ├── code-of-conduct.js, privacy-policy.js, cookie-policy.js, 404.js
+│       └── content-pages/*.md     # Legacy OpenEventKit template pages (unused)
+└── static/
+    ├── img/                       # Hero (kcd-ny-hero-2027.jpg), venue and team images
+    ├── images/gallery/<year>/     # Gallery photos
+    ├── CNAME, robots.txt
+    └── ...
 ```
 
 ---
 
-## 🎨 Customization Guide
+## ✏️ Updating the Site
 
-### 1. **Update Event Details**
+Everything visible on the site is driven by **`src/content/event-data.json`**. Nothing is deleted from the codebase; sections, buttons and whole pages stay hidden until their data is filled in. Leave a link as an empty string (`""`) to keep it hidden.
 
-#### Central Event Configuration
-All primary event details (name, date, year, venue, key dates) are managed in a single file:
-
-**File:** `src/content/event-data.json`
-
-Update this file to change:
-- **Event Name**: `name`
-- **Primary Date**: `date` (e.g., "June 10, 2026")
-- **Year**: `year`
-- **Venue**: `venue` (name, address, fullAddress)
-- **Timeline**: `keyDates` in `src/content/event-data.json` (used for both homepage and sponsors page)
-
-Most pages (`index.js`, `sponsors.js`, `venue.js`, `schedule.js`, `about.js`, `team.js`, etc.) and the `Layout` component import this data directly.
-
-#### Site Metadata
-**File:** `gatsby-config.js`
-The `siteMetadata` (title and description) is also automatically populated from `src/content/event-data.json`.
-
----
-
-### 2. **Update Contact Emails**
-
-Replace placeholder emails throughout the site:
-
-**Files to update:**
-- `src/components/layout.js` (footer)
-- `src/pages/sponsors.js`
-- `src/pages/team.js`
-- `src/pages/code-of-conduct.js`
-
-**Suggested placeholders:**
-- `info@kcdnewyork.com`
-- `sponsors@kcdnewyork.com`
-- `conduct@kcdnewyork.com`
-- `volunteer@kcdnewyork.com`
-- `team@kcdnewyork.com`
-
-Use real team emails, forwarding, or domain-specific addresses.
+| Field | What it controls |
+| --- | --- |
+| `name`, `shortName`, `year` | Site title, navbar brand, page titles, which key of `sponsors.json` is "this year". |
+| `status` | `coming-soon` shows the "Coming soon" badges in the navbar and hero. Set to anything else to remove them. |
+| `tagline`, `description` | Hero subtitle and the About section copy. |
+| `date.display`, `date.note` | The "When" text in the hero (e.g. `June 2027`) and its small note. |
+| `date.iso` | Set once the exact date is confirmed (e.g. `2027-06-09`). Turns on the hero countdown, switches the band to "Save the date", adds `startDate` to the structured data, and flips the site to "thank you" mode the day after the event. |
+| `venue.name`, `venue.address`, `venue.fullAddress` | The "Where" text. While `name` is empty the hero shows `venue.city` and `venue.note`. |
+| `links.registration` | **Register** button in the navbar, hero, CTA banner and speakers page. |
+| `links.cfp` | **Call for Papers** nav item and **Submit a talk** buttons. Closes automatically after a `CFP Closes` key date if one exists. |
+| `links.sponsorProspectus` | **Sponsor Prospectus** / **Download Prospectus** buttons. |
+| `links.volunteerForm` | **Volunteer** button (with `sections.volunteers` also enables the Volunteers page). |
+| `links.venueMap` | Makes the hero address a link to Google Maps. |
+| `links.sessionizeId` | Sessionize event id used by the Schedule and Speakers pages (with `sections.schedule` / `sections.speakers`). |
+| `links.linkedin`, `links.twitter`, `links.flickr` | Social links in the footer, hero fallback buttons and recap section. |
+| `links.email`, `links.organizerEmail`, `links.sponsorEmail` | Contact addresses in the footer, team page and sponsors page. |
+| `newsletter.*` | Constant Contact sign-up section, see [Email sign-up](#-email-sign-up-constant-contact). |
+| `sections.*` | Toggle whole sections and pages: `about`, `getInvolved`, `keyDates`, `recap`, `gallery`, `schedule`, `speakers`, `previousSpeakers`, `sponsors`, `previousSponsors`, `venue`, `team`, `volunteers`. Pages whose flag is off are **not built at all** (see `gatsby-node.js`), so no half-empty page can go live. |
+| `keyDates` | Array of `{ "label": "...", "date": "Month D, YYYY" }` shown on the home page timeline and the sponsors page when `sections.keyDates` is `true`. |
+| `keynotes` | Optional array of `{ name, company, role, headshot, linkedin }` for the current edition's keynote block on the Speakers page. |
+| `previousEdition` | Data for the [2026 recap](#-2026-recap-section). |
 
 ---
 
-### 3. **Update Venue Information**
+## 🔁 Bringing Pages Back for 2027
 
-**File:** `src/pages/venue.js`
+Each 2026 page comes back the moment its data exists:
 
-Current venue: **Convene One Liberty Plaza**, 1 Liberty St, New York, NY 10006.
+| Page | Turn on with |
+| --- | --- |
+| Schedule | `links.sessionizeId` + `sections.schedule: true` |
+| Speakers | `links.sessionizeId` + `sections.speakers: true` (optionally `keynotes`) |
+| Sponsors | `sections.sponsors: true` (already on) and sponsors in `sponsors.json` → `"2027"` |
+| Venue | `venue.name` + `sections.venue: true`. Review the Convene-specific copy in `src/pages/venue.js` (transit tabs, floor plan URL) if the venue changes. |
+| Volunteers | `links.volunteerForm` + `sections.volunteers: true` |
+| Key dates | `keyDates` array + `sections.keyDates: true` |
 
-Update with:
-- Full address and map link
-- Transit directions (subway, PATH, etc.)
-- Accessibility details
-- Venue contact info
+Navigation, footer links and the "Get involved" cards update automatically.
 
 ---
 
-## 🖼️ Adding Images
+## 🏁 2026 Recap Section
 
-### Where to Add Images
+The landing page carries a "Looking back" section for the previous edition, driven by `previousEdition` in `event-data.json`:
 
-```
-src/images/
-├── icon.png              # Favicon (512x512px recommended)
-├── logo.png              # KCD New York logo
-├── hero-background.jpg   # Homepage hero image
-├── venue/                # Venue photos
-├── speakers/             # Speaker headshots
-└── sponsors/             # Sponsor logos
-```
+- `stats` — the year in numbers (**the current values are placeholders copied from the 2026 site; replace them with the real attendance, speaker, sponsor and session counts**).
+- Photos: 13 selected 2026 photos live in `static/images/gallery/2026/` with metadata in `src/data/gallery-photos.json`; the hero background `static/img/kcd-ny-hero-2027.jpg` is composed from one of them.
+- `keynotes` — the 2026 keynote speakers.
+- `summary`, `theme`, `date`, `venue` — the recap copy.
+- `url` — the archived 2026 site (`https://2026.kcdnewyork.com`). "Relive KCD New York 2026" links here.
+- The 2026 sponsor marquee comes from `sponsors.json` → `"2026"`, and the photo gallery shows every year in `src/data/gallery-photos.json`. Add 2026 photos to `static/images/gallery/2026/` and their metadata to the JSON to get a 2026 tab.
 
-### Using Images in Pages
+Set `sections.recap: false` to hide the section.
 
-**Option 1: Static import**
-```javascript
-import logoImage from '../images/logo.png'
+---
 
-<img src={logoImage} alt="KCD New York Logo" />
-```
+## 📬 Email Sign-up (Constant Contact)
 
-**Option 2: Gatsby Image (optimized)**
-```javascript
-import { StaticImage } from "gatsby-plugin-image"
+The sign-up form is Constant Contact's inline form, the same integration as the KCD Cairo site. Two values in `event-data.json` → `newsletter` control it:
 
-<StaticImage
-  src="../images/hero.jpg"
-  alt="KCD New York"
-  placeholder="blurred"
-  layout="fullWidth"
-/>
-```
+- `constantContactFormId` — the `data-form-id` from the form's inline code (`<div class="ctct-inline-form" data-form-id="…">`).
+- `constantContactAccountId` — the `_ctct_m` value from the account's **Universal Code** (Constant Contact → Sign-up Forms → your form → Inline code → *Universal Code*, the line `var _ctct_m = "…"`).
 
-### Image tips
-
-- Prefer **WebP or AVIF** for smaller files.
-- Compress before adding (e.g. TinyPNG, Squoosh).
-- **Suggested sizes:** Hero 1920×1080px; speaker photos 400×400px; sponsor logos ~300×150px (transparent PNG); favicon 512×512px.
+The section, the **Get updates** hero button and the widget script only appear once **both** values are set (they are: the KCD New York form lives in the Cloud Community Labs Constant Contact account). The widget loads from `static.ctctcdn.com`.
 
 ---
 
 ## 🔌 API Integrations
 
-### Sessionize (Speakers & CFP)
+### Sessionize (Schedule & Speakers)
 
-1. Create an event at [Sessionize](https://sessionize.com).
-2. Use the API: `https://sessionize.com/api/v2/{event_id}/view/speakers`.
-3. In `src/pages/speakers.js`, fetch and map speakers (e.g. `profilePicture`, `fullName`, `bio`).
-4. Embed CFP form: `<iframe src="https://sessionize.com/YOUR_EVENT/apply"></iframe>`.
+Set `links.sessionizeId` to the Sessionize event id (the segment in `https://sessionize.com/api/v2/<id>/view/...`). `links.sessionizeEmbeds` picks the embed type (`GridSmart` for the schedule, `SpeakerWall` for speakers). Both pages inject the embed at runtime and style it in `layout.css` (see the "Sessionize Embed Custom Styling" block).
 
-### Ti.to / Eventbrite (Registration)
+### Registration
 
-**Ti.to (good for tech events):**
-```javascript
-// In src/pages/index.js – load Ti.to script, then:
-<tito-button event="kcd-new-york/2026">Register Now</tito-button>
-```
+Set `links.registration` to the ticketing URL (2026 used `https://tickets.kcdnewyork.com`).
 
-**Eventbrite:** Use the [Eventbrite widget](https://www.eventbrite.com/platform/docs/embedding-eventbrite) and embed in a page.
+### Volunteer form
 
-### Mailchimp / Buttondown (Newsletter)
-
-Add a signup form (e.g. in `src/components/newsletter-signup.js` or the footer) that POSTs to your Mailchimp or Buttondown endpoint. Use a form with `action`, `method="post"`, and an email `input` with `name="EMAIL"`.
+Set `links.volunteerForm` to the sign-up form URL (Google Forms in 2026).
 
 ---
 
-## 📝 Updating Content
+## 🖼️ Adding Images
 
-### Sponsors page
-
-**File:** `src/pages/sponsors.js`
-
-Define tiers (e.g. Platinum, Gold, Silver, Community) and pricing. Add logos under `src/images/sponsors/` and import them in the page.
-
-### Speakers page
-
-**File:** `src/pages/speakers.js`
-
-- **Manual:** Keep an array of `{ name, role, company, image, bio, twitter }` and map over it.
-- **Sessionize:** Fetch from the Sessionize API and render the same structure.
-
-### Schedule page
-
-**File:** `src/pages/schedule.js`
-
-Update the `scheduleItems` array with real slots, e.g.:
-```javascript
-{ time: "9:00 AM - 9:30 AM", title: "Registration & Coffee", description: "..." }
 ```
+static/img/                    # Hero (kcd-ny-hero.png), venue photos, team headshots (team/)
+static/images/gallery/<year>/  # Gallery photos, see src/images/gallery/README.md
+src/content/logos/             # Local sponsor logos referenced as "./logos/<file>" in sponsors.json
+```
+
+Sponsor logos can also be remote URLs. Prefer WebP/AVIF or compressed JPEG/PNG; suggested sizes: hero 1920×1080, headshots 400×400, sponsor logos ~300×150 transparent PNG/SVG.
 
 ---
 
 ## 🎨 Styling & Branding
 
-### Colors
-
-**File:** `src/components/layout.css`
+Brand colours are CSS variables at the top of `src/components/layout.css`:
 
 ```css
 :root {
-  --color-primary: #326ce5;    /* Kubernetes blue */
-  --color-secondary: #00d1b2;   /* Teal */
-  --color-dark: #363636;
-  --color-light: #f5f5f5;
+  --color-primary: #1a2c50;       /* Dark blue – navbar, hero, bands */
+  --color-primary-light: #60a1cf;
+  --color-secondary: #e2523d;     /* Orange-red – CTAs, highlights */
+  --color-accent-warm: #f7a544;   /* Golden orange – eyebrows, countdown labels */
+  --color-accent-red: #d13d2f;
 }
 ```
 
-### Typography
-
-Fonts are set in `src/components/layout.css` (e.g. IBM Plex Sans, Nunito Sans). To change them, update the `@import` and `font-family` rules there.
+Typography is IBM Plex Sans (with Nunito Sans fallback) from Google Fonts; layout uses Bulma. Landing-page specific styles are in the "2027 landing page additions" block at the end of `layout.css`.
 
 ---
 
-## 🚀 Deployment
+## ☁️ Deployment (Cloudflare Pages)
 
-### Netlify (recommended)
+GitHub Actions builds the site and publishes `public/` to Cloudflare Pages with `wrangler` (`.github/workflows/deploy.yml`):
 
-**Production (main website):**
-- Deploy the main site from the `main` branch.
-- In Netlify: **Site configuration** → **Build & deploy** → **Continuous deployment** → set **Production branch** to `main`.
-- Every push to `main` triggers a production deploy; the main site URL serves this branch.
+- Push to `main` → production deployment.
+- Pull request against `main` → preview deployment; the workflow comments the preview URL on the PR.
+- `workflow_dispatch` → manual run.
 
-**Preview environments (PRs):**
-- Enable deploy previews so each pull request gets a unique preview URL.
-- In Netlify: **Site configuration** → **Build & deploy** → **Continuous deployment** → under **Deploy Previews**, enable **Deploy Previews for pull requests**.
-- When you open a PR, Netlify builds it and comments with a preview link (e.g. `deploy-preview-123--your-site.netlify.app`).
+The target project is the `CLOUDFLARE_PAGES_PROJECT` env in the workflow. Repository secrets: `CLOUDFLARE_API_TOKEN` (Pages: Edit) and `CLOUDFLARE_ACCOUNT_ID`. Set `GATSBY_SITE_URL` to override the canonical URL (defaults to `https://kcdnewyork.com`).
 
-**Build settings** (in `netlify.toml`):
-- Build command: `yarn install && yarn build`
-- Publish directory: `public`
-- Node 20, Yarn 1.22
-
-### Manual deploy
+**Manual deploy**
 
 ```bash
 yarn build
-# Then deploy the `public` folder (e.g. Netlify CLI: netlify deploy --prod)
+npx wrangler pages deploy public --project-name=<project>
 ```
 
-### Custom domain
+---
 
-In Netlify: Site Settings → Domain management → Add custom domain, then set DNS (A/CNAME) at your registrar. SSL is provisioned automatically.
+## 🗄️ Archiving 2026
+
+Every edition stays online: the 2026 site is frozen on the **`2026` branch** and served at **`2026.kcdnewyork.com`**, while `main` is the current edition at `kcdnewyork.com`.
+
+**Already in place (in git):**
+
+- Tag `2026-final` marks the last 2026 commit.
+- Branch `2026` = that commit plus archive-mode tweaks: an "Archive" banner linking to `kcdnewyork.com`, registration and prospectus buttons switched off, `siteUrl` set to `https://2026.kcdnewyork.com`. Everything else (schedule, speakers, sponsors, venue, photos) is untouched.
+- `.github/workflows/deploy.yml` **on the `2026` branch** deploys every push to `2026` as the production deployment of the `kcd-newyork-2026` Cloudflare Pages project (and previews for PRs against `2026`).
+- `.github/workflows/deploy.yml` **on `main`** deploys to the `kcd-newyork-2027` project.
+
+**One-time Cloudflare steps (dashboard → Workers & Pages):**
+
+1. `kcd-newyork-2026` → *Custom domains* → add `2026.kcdnewyork.com`. Cloudflare creates the DNS record automatically when the zone is on Cloudflare.
+2. `kcd-newyork-2026` → *Custom domains* → remove `kcdnewyork.com` and `www.kcdnewyork.com` **after** step 3 has deployed at least once, so the apex never points at an empty project.
+3. `kcd-newyork-2027` → *Custom domains* → add `kcdnewyork.com` and `www.kcdnewyork.com`. Make sure its production branch is `main` (*Settings → Builds*), and that the GitHub secrets `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` have *Pages: Edit* on the account (they are shared by both projects).
+4. Merge the 2027 landing page PR into `main`. The workflow deploys it to `kcd-newyork-2027`; the archive keeps serving from the `2026` branch.
+
+Optionally protect the `2026` branch in GitHub (*Settings → Branches*) so it only changes through PRs.
+
+Repeat the same pattern in 2028: tag `2027-final`, branch `2027`, add `2027.kcdnewyork.com` to a `kcd-newyork-2027` archive, and point `main` at a new project.
 
 ---
 
@@ -280,20 +250,18 @@ In Netlify: Site Settings → Domain management → Add custom domain, then set 
 
 1. **Clone** the repo and install: `yarn install`
 2. **Branch:** `git checkout -b feature/your-feature-name`
-3. **Edit** content or code; run `yarn develop` to test.
-4. **Commit:** `git add .` and `git commit -m "Add: your change"`
-5. **Push** and open a Pull Request to `main`.
+3. **Edit** `src/content/event-data.json` or the page components; run `yarn develop` to test.
+4. **Push** and open a Pull Request to `main`; the workflow posts a Cloudflare preview URL.
 
 **Style:** Use Bulma classes for layout and components; keep components small and reusable; add comments for non-obvious logic.
 
 ---
 
-## 📞 Support & Contact
+## 📞 Contact
 
-**Placeholders to replace:**
-- Organizer contact (e.g. info@kcdnewyork.com)
-- Social: Twitter/X, LinkedIn, etc.
-- Official event contact: [new-york-org@kubernetescommunitydays.org](https://kubernetescommunitydays.org)
+- Organizers: [new-york-org@kubernetescommunitydays.org](mailto:new-york-org@kubernetescommunitydays.org)
+- General: [info@kcdnewyork.com](mailto:info@kcdnewyork.com)
+- LinkedIn: [KCD New York](https://www.linkedin.com/company/kcdnewyork)
 
 ---
 
@@ -301,12 +269,8 @@ In Netlify: Site Settings → Domain management → Add custom domain, then set 
 
 This project is part of the [Kubernetes Community Days](https://kubernetescommunitydays.org/) program, supported by the [CNCF](https://www.cncf.io/).
 
----
-
 ## 🙏 Acknowledgments
 
-- Structure and approach based on [KCD Toronto 2026](https://github.com/distributethe6ix/kcd-toronto-front-end)
-- Built with [Gatsby](https://www.gatsbyjs.com/)
-- Styled with [Bulma CSS](https://bulma.io/)
-- Hosted on [Netlify](https://www.netlify.com/)
-- Supported by [Cloud Native Computing Foundation](https://www.cncf.io/)
+- Landing-page approach shared with [KCD Cairo](https://github.com/cloudcommunitylabs/kcd-cairo)
+- Structure and approach originally based on [KCD Toronto 2026](https://github.com/distributethe6ix/kcd-toronto-front-end)
+- Built with [Gatsby](https://www.gatsbyjs.com/), styled with [Bulma CSS](https://bulma.io/), hosted on [Cloudflare Pages](https://pages.cloudflare.com/)
